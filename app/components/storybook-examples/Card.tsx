@@ -1,4 +1,4 @@
-import { cn } from '../utils/cn';
+import { cn } from '../../utils/cn';
 
 interface CardProps {
   children: React.ReactNode;
@@ -15,11 +15,7 @@ export function Card({ children, className, variant = 'default' }: CardProps) {
     elevated: 'bg-white shadow-lg',
   };
 
-  return (
-    <div className={cn(baseStyles, variantStyles[variant], className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn(baseStyles, variantStyles[variant], className)}>{children}</div>;
 }
 
 interface CardHeaderProps {
@@ -28,11 +24,7 @@ interface CardHeaderProps {
 }
 
 export function CardHeader({ children, className }: CardHeaderProps) {
-  return (
-    <div className={cn('mb-4', className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn('mb-4', className)}>{children}</div>;
 }
 
 interface CardTitleProps {
@@ -41,11 +33,7 @@ interface CardTitleProps {
 }
 
 export function CardTitle({ children, className }: CardTitleProps) {
-  return (
-    <h3 className={cn('text-lg font-semibold text-gray-900', className)}>
-      {children}
-    </h3>
-  );
+  return <h3 className={cn('text-lg font-semibold text-gray-900', className)}>{children}</h3>;
 }
 
 interface CardContentProps {
@@ -54,9 +42,5 @@ interface CardContentProps {
 }
 
 export function CardContent({ children, className }: CardContentProps) {
-  return (
-    <div className={cn('text-gray-600', className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn('text-gray-600', className)}>{children}</div>;
 }
