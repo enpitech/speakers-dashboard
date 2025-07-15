@@ -8,7 +8,7 @@ interface CardProps {
 
 export function Card({ children, className, variant = 'default' }: CardProps) {
   const baseStyles = 'rounded-lg p-6';
-  
+
   const variantStyles = {
     default: 'bg-white',
     outlined: 'bg-white border border-gray-200',

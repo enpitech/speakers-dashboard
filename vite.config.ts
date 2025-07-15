@@ -13,8 +13,8 @@ const isStorybook = process.env.NODE_ENV === 'storybook' || process.argv[1]?.inc
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: isStorybook 
-    ? [tsconfigPaths()] 
+  plugins: isStorybook
+    ? [tsconfigPaths()]
     : [tailwindcss(), reactRouter(), tsconfigPaths()],
   test: {
     projects: [{
