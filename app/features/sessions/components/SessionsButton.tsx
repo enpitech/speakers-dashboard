@@ -1,7 +1,7 @@
-import { cn } from '../lib/utils';
-import { Button } from './ui/button';
+import { cn } from '~/lib/utils';
+import { Button } from '~/components/ui/button';
 import type React from 'react';
-import { Text } from './Text';
+import { Text } from '~/components/Text';
 import { YoutubeIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 

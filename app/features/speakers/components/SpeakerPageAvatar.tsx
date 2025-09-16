@@ -1,8 +1,8 @@
-import type { Speaker } from '~/lib/types';
-import { Avatar } from './Avatar';
+import type { Speaker } from '~/types';
+import { Avatar } from '~/components/Avatar';
 import { useFetcher } from 'react-router';
 import { useState } from 'react';
-import { Spinner } from './Spinner';
+import { Spinner } from '~/components/Spinner';
 
 export const SpeakerPageAvatar = ({ speaker }: { speaker: Speaker }) => {
   const { avatar, name } = speaker;

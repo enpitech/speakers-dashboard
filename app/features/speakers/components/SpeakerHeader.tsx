@@ -1,8 +1,8 @@
 import { Clock, MapPin, Star, Youtube } from 'lucide-react';
 import { Link } from 'react-router';
-import type { Speaker } from '~/lib/types';
-import { SocialLinks } from './SocialLinks';
-import { Text } from './Text';
+import type { Speaker } from '~/types';
+import { SocialLinks } from '~/components/ui/SocialLinks';
+import { Text } from '~/components/Text';
 import { useTranslation } from 'react-i18next';
 
 type SpeakerHeaderProps = {
@@ -60,7 +60,7 @@ export function SpeakerHeader({ speaker }: SpeakerHeaderProps) {
                 <Star
                   key={i}
                   className={`w-5 h-5 ${
-                    i < speaker.rating ? 'fill-primary text-primary' : 'fill-stroke text-stroke'
+                    i < (speaker.rating || 0) ? 'fill-primary text-primary' : 'fill-stroke text-stroke'
                   }`}
                 />
               ))}

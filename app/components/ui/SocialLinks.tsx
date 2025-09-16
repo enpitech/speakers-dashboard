@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
-import type { Speaker } from '~/lib/types';
-import { SocialIcon } from './ui/SocialIcon';
+import type { Speaker } from '~/types';
+import { SocialIcon } from '~/components/ui/SocialIcon';
 
 type SocialLinksProps = {
   socialLinks: Speaker['socialLinks'];
@@ -9,7 +9,7 @@ type SocialLinksProps = {
 export function SocialLinks({ socialLinks }: SocialLinksProps) {
   return (
     <div className="flex items-center gap-3">
-      {socialLinks.map((link, index) => (
+      {socialLinks.map((link: any, index: number) => (
         <Link
           key={index}
           to={link.url}

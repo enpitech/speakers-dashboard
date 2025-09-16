@@ -1,10 +1,10 @@
 import type { Speaker } from '~/lib/types';
 import { use } from 'react';
 import { useTranslation } from 'react-i18next';
-import { TableCell } from './ui/table/TableCell';
-import { Table } from './ui/table/Table';
+import { TableCell } from '~/components/ui/table/TableCell';
+import { Table } from '~/components/ui/table/Table';
 import { SpeakerRow } from './SpeakersRow';
-import { Text } from './Text';
+import { Text } from '~/components/ui/Text';
 
 const columnWidths = {
   name: '20%',

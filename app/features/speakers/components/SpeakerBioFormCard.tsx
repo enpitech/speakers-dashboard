@@ -3,12 +3,12 @@ import { useTransition } from 'react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSubmit } from 'react-router';
-import type { Speaker } from '~/lib/types';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { TextareaInput } from './ui/form/TextareaInput';
-import { Button } from './ui/button';
+import type { Speaker } from '~/types';
+import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
+import { TextareaInput } from '~/components/ui/form/TextareaInput';
+import { Button } from '~/components/ui/button';
 import { Pencil, Loader2 } from 'lucide-react';
-import { Text } from './Text';
+import { Text } from '~/components/Text';
 import { GenerateSpeakerBioButton } from './GenerateSpeakerBioButton';
 
 export const SpeakerBioFormCard = ({ speaker }: { speaker: Speaker }) => {
@@ -60,7 +60,7 @@ export const SpeakerBioFormCard = ({ speaker }: { speaker: Speaker }) => {
             <TextareaInput
               name="bio"
               value={editedBio}
-              onChange={e => setEditedBio(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setEditedBio(e.target.value)}
               placeholder={t('speaker.bio.placeholder')}
               className={`min-h-[100px]`}
               icon={

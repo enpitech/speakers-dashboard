@@ -1,8 +1,8 @@
 import { Link } from 'react-router';
 import { MapPin, Clock } from 'lucide-react';
-import type { Speaker } from '~/lib/types';
-import { SocialIcon } from './SocialIcon';
-import { Text } from './Text';
+import type { Speaker } from '~/types';
+import { SocialIcon } from '~/components/SocialIcon';
+import { Text } from '~/components/Text';
 import { SpeakerPageAvatar } from './SpeakerPageAvatar';
 export const SpeakerPageHeader = ({ speaker }: { speaker: Speaker }) => {
   const { avatar, name, location, experience, rating, sessionsUrl, socialLinks } = speaker;
@@ -37,7 +37,7 @@ export const SpeakerPageHeader = ({ speaker }: { speaker: Speaker }) => {
         </div>
 
         <div className="ml-44 flex items-center gap-3 mt-4">
-          {socialLinks.map((link, index) => (
+          {socialLinks.map((link: any, index: number) => (
             <Link
               key={index}
               to={link.url}

@@ -1,10 +1,9 @@
 import { AlertTriangle } from 'lucide-react';
-import type { Route } from '../+types/root';
-import { Button } from './ui/button';
-import { Text } from './Text';
+import { Button } from '~/components/ui/button';
+import { Text } from '~/components/Text';
 import { useTranslation } from 'react-i18next';
 
-export const GeneralError = ({ error }: Route.ErrorBoundaryProps) => {
+export const GeneralError = ({ error }: { error: Error }) => {
   const { t } = useTranslation();
   return (
     <div className="flex flex-col items-center justify-center min-h-[400px] p-6 bg-background-2 rounded-lg border border-stroke">

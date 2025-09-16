@@ -1,7 +1,7 @@
-import { SpeakerBioFormCard } from '~/components/SpeakerBioFormCard';
-import type { Speaker } from '~/lib/types';
-import { SpeakerExpertiseCard } from '~/components/SpeakerExpertiseCard';
-import { SpeakerLanguagesCard } from '~/components/SpeakerLanguagesCard';
+import { SpeakerBioFormCard } from '~/features/speakers/components/SpeakerBioFormCard';
+import type { Speaker } from '~/types';
+import { SpeakerExpertiseCard } from '~/features/speakers/components/SpeakerExpertiseCard';
+import { SpeakerLanguagesCard } from '~/features/speakers/components/SpeakerLanguagesCard';
 
 export const SpeakerPageAbout = ({ speaker }: { speaker: Speaker }) => {
   return (

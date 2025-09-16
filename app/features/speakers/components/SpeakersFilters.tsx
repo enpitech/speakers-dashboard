@@ -1,10 +1,10 @@
 import { Suspense, use } from 'react';
-import { Chip } from './ui/Chip';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import { Chip } from '~/components/ui/Chip';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '~/components/ui/select';
 import { CheckIcon } from 'lucide-react';
-import { Spinner } from './Spinner';
-import { Text } from './Text';
-import { useSpeakersFilters } from '~/lib/hooks/useSpeakersFilters';
+import { Spinner } from '~/components/ui/Spinner';
+import { Text } from '~/components/ui/Text';
+import { useSpeakersFilters } from '~/hooks/useSpeakersFilters';
 
 type SpeakersFiltersProps = {
   availableFilters: {
@@ -21,56 +21,56 @@ export function SpeakersFilters({ availableFilters }: SpeakersFiltersProps) {
   return (
     <div className="flex gap-4 mb-4 w-full border border-primary rounded-md p-4 bg-card">
       <div className="flex-1">
-        <Select value="" onValueChange={value => handleSelectChange(value, 'language')}>
+        <Select value="" onValueChange={(value: string) => handleSelectChange('languages', value)}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Filter by language" />
           </SelectTrigger>
           <SelectContent>
             {availableLanguages.map(lang => (
               <SelectItem key={lang} value={lang}>
-                {filters.language.includes(lang) ? <CheckIcon /> : null} {lang}
+                {filters.languages.includes(lang) ? <CheckIcon /> : null} {lang}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
 
         <div className="flex gap-2 mt-2 flex-wrap">
-          {filters.language.map(lang => (
+          {filters.languages.map((lang: string) => (
             <Chip
               key={lang + Math.random()}
               label={lang}
-              onRemove={() => handleRemove('language', lang)}
+              onRemove={() => handleRemove('languages', lang)}
             />
           ))}
         </div>
       </div>
 
       <div className="flex-1">
-        <Select value="" onValueChange={value => handleSelectChange(value, 'topic')}>
+        <Select value="" onValueChange={(value: string) => handleSelectChange('topics', value)}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Filter by topic" />
           </SelectTrigger>
           <SelectContent>
             {availableTopics.map(topic => (
               <SelectItem key={topic + Math.random()} value={topic}>
-                {filters.topic.includes(topic) ? <CheckIcon /> : null} {topic}
+                {filters.topics.includes(topic) ? <CheckIcon /> : null} {topic}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
         <div className="flex gap-2 mt-2 flex-wrap">
-          {filters.topic.filter(Boolean).map(topic => (
+          {filters.topics.filter(Boolean).map((topic: string) => (
             <Chip
               key={topic + Math.random()}
               label={topic}
-              onRemove={() => handleRemove('topic', topic)}
+              onRemove={() => handleRemove('topics', topic)}
             />
           ))}
         </div>
       </div>
 
       <div className="flex-1">
-        <Select value="" onValueChange={value => handleRatingChange(value)}>
+        <Select value="" onValueChange={(value: string) => handleRatingChange(value === 'null' ? null : parseInt(value))}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Filter by rating" />
           </SelectTrigger>
@@ -89,7 +89,7 @@ export function SpeakersFilters({ availableFilters }: SpeakersFiltersProps) {
           {filters.rating && (
             <Chip
               label={'⭐'.repeat(filters.rating ?? 0)}
-              onRemove={() => handleRatingChange('null')}
+              onRemove={() => handleRatingChange(null)}
             />
           )}
         </div>

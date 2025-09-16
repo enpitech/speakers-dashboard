@@ -1,8 +1,8 @@
+import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
+import { ComponentErrorBoundary } from '~/components/ComponentErrorBoundary';
+import type { Speaker } from '~/types';
+import { SpeakerExpertise } from '~/features/speakers/components/SpeakerExpertise';
 import { useTranslation } from 'react-i18next';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { ComponentErrorBoundary } from './ComponentErrorBoundary';
-import type { Speaker } from '~/lib/types';
-import { SpeakerExpertise } from '~/components/SpeakerExpertise';
 import { FileWarningIcon } from 'lucide-react';
 import { Text } from '~/components/Text';
 
@@ -20,7 +20,7 @@ export const SpeakerExpertiseCard = ({ speaker }: { speaker: Speaker }) => {
       </CardHeader>
       <CardContent>
         <ComponentErrorBoundary
-          onError={error => {
+          onError={(error: any) => {
             console.log('Error loading expertise', error);
           }}
           fallback={

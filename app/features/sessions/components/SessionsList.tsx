@@ -1,9 +1,9 @@
 import { Calendar, Clock, MapPin, Users, YoutubeIcon } from 'lucide-react';
 import { Button } from '~/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card';
-import type { Session } from '~/lib/types';
-import { Text } from './Text';
-import { EmptyResponseView } from './EmptyResponseView';
+import type { Session } from '~/types';
+import { Text } from '~/components/Text';
+import { EmptyResponseView } from '~/components/EmptyResponseView';
 import { useTranslation } from 'react-i18next';
 
 type UpcomingSessionsProps = {

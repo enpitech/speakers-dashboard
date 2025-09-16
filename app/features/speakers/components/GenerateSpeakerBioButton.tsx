@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useFetcher } from 'react-router';
-import type { Speaker } from '~/lib/types';
-import { Button } from './ui/button';
+import type { Speaker } from '~/types';
+import { Button } from '~/components/ui/button';
 import { WandSparklesIcon } from 'lucide-react';
 
 export const GenerateSpeakerBioButton = ({

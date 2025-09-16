@@ -1,5 +1,22 @@
 // Shared types used across the application
 
+export type SocialNetwork = 
+  | 'linkedin'
+  | 'twitter'
+  | 'facebook'
+  | 'instagram'
+  | 'youtube'
+  | 'github'
+  | 'tiktok'
+  | 'spotify'
+  | 'discord';
+
+export interface SocialLink {
+  platform: SocialNetwork;
+  url: string;
+  icon?: string;
+}
+
 export interface Speaker {
   id: string;
   name: string;
@@ -8,16 +25,10 @@ export interface Speaker {
   experience?: string;
   rating?: number;
   sessionsUrl?: string;
-  socialLinks?: SocialLink[];
+  socialLinks: SocialLink[];
   bio?: string;
-  expertise?: string[];
-  languages?: string[];
-}
-
-export interface SocialLink {
-  platform: string;
-  url: string;
-  icon?: string;
+  topics: string[];
+  languages: string[];
 }
 
 export interface Review {
@@ -25,8 +36,11 @@ export interface Review {
   speakerId: string;
   rating: number;
   comment: string;
-  reviewerName: string;
-  createdAt: Date;
+  text: string; // Alternative property name used in components
+  author: string;
+  avatar?: string;
+  date: string; // Used in components
+  createdAt: string;
 }
 
 export interface Session {
@@ -34,8 +48,31 @@ export interface Session {
   title: string;
   description?: string;
   speakerId: string;
+  date: string;
+  time: string; // Used in components
+  location: string; // Used in components
+  attendees?: number;
+  videoUrl?: string;
   duration?: number;
   scheduledAt?: Date;
+}
+
+export interface SpeakerFormData {
+  name: string;
+  avatar?: string;
+  topics: string[];
+  languages: string[];
+  sessionsUrl: string;
+  socialLinks: SocialLink[];
+  bio?: string;
+  location?: string;
+  experience?: string;
+}
+
+export interface SocialNetworkOption {
+  value: SocialNetwork;
+  label: string;
+  icon: React.ReactNode;
 }
 
 export interface ApiResponse<T> {

@@ -1,12 +1,12 @@
-import { Avatar } from './Avatar';
-import { StarRating } from './StarRating';
-import { Row } from './ui/table/Row';
-import { TableCell } from './ui/table/TableCell';
-import { SocialIconsGroup } from './ui/SocialIconsGroup';
-import type { Speaker } from '~/lib/types';
+import { Avatar } from '~/components/Avatar';
+import { StarRating } from '~/features/reviews/components/StarRating';
+import { Row } from '~/components/ui/table/Row';
+import { TableCell } from '~/components/ui/table/TableCell';
+import { SocialIconsGroup } from '~/components/ui/SocialIconsGroup';
+import type { Speaker } from '~/types';
 import { useNavigate } from 'react-router';
 import { Text } from '~/components/Text';
-import { SessionsButton } from './SessionsButton';
+import { SessionsButton } from '~/features/sessions/components/SessionsButton';
 
 interface SpeakerRowProps {
   speaker: Speaker;
@@ -53,7 +53,7 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
 
       <TableCell width={columnWidths.information}>
         <div className="flex items-center gap-3">
-          <StarRating rating={speaker.rating} readonly size="sm" />
+          <StarRating rating={speaker.rating || 0} readonly size="sm" />
           {speaker.sessionsUrl && <SessionsButton />}
         </div>
       </TableCell>

@@ -4,12 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { TextInput } from '~/components/ui/form/TextInput';
 import { SocialNetworkInput } from '~/components/ui/form/SocialNetworkInput';
 import { FormError } from '~/components/ui/form/FormError';
-import type { SpeakerFormData } from '~/lib/types';
+import type { SpeakerFormData } from '~/types';
 import { TextareaInput } from '~/components/ui/form/TextareaInput';
 import { ChipInput } from '~/components/ui/ChipInput';
 import { Text } from '~/components/Text';
-import { Button } from './ui/button';
-import { ImageUploadInput } from './ui/form/ImageUploadInput';
+import { Button } from '~/components/ui/button';
+import { ImageUploadInput } from '~/components/ui/form/ImageUploadInput';
 
 type SpeakerFormDialogViewProps = {
   formData: SpeakerFormData;
@@ -51,7 +51,7 @@ export function SpeakerFormDialogView({
       <div className="flex justify-left">
         <ImageUploadInput
           image={formData.avatar}
-          onChange={({ image }) => onChange({ avatar: image })}
+          onChange={({ image }: any) => onChange({ avatar: image })}
         />
       </div>
 
@@ -113,7 +113,7 @@ export function SpeakerFormDialogView({
           </Text>
         </div>
 
-        {formData.socialLinks.map((social, index) => (
+        {formData.socialLinks.map((social: any, index: number) => (
           <div key={index} className="space-y-2">
             <SocialNetworkInput
               value={social}

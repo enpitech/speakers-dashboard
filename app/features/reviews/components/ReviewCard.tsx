@@ -1,7 +1,7 @@
-import type { Review } from '~/lib/types';
-import { Card, CardContent } from './ui/card';
+import type { Review } from '~/types';
+import { Card, CardContent } from '~/components/ui/card';
 import { Star } from 'lucide-react';
-import { Text } from './Text';
+import { Text } from '~/components/Text';
 export const ReviewCard = ({ review }: { review: Review }) => {
   return (
     <Card key={review.id}>

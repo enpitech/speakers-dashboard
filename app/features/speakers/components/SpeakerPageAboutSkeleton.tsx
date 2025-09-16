@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
-import { Text } from './Text';
+import { Text } from '~/components/Text';
 export const SpeakerPageAboutSkeleton = () => {
   return (
     <div className="md:col-span-1 space-y-6">

@@ -1,8 +1,8 @@
 import { Globe } from 'lucide-react';
 import { Badge } from '~/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
-import type { Speaker } from '~/lib/types';
-import { Text } from './Text';
+import type { Speaker } from '~/types';
+import { Text } from '~/components/Text';
 import { useTranslation } from 'react-i18next';
 
 type ProfileSidebarProps = {
@@ -32,7 +32,7 @@ export function ProfileSidebar({ speaker }: ProfileSidebarProps) {
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-2">
-            {speaker.topics.map((topic, index) => (
+            {speaker.topics.map((topic: string, index: number) => (
               <Badge key={index} className="bg-stroke text-text-2 hover:bg-dark-base">
                 {topic}
               </Badge>
@@ -47,7 +47,7 @@ export function ProfileSidebar({ speaker }: ProfileSidebarProps) {
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
-            {speaker.languages.map((language, index) => (
+            {speaker.languages.map((language: string, index: number) => (
               <div key={index} className="flex items-center gap-1">
                 <Globe className="w-4 h-4 text-text-2" />
                 <Text variant="span" size="sm">

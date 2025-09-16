@@ -1,4 +1,4 @@
-import { cn } from '../../utils/cn';
+import { cn } from '~/lib/utils';
 
 interface ButtonProps {
   children: React.ReactNode;
