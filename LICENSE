@@ -1,0 +1,45 @@
+Business Source License 1.1
+
+Licensor: Enpitech Ltd.
+
+Licensed Work: Speakdashboard — a web application for managing public speaker profiles, CFP submissions, and event discovery.
+
+Copyright © 2025 Enpitech Ltd. All rights reserved.
+
+-------------------------------------------------------------------------------
+Use Grant
+-------------------------------------------------------------------------------
+You may use, copy, modify, and contribute to the Licensed Work for personal,
+educational, research, or internal business purposes. You may distribute
+modifications or derived works under this same license.
+
+You may NOT use the Licensed Work, or any derivative of it, to provide a
+hosted or Software-as-a-Service (SaaS) product that competes with
+Speakdashboard or any related product or service offered by Enpitech Ltd.,
+without express written permission from Enpitech Ltd.
+
+-------------------------------------------------------------------------------
+License Duration
+-------------------------------------------------------------------------------
+This license remains in effect indefinitely. There is no automatic conversion
+to another license. Enpitech Ltd. reserves the right to relicense future
+versions of the Licensed Work under different terms at its discretion.
+
+-------------------------------------------------------------------------------
+Warranty Disclaimer
+-------------------------------------------------------------------------------
+The Licensed Work is provided "AS IS" without any warranty of any kind,
+express or implied, including but not limited to warranties of merchantability,
+fitness for a particular purpose, or noninfringement.
+
+-------------------------------------------------------------------------------
+Liability Limitation
+-------------------------------------------------------------------------------
+In no event shall Enpitech Ltd. or contributors be liable for any claim,
+damages, or other liability, arising from or in connection with the Licensed Work.
+
+-------------------------------------------------------------------------------
+Reference
+-------------------------------------------------------------------------------
+For background on the Business Source License model, see:
+https://mariadb.com/bsl11/
