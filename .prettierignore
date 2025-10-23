@@ -1,26 +1,3 @@
-# Build artifacts
-build/
-dist/
-
-# Dependencies
-node_modules/
-
-# Cache
-.cache/
-.cursor/
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Package lock
 package-lock.json
+pnpm-lock.yaml
 yarn.lock
-
-# Coverage reports
-coverage/
-
-# Environment variables
-.env*
-!.env.example 

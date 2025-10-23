@@ -1,9 +1,13 @@
+node_modules
 .DS_Store
-/node_modules/
-
-# React Router
-/.react-router/
-/build/
-
-*storybook.log
-storybook-static
+dist
+dist-ssr
+*.local
+count.txt
+.env
+.nitro
+.tanstack
+.wrangler
+.output
+.vinxi
+todos.json
