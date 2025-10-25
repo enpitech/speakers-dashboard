@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import { MapPin, Clock } from 'lucide-react';
 import type { Speaker } from '~/types';
 import { SocialIcon } from '~/components/SocialIcon';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 import { SpeakerPageAvatar } from './SpeakerPageAvatar';
 export const SpeakerPageHeader = ({ speaker }: { speaker: Speaker }) => {
   const { avatar, name, location, experience, rating, sessionsUrl, socialLinks } = speaker;

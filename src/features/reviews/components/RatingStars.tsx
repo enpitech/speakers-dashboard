@@ -1,5 +1,5 @@
 import { Star } from 'lucide-react';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 import { useTranslation } from 'react-i18next';
 
 export const RatingStars = ({ rating, reviewsCount }: { rating: number; reviewsCount: number }) => {

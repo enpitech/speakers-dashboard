@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import { TextareaInput } from '~/components/ui/form/TextareaInput';
 import { Button } from '~/components/ui/button';
 import { Pencil, Loader2 } from 'lucide-react';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 import { GenerateSpeakerBioButton } from './GenerateSpeakerBioButton';
 
 export const SpeakerBioFormCard = ({ speaker }: { speaker: Speaker }) => {

@@ -4,7 +4,7 @@ import type { Speaker } from '~/types';
 import { SpeakerExpertise } from '~/features/speakers/components/SpeakerExpertise';
 import { useTranslation } from 'react-i18next';
 import { FileWarningIcon } from 'lucide-react';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 
 export const SpeakerExpertiseCard = ({ speaker }: { speaker: Speaker }) => {
   const { t } = useTranslation();

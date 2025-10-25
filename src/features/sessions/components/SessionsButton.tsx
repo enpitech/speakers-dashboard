@@ -1,7 +1,7 @@
 import { cn } from '~/lib/utils';
 import { Button } from '~/components/ui/button';
 import type React from 'react';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 import { YoutubeIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -17,14 +17,14 @@ export function SessionsButton({ isPending = false, className, ...props }: Sessi
     <Button
       variant="outline"
       isLoading={isPending}
-      className={cn('gap-1 text-sm font-medium items-center justify-center', className)}
+      className={cn('gap-1 text-sm font-medium items-center justify-center border-gray-300 text-gray-700', className)}
       aria-label="View sessions"
       {...props}
     >
-      <Text variant="span" size="sm" className="hidden md:block md:p-0">
+      <Text variant="span" size="sm" className="md:p-0">
         {t('sessions.button')}
       </Text>
-      <YoutubeIcon className="w-4 h-4" />
+      <YoutubeIcon className="w-4 h-4 text-red-600" />
     </Button>
   );
 }

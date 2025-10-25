@@ -1,7 +1,7 @@
 import { Table } from 'lucide-react';
 import { cn } from '~/lib/utils';
 import { Button } from '../button';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 export function TableEmptyView({
   emptyMessage,
   className,

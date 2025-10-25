@@ -1,9 +1,9 @@
 import { Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import type { Speaker } from '~/types';
 import { Badge } from '~/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
-import type { Speaker } from '~/types';
-import { Text } from '~/components/Text';
-import { useTranslation } from 'react-i18next';
+import { Text } from '~/components/';
 
 type ProfileSidebarProps = {
   speaker: Speaker;

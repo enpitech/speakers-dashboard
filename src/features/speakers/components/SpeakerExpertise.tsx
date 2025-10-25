@@ -1,5 +1,5 @@
 import { Badge } from '~/components/ui/badge';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 
 export const SpeakerExpertise = ({ topics }: { topics: string[] }) => {
   return (

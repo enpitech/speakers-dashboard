@@ -1,7 +1,5 @@
-import { SocialIcon } from '~/components/SocialIcon';
-import { Text } from '~/components/Text';
-import { TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip';
-import { Tooltip } from './tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger  } from './tooltip';
+import { SocialIcon, Text  } from '~/components';
 
 type SocialPlatform =
   | 'linkedin'

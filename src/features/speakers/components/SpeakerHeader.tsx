@@ -2,7 +2,7 @@ import { Clock, MapPin, Star, Youtube } from 'lucide-react';
 import { Link } from 'react-router';
 import type { Speaker } from '~/types';
 import { SocialLinks } from '~/components/ui/SocialLinks';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 import { useTranslation } from 'react-i18next';
 
 type SpeakerHeaderProps = {

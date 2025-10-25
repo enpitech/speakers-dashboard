@@ -7,7 +7,7 @@ import { FormError } from '~/components/ui/form/FormError';
 import type { SpeakerFormData } from '~/types';
 import { TextareaInput } from '~/components/ui/form/TextareaInput';
 import { ChipInput } from '~/components/ui/ChipInput';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 import { Button } from '~/components/ui/button';
 import { ImageUploadInput } from '~/components/ui/form/ImageUploadInput';
 

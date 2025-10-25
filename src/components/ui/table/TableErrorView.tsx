@@ -1,7 +1,7 @@
 import { Table } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '~/components/ui/button';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 
 export function TableErrorFallback({ error }: { error: Error }) {
   const { t } = useTranslation();

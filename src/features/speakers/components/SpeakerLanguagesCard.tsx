@@ -1,6 +1,6 @@
 import { Globe } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 import type { Speaker } from '~/types';
 import { useTranslation } from 'react-i18next';
 

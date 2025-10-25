@@ -2,7 +2,7 @@ import { MessageSquare, Star } from 'lucide-react';
 import { Button } from '~/components/ui/button';
 import { Card, CardContent } from '~/components/ui/card';
 import type { Review } from '~/types';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 import { useTranslation } from 'react-i18next';
 
 type ReviewsListProps = {

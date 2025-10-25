@@ -1,4 +1,4 @@
-import type React from 'react';
+import  React from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '../../../lib/utils';
 import { Row } from './Row';
@@ -24,7 +24,7 @@ export function Table<T>({
   const { t } = useTranslation();
   const defaultEmptyMessage = t('no.data.found');
 
-  if (!data?.length) {
+  if (!data.length) {
     return (
       <TableEmptyView emptyMessage={emptyMessage || defaultEmptyMessage} className={className} />
     );

@@ -1,7 +1,7 @@
 import { AlertTriangle } from 'lucide-react';
-import { Button } from '~/components/ui/button';
-import { Text } from '~/components/Text';
 import { useTranslation } from 'react-i18next';
+import { Button } from '~/components/ui/button';
+import { Text } from '~/components';
 
 export const GeneralError = ({ error }: { error: Error }) => {
   const { t } = useTranslation();
@@ -18,7 +18,7 @@ export const GeneralError = ({ error }: { error: Error }) => {
           {t('error.general.description')}
         </Text>
         <Text variant="p" size="sm">
-          {(error as Error)?.message ?? 'Unknown error'}
+          {(error)?.message ?? 'Unknown error'}
         </Text>
         <div className="flex gap-4">
           <Button className="bg-primary hover:bg-primary/90 text-white">

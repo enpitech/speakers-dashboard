@@ -1,6 +1,6 @@
 import { Wifi, WifiOff } from 'lucide-react';
 import { Button } from '~/components/ui/button';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 import { useTranslation } from 'react-i18next';
 
 export const NetworkError = ({ error }: { error: Error }) => {

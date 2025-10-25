@@ -1,4 +1,13 @@
 @import "tailwindcss";
+@theme {
+  --color-primary-color: #5C9CAD;
+  --color-secondary-color: #4d8294;
+  --color-tertiary-color: #4d8294;
+  --color-quaternary-color: #4d8294;
+  --color-quinary-color: #4d8294;
+  --color-senary-color: #4d8294;
+  --color-septenary-color: #4d8294;
+}
 
 body {
   @apply m-0;

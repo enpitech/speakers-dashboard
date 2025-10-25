@@ -1,6 +1,6 @@
 import { X } from 'lucide-react';
 import { cn } from '~/lib/utils';
-import { Text } from '../Text';
+import { Text } from '~/components/';
 
 export interface ChipProps {
   label: string;

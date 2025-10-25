@@ -3,7 +3,7 @@ import { Calendar, Users } from 'lucide-react';
 import { SocialIcon } from '~/components/ui/SocialIcon';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card';
 import type { Session } from '~/types';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 import { useTranslation } from 'react-i18next';
 import { cn } from '~/lib/utils';
 

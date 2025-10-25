@@ -1,5 +1,5 @@
-import { Text } from '~/components/Text';
 import { PhoneMissedIcon } from 'lucide-react';
+import { Text } from '~/components';
 
 export const EmptyResponseView = ({
   message,

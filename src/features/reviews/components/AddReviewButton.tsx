@@ -1,6 +1,6 @@
 import { MessageSquare } from 'lucide-react';
-import { Button } from '~/components/ui/button';
 import { useTranslation } from 'react-i18next';
+import { Button } from '~/components/ui/button';
 
 export const AddReviewButton = () => {
   const { t } = useTranslation();

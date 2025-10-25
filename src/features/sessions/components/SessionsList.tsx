@@ -2,7 +2,7 @@ import { Calendar, Clock, MapPin, Users, YoutubeIcon } from 'lucide-react';
 import { Button } from '~/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card';
 import type { Session } from '~/types';
-import { Text } from '~/components/Text';
+import { Text } from '~/components';
 import { EmptyResponseView } from '~/components/EmptyResponseView';
 import { useTranslation } from 'react-i18next';
 
