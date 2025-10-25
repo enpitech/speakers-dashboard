@@ -1,9 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
-import { ComponentErrorBoundary } from '~/components/ComponentErrorBoundary';
-import type { Speaker } from '~/types';
-import { SpeakerExpertise } from '~/features/speakers/components/SpeakerExpertise';
 import { useTranslation } from 'react-i18next';
 import { FileWarningIcon } from 'lucide-react';
+import type { Speaker } from '~/types';
+import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
+import { ComponentErrorBoundary } from '~/components/';
+import { SpeakerExpertise } from '~/features/speakers/components/SpeakerExpertise';
 import { Text } from '~/components';
 
 export const SpeakerExpertiseCard = ({ speaker }: { speaker: Speaker }) => {

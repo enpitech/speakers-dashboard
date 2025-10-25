@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import {Link} from '@tanstack/react-router';
 import type { Speaker } from '~/types';
 import { SocialIcon } from '~/components/ui/SocialIcon';
 

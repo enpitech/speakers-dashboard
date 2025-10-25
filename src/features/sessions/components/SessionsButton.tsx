@@ -1,9 +1,9 @@
-import { cn } from '~/lib/utils';
-import { Button } from '~/components/ui/button';
-import type React from 'react';
-import { Text } from '~/components';
 import { YoutubeIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import type React from 'react';
+import { cn } from '~/lib/utils';
+import { Button } from '~/components/ui/button';
+import { Text } from '~/components';
 
 interface SessionsButtonProps
   extends Omit<React.ComponentProps<typeof Button>, 'children' | 'variant'> {

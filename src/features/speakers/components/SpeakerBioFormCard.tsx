@@ -1,15 +1,11 @@
-import { useOptimistic } from 'react';
-import { useTransition } from 'react';
-import { useState } from 'react';
+import { useOptimistic, useState , useTransition  } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSubmit } from 'react-router';
+import { Loader2, Pencil } from 'lucide-react';
 import type { Speaker } from '~/types';
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import { TextareaInput } from '~/components/ui/form/TextareaInput';
 import { Button } from '~/components/ui/button';
-import { Pencil, Loader2 } from 'lucide-react';
 import { Text } from '~/components';
-import { GenerateSpeakerBioButton } from './GenerateSpeakerBioButton';
 
 export const SpeakerBioFormCard = ({ speaker }: { speaker: Speaker }) => {
   const { t } = useTranslation();
@@ -25,17 +21,8 @@ export const SpeakerBioFormCard = ({ speaker }: { speaker: Speaker }) => {
       return newBio;
     },
   );
-  const submit = useSubmit();
 
-  const handleSubmit = async (newBio: string) => {
-    startTransition(async () => {
-      setOptimisticBio(newBio);
-      const formData = new FormData();
-      formData.append('bio', newBio);
-      formData.append('speakerId', speaker.id);
-      await submit(formData, { method: 'post' });
-    });
-  };
+
 
   return (
     <Card>
@@ -63,14 +50,7 @@ export const SpeakerBioFormCard = ({ speaker }: { speaker: Speaker }) => {
               onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setEditedBio(e.target.value)}
               placeholder={t('speaker.bio.placeholder')}
               className={`min-h-[100px]`}
-              icon={
-                <GenerateSpeakerBioButton
-                  speaker={speaker}
-                  isGenerating={isGenerating}
-                  setIsGenerating={setIsGenerating}
-                  onGenerationComplete={handleSubmit}
-                />
-              }
+      
             />
             <div className="flex justify-end gap-2">
               <Button

@@ -1,8 +1,8 @@
 import { Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import type { Speaker } from '~/types';
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import { Text } from '~/components';
-import type { Speaker } from '~/types';
-import { useTranslation } from 'react-i18next';
 
 export const SpeakerLanguagesCard = ({ speaker }: { speaker: Speaker }) => {
   const { languages } = speaker;

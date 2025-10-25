@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger  } from './tooltip';
 import { SocialIcon, Text  } from '~/components';
 
@@ -71,14 +72,14 @@ export function SocialIconsGroup({
 }
 const SocialIconLink = ({ link }: { link: SocialLink }) => {
   return (
-    <a
-      href={link.url}
+    <Link
+      to={link.url}
       target="_blank"
       rel="noopener noreferrer"
       className="transition-opacity hover:opacity-90"
       aria-label={`${link.platform} profile`}
     >
       <SocialIcon platform={link.platform} />
-    </a>
+    </Link>
   );
 };

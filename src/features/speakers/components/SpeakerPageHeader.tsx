@@ -1,11 +1,11 @@
-import { Link } from 'react-router';
-import { MapPin, Clock } from 'lucide-react';
-import type { Speaker } from '~/types';
-import { SocialIcon } from '~/components/SocialIcon';
-import { Text } from '~/components';
+import { Link } from '@tanstack/react-router';
+import { Clock, MapPin } from 'lucide-react';
 import { SpeakerPageAvatar } from './SpeakerPageAvatar';
+import type { Speaker } from '~/types';
+import { SocialIcon, Text  } from '~/components';
+
 export const SpeakerPageHeader = ({ speaker }: { speaker: Speaker }) => {
-  const { avatar, name, location, experience, rating, sessionsUrl, socialLinks } = speaker;
+  const { name, location, experience, socialLinks } = speaker;
   return (
     <div className="bg-stroke rounded-lg overflow-hidden mb-8">
       <div className="h-48 bg-gradient-to-r from-primary to-secondary/90"></div>
