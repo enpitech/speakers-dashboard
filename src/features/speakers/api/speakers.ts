@@ -160,3 +160,35 @@ export const mockSpeakers: Speaker[] = [
     bio: 'Frontend specialist and UI/UX enthusiast.',
   },
 ]
+
+
+export const getMockData = async (filters?: { topics: string[], languages: string[] }) => {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  if(!filters) {
+    return Promise.resolve({
+      speakers: mockSpeakers,
+      topics: getTopics(mockSpeakers),
+      languages: getLanguages(mockSpeakers)
+    })
+  }
+  const filteredSpeakers = mockSpeakers.filter((speaker) => {
+    return filters.topics.every((topic) => speaker.topics.includes(topic)) && filters.languages.every((language) => speaker.languages.includes(language))
+  })
+  return Promise.resolve({
+    speakers: filteredSpeakers,
+    topics: getTopics(filteredSpeakers),
+    languages: getLanguages(filteredSpeakers)
+  })
+
+}
+
+
+export const getTopics = (speakers: Speaker[]) => {
+  return [...new Set(speakers.flatMap((speaker) => speaker.topics))];
+}
+
+export const getLanguages = (speakers: Speaker[]) => {
+return [...new Set(speakers.flatMap((speaker) => speaker.languages))];
+}
+
