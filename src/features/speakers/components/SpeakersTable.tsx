@@ -5,11 +5,10 @@ import type { Speaker } from '~/lib/types';
 import { Table } from '~/components/ui/table/Table';
 
 const columnWidths = {
-  name: '20%',
-  topics: '20%',
-  languages: '20%',
+  name: '25%',
+  topics: '25%',
+  languages: '25%',
   social: '25%',
-  information: '25%',
 };
 
 interface SpeakersTableViewProps {

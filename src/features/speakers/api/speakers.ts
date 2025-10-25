@@ -52,7 +52,7 @@ export const mockSpeakers: Speaker[] = [
     avatar: 'https://i.pravatar.cc/150?img=1',
     location: 'Tel Aviv, Israel',
     experience: '5+ years',
-    rating: 5,
+    
     topics: ['React', 'Typescript', 'Tailwind'],
     languages: ['English', 'Hebrew', 'German'],
     socialLinks: [
@@ -69,7 +69,7 @@ export const mockSpeakers: Speaker[] = [
     avatar: 'https://i.pravatar.cc/150?img=2',
     location: 'Tel Aviv, Israel',
     experience: '8+ years',
-    rating: 4,
+    
     topics: ['React'],
     languages: ['English', 'Hebrew'],
     socialLinks: [
@@ -88,7 +88,7 @@ export const mockSpeakers: Speaker[] = [
     avatar: 'https://i.pravatar.cc/150?img=3',
     location: 'Tel Aviv, Israel',
     experience: '6+ years',
-    rating: 3,
+    
     topics: ['Typescript', 'Tailwind'],
     languages: ['Hebrew', 'Russian'],
     socialLinks: [
@@ -107,7 +107,7 @@ export const mockSpeakers: Speaker[] = [
     avatar: 'https://i.pravatar.cc/150?img=4',
     location: 'Tel Aviv, Israel',
     experience: '7+ years',
-    rating: 5,
+    
     topics: ['React', 'Tailwind'],
     languages: ['English', 'Hebrew', 'Amharic'],
     socialLinks: [
@@ -125,7 +125,7 @@ export const mockSpeakers: Speaker[] = [
     avatar: 'https://i.pravatar.cc/150?img=5',
     location: 'Tel Aviv, Israel',
     experience: '9+ years',
-    rating: 5,
+    
     topics: ['React', 'Typescript'],
     languages: ['English', 'Hebrew', 'Spanish'],
     socialLinks: [
@@ -147,7 +147,7 @@ export const mockSpeakers: Speaker[] = [
     avatar: 'https://i.pravatar.cc/150?img=6',
     location: 'Tel Aviv, Israel',
     experience: '4+ years',
-    rating: 5,
+    
     topics: ['React', 'Typescript', 'Tailwind'],
     languages: ['English', 'Hebrew', 'Czech'],
     socialLinks: [

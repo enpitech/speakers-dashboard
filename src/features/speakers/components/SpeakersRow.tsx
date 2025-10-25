@@ -4,8 +4,7 @@ import { Avatar ,Text} from '~/components/'
 import { SocialIconsGroup } from '~/components/ui/SocialIconsGroup'
 import { Row } from '~/components/ui/table/Row'
 import { TableCell } from '~/components/ui/table/TableCell'
-import { StarRating } from '~/features/reviews/components/StarRating'
-import { SessionsButton } from '~/features/sessions/components/SessionsButton'
+
 
 interface SpeakerRowProps {
   speaker: Speaker
@@ -14,7 +13,6 @@ interface SpeakerRowProps {
     topics: string
     languages: string
     social: string
-    information: string
   }
 }
 
@@ -28,7 +26,7 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
           params: { speakerId: speaker.id },
         })
       }
-      className="cursor-pointer hover:bg-gray-50 transition-colors duration-100 border-b border-gray-100"
+      className="cursor-pointer hover:bg-gray-50 transition-colors duration-100 border-b border-gray-100 w-full"
     >
       <TableCell width={columnWidths.name}>
         <div className="flex items-center gap-3 min-w-0 py-4">
@@ -68,13 +66,6 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
           maxIcons={6}
           showCount={false}
         />
-      </TableCell>
-
-      <TableCell width={columnWidths.information}>
-        <div className="flex items-center gap-3 justify-end">
-          {speaker.sessionsUrl && <SessionsButton />}
-          <StarRating rating={speaker.rating || 0} readonly size="sm" />
-        </div>
       </TableCell>
     </Row>
   )
