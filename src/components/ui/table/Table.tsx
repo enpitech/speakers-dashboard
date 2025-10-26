@@ -2,7 +2,6 @@ import  React from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '../../../lib/utils';
 import { Row } from './Row';
-import { TableEmptyView } from './TableEmptyView';
 
 interface TableProps<T> {
   data: T[];
@@ -26,7 +25,7 @@ export function Table<T>({
 
   if (!data.length) {
     return (
-      <TableEmptyView emptyMessage={emptyMessage || defaultEmptyMessage} className={className} />
+      <p className={className}>{emptyMessage || defaultEmptyMessage}</p>
     );
   }
 

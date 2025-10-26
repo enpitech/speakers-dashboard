@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger  } from './tooltip';
-import { SocialIcon, Text  } from '~/components';
+import { SocialIcon  } from '~/components';
 
 type SocialPlatform =
   | 'linkedin'
@@ -54,7 +54,7 @@ export function SocialIconsGroup({
           <Tooltip>
             <TooltipTrigger asChild>
               <div className="flex h-8 w-8 items-center justify-center rounded-md bg-background-1/10 text-sm font-medium text-text-1">
-                <Text variant="span">+{remainingCount}</Text>
+                <p>+{remainingCount}</p>
               </div>
             </TooltipTrigger>
             <TooltipContent className="p-2 bg-background-1 rounded-md shadow-md">

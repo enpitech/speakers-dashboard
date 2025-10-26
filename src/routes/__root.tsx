@@ -16,7 +16,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'Speaker Dashboard - The Frontendistim',
       },
     ],
     links: [
@@ -26,7 +26,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
   }),
-
+  ssr: true,
   shellComponent: RootDocument,
 })
 
@@ -36,9 +36,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body >
         <Header />
-        {children}
+        <main className="grid place-items-center p-4">
+          {children}
+        </main>
         <TanStackDevtools
           config={{
             position: 'bottom-right',

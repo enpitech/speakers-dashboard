@@ -1,6 +1,6 @@
 import { useNavigate } from '@tanstack/react-router'
 import type { Speaker } from '~/types'
-import { Avatar ,Text} from '~/components/'
+import { Avatar } from '~/components/'
 import { SocialIconsGroup } from '~/components/ui/SocialIconsGroup'
 import { Row } from '~/components/ui/table/Row'
 import { TableCell } from '~/components/ui/table/TableCell'
@@ -36,28 +36,26 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
             size="sm"
             fallback={speaker.name}
           />
-          <Text variant="p" className="truncate text-gray-600 font-medium">
+          <p className="truncate text-gray-600 font-medium">
             {speaker.name}
-          </Text>
+          </p>
         </div>
       </TableCell>
 
       <TableCell width={columnWidths.topics}>
-        <Text
-          variant="p"
+        <p
           className="text-sm text-gray-700 wrap-break-word line-clamp-2"
         >
           {speaker.topics.join(', ')}
-        </Text>
+        </p>
       </TableCell>
 
       <TableCell width={columnWidths.languages}>
-        <Text
-          variant="p"
+        <p
           className="text-sm text-gray-600 wrap-break-word line-clamp-2"
         >
           {speaker.languages.join(', ')}
-        </Text>
+        </p>
       </TableCell>
 
       <TableCell width={columnWidths.social}>

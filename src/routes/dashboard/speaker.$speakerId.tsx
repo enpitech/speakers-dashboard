@@ -1,6 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { SpeakerPage } from '~/pages/speaker/SpeakerPage'
+import { Suspense } from 'react'
+import { SpeakerPage } from '~/features/speakers/pages/SpeakerPage'
+import { Spinner } from '~/components'
 
 export const Route = createFileRoute('/dashboard/speaker/$speakerId')({
-  component: SpeakerPage,
+  component: () => (
+    <Suspense fallback={<Spinner size="lg" />}>
+      <SpeakerPage />
+    </Suspense>
+  ),
 })
