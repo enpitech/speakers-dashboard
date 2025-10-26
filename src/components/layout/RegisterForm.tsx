@@ -1,4 +1,4 @@
-import { useForm } from '@tanstack/react-form'
+import { useForm  } from '@tanstack/react-form'
 import * as z from 'zod'
 
 import { Button } from '~/components/ui/button'
@@ -49,7 +49,7 @@ export function RegisterForm() {
       socialLinks: [],
     },
     validators: {
-      onSubmit: formSchema,
+      onChange: formSchema,
     },
   })
 
