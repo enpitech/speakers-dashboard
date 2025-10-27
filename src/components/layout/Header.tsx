@@ -1,4 +1,4 @@
-import { RegisterDialog } from './RegisterDIalog'
+import { RegisterDialog } from '../ui/RegisterDialog'
 
 export function Header() {
   return (
