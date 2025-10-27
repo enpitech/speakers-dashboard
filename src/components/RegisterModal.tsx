@@ -8,7 +8,7 @@ import {
 } from './ui/Dialog'
 import { RegisterForm } from './RegisterForm/RegisterForm'
 
-export function RegisterDialog() {
+export function RegisterModal() {
   return (
     <Dialog>
       <DialogTrigger  className="bg-primary-color hover:bg-secondary-color text-white px-6 py-2 rounded-lg h-full">
