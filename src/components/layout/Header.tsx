@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { RegisterDialog } from '~/components/RegisterDialog'
+import { RegisterModal } from '~/components/RegisterModal'
 
 export function Header() {
   return (
@@ -11,7 +11,7 @@ export function Header() {
             <img src="/logo.svg" alt="Logo" />
             </Link>
           </div>
-          <RegisterDialog />
+          <RegisterModal />
         </div>
       </div>
     </header>
