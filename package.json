@@ -9,7 +9,7 @@
     "lint": "eslint",
     "format": "prettier",
     "build": "vite build",
-    "start": "node .output/server/index.mjs",
+    "start": "HOST=0.0.0.0 PORT=3000 node .output/server/index.mjs",
     "check": "prettier --write . && eslint --fix"
   },
   "dependencies": {
