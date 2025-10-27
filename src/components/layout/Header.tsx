@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { RegisterDialog } from '../RegisterDialog'
+import { RegisterDialog } from '~/components/RegisterDialog'
 
 export function Header() {
   return (
