@@ -5,7 +5,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '../ui/Dialog'
+} from './ui/Dialog'
 import { RegisterForm } from './RegisterForm/RegisterForm'
 
 export function RegisterDialog() {
