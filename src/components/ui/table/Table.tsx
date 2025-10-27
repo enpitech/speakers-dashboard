@@ -34,8 +34,7 @@ export function Table<T>({
           'min-w-full ',
           'border',
           'rounded-lg',
-          'overflow-x-auto',
-          'min-w-[500px]',
+          'min-w-[700px]',
           className,
         )}
         role="table"

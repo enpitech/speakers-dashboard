@@ -7,17 +7,16 @@ interface TableCellProps {
   className?: string;
 }
 
-export function TableCell({ children, width, className }: TableCellProps) {
+export function TableCell({ children,  className }: TableCellProps) {
   return (
     <div
       className={cn(
-        "flex items-center min-w-0",
+        "flex items-center flex-1 min-w-[150px]",
         className
       )}
-      style={width ? { width } : undefined}
       role="cell"
     >
-      <div className="min-w-0 flex-1 break-words">
+      <div className="min-w-0 flex-1">
         {children}
       </div>
     </div>

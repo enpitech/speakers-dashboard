@@ -1,5 +1,5 @@
 import { useNavigate } from '@tanstack/react-router'
-import type { Speaker } from '~/types'
+import type { Speaker } from '~/lib/types'
 import { Avatar } from '~/components/'
 import { SocialIconsGroup } from '~/components/ui/SocialIconsGroup'
 import { Row } from '~/components/ui/table/Row'
@@ -26,7 +26,7 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
           params: { speakerId: speaker.id },
         })
       }
-      className="cursor-pointer hover:bg-gray-50 transition-colors duration-100 border-b border-gray-100 w-full"
+      className="cursor-pointer hover:bg-gray-50 transition-colors flex duration-100 border-b gap-5 border-gray-100 w-full"
     >
       <TableCell width={columnWidths.name}>
         <div className="flex items-center gap-3 min-w-0 py-4">
