@@ -39,12 +39,12 @@ export function SocialIconsGroup({
         url,
       }));
 
-  const displayLinks = linksArray.slice(0, maxIcons);
+  const displayLinks = linksArray.slice(0, maxIcons).filter(link => link.url !== '');
   const remainingIcons = linksArray.slice(maxIcons);
   const remainingCount = remainingIcons.length;
-
+console.log(displayLinks);
   return (
-    <div className={`flex flex-wrap items-center gap-2 ${className}`}>
+    <div className={`flex flex-wrap gap-2 ${className}`}>
       {displayLinks.map((link, index) => (
         <SocialIconLink key={index} link={link} />
       ))}

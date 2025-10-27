@@ -30,24 +30,25 @@ export function Table<T>({
   }
 
   return (
-    <div className="w-full overflow-x-auto bg-card">
+    <div className=" w-full overflow-x-auto bg-card">
       <div
         className={cn(
-          'min-w-full bg-[var(--color-background-0)]',
-          'border border-[var(--color-background-100)]',
+          'min-w-full ',
+          'border',
           'rounded-lg',
-          'overflow-hidden',
+          'overflow-x-auto',
+          'min-w-[500px]',
           className,
         )}
         role="table"
         aria-label={ariaLabel}
       >
         {headers && (
-          <Row className="border-b border-[var(--color-background-100)] bg-[var(--color-background-50)]">
+          <Row className="border-b">
             {headers}
           </Row>
         )}
-        <div role="rowgroup" className="divide-y divide-[var(--color-background-100)]">
+        <div role="rowgroup" className="divide-y">
           {data.map((item, index) => renderRow(item, index))}
         </div>
       </div>

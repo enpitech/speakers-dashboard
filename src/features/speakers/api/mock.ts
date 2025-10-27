@@ -12,7 +12,6 @@ export const mockSpeakers: Speaker[] = [
       languages: ['English', 'Hebrew', 'German'],
       socialLinks: [
         { platform: 'linkedin', url: 'https://linkedin.com/in/danaharari' },
-        { platform: 'spotify', url: 'https://spotify.com/danaharari' },
         { platform: 'instagram', url: 'https://instagram.com/danaharari' },
       ],
       sessionsUrl: 'https://youtube.com/@danaharari',
@@ -29,8 +28,6 @@ export const mockSpeakers: Speaker[] = [
       languages: ['English', 'Hebrew'],
       socialLinks: [
         { platform: 'twitter', url: 'https://twitter.com/shalevamari' },
-        { platform: 'tiktok', url: 'https://tiktok.com/@shalevamari' },
-        { platform: 'facebook', url: 'https://facebook.com/shalevamari' },
         { platform: 'linkedin', url: 'https://linkedin.com/in/shalevamari' },
         { platform: 'instagram', url: 'https://instagram.com/shalevamari' },
       ],
@@ -47,10 +44,8 @@ export const mockSpeakers: Speaker[] = [
       topics: ['Typescript', 'Tailwind'],
       languages: ['Hebrew', 'Russian'],
       socialLinks: [
-        { platform: 'facebook', url: 'https://facebook.com/lanakochovski' },
         { platform: 'linkedin', url: 'https://linkedin.com/in/lanakochovski' },
         { platform: 'instagram', url: 'https://instagram.com/lanakochovski' },
-        { platform: 'discord', url: 'https://discord.com/lanakochovski' },
         { platform: 'github', url: 'https://github.com/lanakochovski' },
       ],
       sessionsUrl: 'https://youtube.com/@lanakochovski',
@@ -66,8 +61,6 @@ export const mockSpeakers: Speaker[] = [
       topics: ['React', 'Tailwind'],
       languages: ['English', 'Hebrew', 'Amharic'],
       socialLinks: [
-        { platform: 'tiktok', url: 'https://tiktok.com/@mordesa' },
-        { platform: 'facebook', url: 'https://facebook.com/mordesa' },
         { platform: 'linkedin', url: 'https://linkedin.com/in/mordesa' },
         { platform: 'instagram', url: 'https://instagram.com/mordesa' },
       ],
@@ -85,12 +78,8 @@ export const mockSpeakers: Speaker[] = [
       languages: ['English', 'Hebrew', 'Spanish'],
       socialLinks: [
         { platform: 'twitter', url: 'https://twitter.com/sharonamsalem' },
-        { platform: 'tiktok', url: 'https://tiktok.com/@sharonamsalem' },
-        { platform: 'facebook', url: 'https://facebook.com/sharonamsalem' },
         { platform: 'linkedin', url: 'https://linkedin.com/in/sharonamsalem' },
-        { platform: 'spotify', url: 'https://spotify.com/sharonamsalem' },
         { platform: 'instagram', url: 'https://instagram.com/sharonamsalem' },
-        { platform: 'discord', url: 'https://discord.com/sharonamsalem' },
         { platform: 'github', url: 'https://github.com/sharonamsalem' },
       ],
       sessionsUrl: 'https://youtube.com/@sharonamsalem',
@@ -106,8 +95,6 @@ export const mockSpeakers: Speaker[] = [
       topics: ['React', 'Typescript', 'Tailwind'],
       languages: ['English', 'Hebrew', 'Czech'],
       socialLinks: [
-        { platform: 'tiktok', url: 'https://tiktok.com/@yogelnahalal' },
-        { platform: 'facebook', url: 'https://facebook.com/yogelnahalal' },
         { platform: 'linkedin', url: 'https://linkedin.com/in/yogelnahalal' },
         { platform: 'instagram', url: 'https://instagram.com/yogelnahalal' },
       ],
