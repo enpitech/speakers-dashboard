@@ -1,265 +1,301 @@
-# Frontendistim Speakers Board
+Welcome to your new TanStack app! 
 
-A modern, scalable platform for managing and discovering speakers for frontend events. Built with React Router v7 framework mode and following bulletproof-react architecture principles.
+# Getting Started
 
-## Features
-
-- 🚀 Server-side rendering with React Router v7
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization with Vite
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 Tailwind CSS v4 for styling
-- 🏗️ **Bulletproof-React Architecture** for scalability
-- � **Speaker Management** - Register, browse, and manage speaker profiles
-- ⭐ **Review System** - Rate and review speakers and sessions
-- 📅 **Session Management** - Organize and track conference sessions
-- 🌐 **Internationalization** support (EN/HE)
-- 📱 **Responsive Design** with modern UI components
-
-## Architecture
-
-This project follows the **[bulletproof-react](https://github.com/alan2207/bulletproof-react)** methodology for building scalable React applications with clean architecture and clear separation of concerns.
-
-## 📁 Project Structure
-
-```
-app/
-├── api/                    # Global API client and utilities
-│   └── client.ts          # Base HTTP client with error handling
-├── components/            # Shared components used across features
-│   ├── ui/               # Generic UI components (Button, Dialog, etc.)
-│   └── layout/           # Layout components (Sidebar, Header, etc.)
-├── config/               # Application configuration
-│   └── index.ts          # Environment variables and app settings
-├── features/             # Feature-based modules (core of the app)
-│   ├── speakers/         # 👥 Speaker management feature
-│   │   ├── api/         # Speaker-specific API calls
-│   │   ├── components/  # Speaker UI components
-│   │   ├── types/       # Speaker-related TypeScript types
-│   │   └── index.ts     # Feature exports
-│   ├── reviews/         # ⭐ Review and rating system
-│   │   ├── api/         # Review-specific API calls
-│   │   ├── components/  # Review UI components
-│   │   └── index.ts     # Feature exports
-│   └── sessions/        # 📅 Session management
-│       ├── components/  # Session UI components
-│       └── index.ts     # Feature exports
-├── hooks/               # Shared custom hooks
-│   └── index.ts         # useAsync, useLocalStorage, useToggle
-├── lib/                 # Reusable utilities and libraries
-│   └── cn.ts           # Tailwind className utility
-├── routes/             # React Router v7 file-based routing
-├── translations/       # Internationalization files (EN/HE)
-├── types/              # Global TypeScript type definitions
-├── utils/              # Shared utility functions
-└── welcome/            # Welcome page assets
-```
-
-### Architecture Principles
-
-#### 🎯 **Feature-Based Organization**
-
-Each major functionality is organized as a self-contained feature:
-
-- **Speakers**: Registration, profiles, listing, search and filtering
-- **Reviews**: Rating system, feedback, review management
-- **Sessions**: Conference session scheduling and management
-
-#### 🔄 **Unidirectional Data Flow**
-
-```
-Shared (components, hooks, lib, types, utils)
-  ↓
-Features (speakers, reviews, sessions)
-  ↓
-App (routes, main application)
-```
-
-#### 🚫 **No Cross-Feature Imports**
-
-- Features cannot import from other features
-- Features compose at the application/route level
-- Ensures loose coupling and independent development
-
-#### 📦 **Component Hierarchy**
-
-- **`/components/ui`**: Reusable UI primitives (Button, Card, Dialog)
-- **`/components/layout`**: Application layout components
-- **`/features/*/components`**: Feature-specific components
-- **Storybook Integration**: All UI components documented and tested
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm, pnpm, or bun
-
-### Installation
-
-Install the dependencies:
+To run this application:
 
 ```bash
 npm install
+npm run start
 ```
 
-### Development
+# Building For Production
 
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-### Storybook (Component Documentation)
-
-Start Storybook to view and develop UI components in isolation:
-
-```bash
-npm run storybook
-```
-
-Storybook will be available at `http://localhost:6006`.
-
-### Type Checking
-
-Run TypeScript type checking:
-
-```bash
-npm run typecheck
-```
-
-## Code Quality & Linting
-
-### ESLint Configuration
-
-This project includes custom ESLint rules to enforce bulletproof-react architecture:
-
-```bash
-# The project includes eslint-bulletproof-rules.js which prevents:
-# - Cross-feature imports
-# - Reverse dependency violations
-# - Import violations against unidirectional architecture
-```
-
-Add these rules to your `.eslintrc.js` to enforce architectural boundaries.
-
-## 🤝 Contributing
-
-This project follows bulletproof-react principles to ensure consistent, scalable code. When contributing:
-
-### For New Contributors
-
-1. **Read the Architecture**: Review `PROJECT_STRUCTURE.md` for detailed guidelines
-2. **Follow the Patterns**: Look at existing features (`speakers`, `reviews`, `sessions`) as examples
-3. **No Cross-Feature Imports**: Features should be independent
-4. **Use TypeScript**: All new code should be properly typed
-5. **Component Stories**: Add Storybook stories for new UI components
-
-### Pull Request Guidelines
-
-1. **Feature Branch**: Create a branch from `main`
-2. **Atomic Commits**: Keep commits focused and descriptive
-3. **Test Your Changes**: Ensure `npm run typecheck` passes
-4. **Follow Architecture**: Respect the feature-based organization
-5. **Update Documentation**: Add or update relevant documentation
-
-### File Placement Guide
-
-- **New shared component** → `app/components/ui/`
-- **New speaker feature** → `app/features/speakers/`
-- **New API endpoint** → `app/features/[feature]/api/`
-- **New utility function** → `app/lib/` or `app/utils/`
-- **New custom hook** → `app/hooks/`
-- **New route** → `app/routes/`
-
-### Questions?
-
-- Check existing patterns in the codebase
-- Review `PROJECT_STRUCTURE.md` for detailed architecture guidelines
-- Look at bulletproof-react documentation: https://github.com/alan2207/bulletproof-react
-
----
-
-Built with ❤️ using React Router.
-
-## Building for Production
-
-Create a production build:
+To build this application for production:
 
 ```bash
 npm run build
 ```
 
-## Deployment
+## Testing
 
-### Docker Deployment
-
-To build and run using Docker:
+This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+npm run test
 ```
 
 ## Styling
 
-This project uses [Tailwind CSS v4](https://tailwindcss.com/) with the following approach:
+This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
 
-- **Design System**: Consistent spacing, colors, and typography
-- **Responsive Design**: Mobile-first approach with responsive utilities
-- **Component Styling**: Co-located styles using Tailwind classes
-- **Custom Utilities**: Additional utilities in `app/lib/cn.ts` for conditional classes
 
-### UI Component Library
+## Linting & Formatting
 
-The project includes a custom UI component library in `app/components/ui/`:
 
-- **Button** - Various sizes, variants, and states
-- **Card** - Content containers with consistent spacing
-- **Dialog** - Modal and overlay components
-- **Form** - Input components with validation styling
-- **Table** - Data display components
-- **Tabs** - Navigation and content organization
+This project uses [eslint](https://eslint.org/) and [prettier](https://prettier.io/) for linting and formatting. Eslint is configured using [tanstack/eslint-config](https://tanstack.com/config/latest/docs/eslint). The following scripts are available:
 
-All components are documented in Storybook with examples and API documentation.
+```bash
+npm run lint
+npm run format
+npm run check
+```
 
-## 📚 Additional Resources
 
-- **[React Router v7 Docs](https://reactrouter.com/)** - Routing and data loading
-- **[Bulletproof React](https://github.com/alan2207/bulletproof-react)** - Architecture methodology
-- **[Tailwind CSS](https://tailwindcss.com/)** - Styling framework
-- **[TypeScript](https://www.typescriptlang.org/)** - Type safety
-- **[Storybook](https://storybook.js.org/)** - Component documentation
 
----
+## Routing
+This project uses [TanStack Router](https://tanstack.com/router). The initial setup is a file based router. Which means that the routes are managed as files in `src/routes`.
 
-Built with ❤️ for the Frontend Istanbul community using React Router and bulletproof-react architecture.
+### Adding A Route
+
+To add a new route to your application just add another a new file in the `./src/routes` directory.
+
+TanStack will automatically generate the content of the route file for you.
+
+Now that you have two routes you can use a `Link` component to navigate between them.
+
+### Adding Links
+
+To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/react-router`.
+
+```tsx
+import { Link } from "@tanstack/react-router";
+```
+
+Then anywhere in your JSX you can use it like so:
+
+```tsx
+<Link to="/about">About</Link>
+```
+
+This will create a link that will navigate to the `/about` route.
+
+More information on the `Link` component can be found in the [Link documentation](https://tanstack.com/router/v1/docs/framework/react/api/router/linkComponent).
+
+### Using A Layout
+
+In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root route will appear in all the routes. The route content will appear in the JSX where you use the `<Outlet />` component.
+
+Here is an example layout that includes a header:
+
+```tsx
+import { Outlet, createRootRoute } from '@tanstack/react-router'
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+
+import { Link } from "@tanstack/react-router";
+
+export const Route = createRootRoute({
+  component: () => (
+    <>
+      <header>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+        </nav>
+      </header>
+      <Outlet />
+      <TanStackRouterDevtools />
+    </>
+  ),
+})
+```
+
+The `<TanStackRouterDevtools />` component is not required so you can remove it if you don't want it in your layout.
+
+More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
+
+
+## Data Fetching
+
+There are multiple ways to fetch data in your application. You can use TanStack Query to fetch data from a server. But you can also use the `loader` functionality built into TanStack Router to load the data for a route before it's rendered.
+
+For example:
+
+```tsx
+const peopleRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/people",
+  loader: async () => {
+    const response = await fetch("https://swapi.dev/api/people");
+    return response.json() as Promise<{
+      results: {
+        name: string;
+      }[];
+    }>;
+  },
+  component: () => {
+    const data = peopleRoute.useLoaderData();
+    return (
+      <ul>
+        {data.results.map((person) => (
+          <li key={person.name}>{person.name}</li>
+        ))}
+      </ul>
+    );
+  },
+});
+```
+
+Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
+
+### React-Query
+
+React-Query is an excellent addition or alternative to route loading and integrating it into you application is a breeze.
+
+First add your dependencies:
+
+```bash
+npm install @tanstack/react-query @tanstack/react-query-devtools
+```
+
+Next we'll need to create a query client and provider. We recommend putting those in `main.tsx`.
+
+```tsx
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+// ...
+
+const queryClient = new QueryClient();
+
+// ...
+
+if (!rootElement.innerHTML) {
+  const root = ReactDOM.createRoot(rootElement);
+
+  root.render(
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
+}
+```
+
+You can also add TanStack Query Devtools to the root route (optional).
+
+```tsx
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+const rootRoute = createRootRoute({
+  component: () => (
+    <>
+      <Outlet />
+      <ReactQueryDevtools buttonPosition="top-right" />
+      <TanStackRouterDevtools />
+    </>
+  ),
+});
+```
+
+Now you can use `useQuery` to fetch your data.
+
+```tsx
+import { useQuery } from "@tanstack/react-query";
+
+import "./App.css";
+
+function App() {
+  const { data } = useQuery({
+    queryKey: ["people"],
+    queryFn: () =>
+      fetch("https://swapi.dev/api/people")
+        .then((res) => res.json())
+        .then((data) => data.results as { name: string }[]),
+    initialData: [],
+  });
+
+  return (
+    <div>
+      <ul>
+        {data.map((person) => (
+          <li key={person.name}>{person.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+```
+
+You can find out everything you need to know on how to use React-Query in the [React-Query documentation](https://tanstack.com/query/latest/docs/framework/react/overview).
+
+## State Management
+
+Another common requirement for React applications is state management. There are many options for state management in React. TanStack Store provides a great starting point for your project.
+
+First you need to add TanStack Store as a dependency:
+
+```bash
+npm install @tanstack/store
+```
+
+Now let's create a simple counter in the `src/App.tsx` file as a demonstration.
+
+```tsx
+import { useStore } from "@tanstack/react-store";
+import { Store } from "@tanstack/store";
+import "./App.css";
+
+const countStore = new Store(0);
+
+function App() {
+  const count = useStore(countStore);
+  return (
+    <div>
+      <button onClick={() => countStore.setState((n) => n + 1)}>
+        Increment - {count}
+      </button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+One of the many nice features of TanStack Store is the ability to derive state from other state. That derived state will update when the base state updates.
+
+Let's check this out by doubling the count using derived state.
+
+```tsx
+import { useStore } from "@tanstack/react-store";
+import { Store, Derived } from "@tanstack/store";
+import "./App.css";
+
+const countStore = new Store(0);
+
+const doubledStore = new Derived({
+  fn: () => countStore.state * 2,
+  deps: [countStore],
+});
+doubledStore.mount();
+
+function App() {
+  const count = useStore(countStore);
+  const doubledCount = useStore(doubledStore);
+
+  return (
+    <div>
+      <button onClick={() => countStore.setState((n) => n + 1)}>
+        Increment - {count}
+      </button>
+      <div>Doubled - {doubledCount}</div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+We use the `Derived` class to create a new store that is derived from another store. The `Derived` class has a `mount` method that will start the derived store updating.
+
+Once we've created the derived store we can use it in the `App` component just like we would any other store using the `useStore` hook.
+
+You can find out everything you need to know on how to use TanStack Store in the [TanStack Store documentation](https://tanstack.com/store/latest).
+
+# Demo files
+
+Files prefixed with `demo` can be safely deleted. They are there to provide a starting point for you to play around with the features you've installed.
+
+# Learn More
+
+You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).
