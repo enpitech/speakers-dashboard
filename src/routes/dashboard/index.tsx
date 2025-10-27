@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Suspense } from 'react'
-import { DashboardPage } from '~/features/speakers/pages/DashBoardPage'
+import { DashboardPage } from '~/features/speakers/pages/DashboardPage'
 import { Spinner } from '~/components'
 
 export const Route = createFileRoute('/dashboard/')({
