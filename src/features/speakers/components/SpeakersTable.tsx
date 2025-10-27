@@ -1,5 +1,4 @@
 import { use } from 'react';
-import { useTranslation } from 'react-i18next';
 import { SpeakerRow } from './SpeakersRow';
 import type { Speaker } from '~/lib/types';
 import { Table } from '~/components/ui/table/Table';
@@ -16,7 +15,6 @@ interface SpeakersTableViewProps {
 }
 
 export function SpeakersTable({ speakers }: SpeakersTableViewProps) {
-  const { t } = useTranslation();
 
   return (
     <Table
@@ -25,7 +23,7 @@ export function SpeakersTable({ speakers }: SpeakersTableViewProps) {
         <SpeakerRow key={speaker.id} speaker={speaker} columnWidths={columnWidths} />
       )}
       headers={null}
-      emptyMessage={t('no.speakers.found')}
+      emptyMessage="No speakers found"
       aria-label="Speakers list"
       className="w-full min-h-[500px] bg-white shadow-sm rounded-lg overflow-hidden"
     />

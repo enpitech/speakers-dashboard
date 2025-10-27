@@ -1,5 +1,4 @@
 import  React from 'react';
-import { useTranslation } from 'react-i18next';
 import { cn } from '../../../lib/utils';
 import { Row } from './Row';
 
@@ -20,8 +19,7 @@ export function Table<T>({
   className,
   'aria-label': ariaLabel = 'Data table',
 }: TableProps<T>) {
-  const { t } = useTranslation();
-  const defaultEmptyMessage = t('no.data.found');
+  const defaultEmptyMessage = 'No data found';
 
   if (!data.length) {
     return (
