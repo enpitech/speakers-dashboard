@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
-import { Route } from '~/routes/dashboard/speaker.$speakerId'
+import { Route } from '~/routes/speaker.$speakerId'
 import { getSpeakers } from '~/features/speakers/api'
 
 export function SpeakerPage() {
