@@ -1,6 +1,12 @@
 # Speakers Dashboard
 
-A dashboard application to manage speakers for events or conferences. This application allows users to view, add, and manage speaker information in a user-friendly interface.
+A dashboard application for managing speakers at events and conferences.
+This application provides an intuitive interface for viewing, adding, and managing speaker information.
+
+This project is built and maintained by the Frontendistim community a group of Israeli frontend developers.
+- If you're interested in contributing, that's great! Please read our Contributing Guidelines [here](CONTRIBUTING.md).
+
+- To join our community or learn more about us, click [here](https://enpitech.dev/community).
 
 ## Tech Stack
 
