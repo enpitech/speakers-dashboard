@@ -36,7 +36,7 @@ This license allows open collaboration but restricts commercial hosting and SaaS
    - Include documentation or comments for all nontrivial logic.
 
 5. **Pull Request Process**
-
+   - Fork this repo
    - Create a feature branch from `main`.
    - Ensure your code passes linting, build, and tests.
    - Write concise commit messages.
