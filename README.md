@@ -4,7 +4,7 @@ A dashboard application for managing speakers at events and conferences.
 This application provides an intuitive interface for viewing, adding, and managing speaker information.
 
 This project is built and maintained by the Frontendistim community a group of Israeli frontend developers.
-- If you're interested in contributing, that's great! Please read our Contributing Guidelines [here](CONTRIBUTING.md).
+- If you're interested in contributing, that's great! Please read our Contributing Guidelines [here](https://github.com/enpitech/speakers-dashboard/blob/main/%F0%9F%93%84%20CONTRIBUTING.md).
 
 - To join our community or learn more about us, click [here](https://enpitech.dev/community).
 
@@ -49,4 +49,4 @@ To get a local copy up and running, follow these simple steps.
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Please read our [Contributing Guidelines](CONTRIBUTING.md) for more information.
+Please read our [Contributing Guidelines](https://github.com/enpitech/speakers-dashboard/blob/main/%F0%9F%93%84%20CONTRIBUTING.md) for more information.
