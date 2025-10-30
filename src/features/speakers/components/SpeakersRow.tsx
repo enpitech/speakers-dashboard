@@ -4,7 +4,7 @@ import { Avatar } from '~/components/'
 import { SocialIconsGroup } from '~/components/ui/SocialIconsGroup'
 import { Row } from '~/components/ui/table/Row'
 import { TableCell } from '~/components/ui/table/TableCell'
-
+import { Route as SpeakerRoute } from '~/routes/speaker.$speakerId'
 
 interface SpeakerRowProps {
   speaker: Speaker
@@ -22,7 +22,7 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
     <Row
       onClick={() =>
         navigate({
-          to: '/dashboard/speaker/$speakerId',
+          to: SpeakerRoute.fullPath,
           params: { speakerId: speaker.id },
         })
       }
