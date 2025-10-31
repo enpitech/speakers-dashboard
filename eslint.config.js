@@ -1,9 +1,10 @@
 //  @ts-check
 
 import { tanstackConfig } from '@tanstack/eslint-config'
-import {  globalIgnores } from 'eslint/config'
+import { globalIgnores } from 'eslint/config'
+
 export default [
-globalIgnores([
+  globalIgnores([
     '.nitro',
     '.output',
     '.vinxi',
@@ -16,9 +17,11 @@ globalIgnores([
     '**/*.config.js',
   ]),
   ...tanstackConfig,
-  { 
+  {
     rules: {
       '@typescript-eslint/array-type': 'off',
+      'no-console': 'warn',
     },
+
   },
 ]
