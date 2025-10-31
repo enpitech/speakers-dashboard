@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger  } from './tooltip';
-import { SocialIcon  } from '~/components';
+import { SocialIcon  } from '~/ui-core';
 
 type SocialPlatform =
   | 'linkedin'

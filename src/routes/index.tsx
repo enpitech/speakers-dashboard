@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Suspense } from 'react'
-import { Spinner } from '~/components/ui/Spinner'
+import { Spinner } from '~/ui-core/shadcn/Spinner'
 import { DashboardPage } from '~/features/speakers/pages/DashboardPage'
 
 export const Route = createFileRoute('/')({

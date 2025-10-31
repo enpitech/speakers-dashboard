@@ -1,21 +1,17 @@
 import { useForm } from '@tanstack/react-form'
 
 import { formFields, formSchema } from './form-fields'
-import { Button } from '~/components/ui/button'
-import {
+import { Button,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
-} from '~/components/ui/card'
-import {
-  Field,
+  CardTitle, Field,
   FieldError,
   FieldLabel,
-} from '~/components/ui/field'
-import { Input } from '~/components/ui/input'
+  Input 
+ } from '~/ui-core'
 
 export function RegisterForm() {
   const form = useForm({

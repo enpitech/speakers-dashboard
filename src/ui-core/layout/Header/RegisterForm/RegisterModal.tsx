@@ -1,12 +1,10 @@
-import {
-  Dialog,
+import { Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from './ui/Dialog'
-import { RegisterForm } from './RegisterForm/RegisterForm'
+  RegisterForm } from '~/ui-core/'
 
 export function RegisterModal() {
   return (

@@ -1,7 +1,7 @@
 import { use } from 'react';
 import { SpeakerRow } from './SpeakersRow';
 import type { Speaker } from '~/lib/types';
-import { Table } from '~/components/ui/table/Table';
+import { Table } from '~/ui-core/shadcn/table/Table';
 
 const columnWidths = {
   name: '25%',

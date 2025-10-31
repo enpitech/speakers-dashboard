@@ -1,9 +1,9 @@
 import { useNavigate } from '@tanstack/react-router'
 import type { Speaker } from '~/lib/types'
-import { Avatar } from '~/components/'
-import { SocialIconsGroup } from '~/components/ui/SocialIconsGroup'
-import { Row } from '~/components/ui/table/Row'
-import { TableCell } from '~/components/ui/table/TableCell'
+import { Avatar } from '~/ui-core/'
+import { SocialIconsGroup } from '~/ui-core/shadcn/SocialIconsGroup'
+import { Row } from '~/ui-core/shadcn/table/Row'
+import { TableCell } from '~/ui-core/shadcn/table/TableCell'
 import { Route as SpeakerRoute } from '~/routes/speaker.$speakerId'
 
 interface SpeakerRowProps {
