@@ -3,7 +3,7 @@ export { Header } from './layout/Header/Header'
 
 // UI components
 export { Avatar } from './shadcn/Avatar'
-export { Button } from './shadcn/button'
+export { Button } from './shadcn/Button'
 export { SocialIcon } from './shadcn/SocialIcon'
 export { SocialIconsGroup } from './shadcn/SocialIconsGroup'
 export { Spinner } from './shadcn/Spinner'
