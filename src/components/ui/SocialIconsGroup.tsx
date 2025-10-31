@@ -42,7 +42,6 @@ export function SocialIconsGroup({
   const displayLinks = linksArray.slice(0, maxIcons).filter(link => link.url !== '');
   const remainingIcons = linksArray.slice(maxIcons);
   const remainingCount = remainingIcons.length;
-console.log(displayLinks);
   return (
     <div className={`flex flex-wrap gap-2 ${className}`}>
       {displayLinks.map((link, index) => (
