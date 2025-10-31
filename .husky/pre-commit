@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+
+# confirm commit to main
+# https://www.kim-lindhard.com/git-prevent-commit-to-master/
+currentBranch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [[ "$currentBranch" == "main" ]]; then
+  echo "You are about to commit to $currentBranch. Are you sure? [Yes/No]"
+
+  exec < /dev/tty
+
+  while read -n 1 -r yn; do
+    if [ "$yn" = "" ]; then
+        yn='N'
+    fi
+    case $yn in
+        [Yy] ) break;;
+        [Nn] ) echo;[[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1;;
+        * ) echo "Please answer y (yes) or n (no):" && continue;
+    esac
+  done
+
+  exec <&-
+fi
+
+npm run lint
+npm run typecheck

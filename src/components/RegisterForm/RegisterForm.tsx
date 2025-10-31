@@ -23,9 +23,9 @@ export function RegisterForm() {
       name: '',
       location: '',
       experience: '',
-      topics: [],
-      languages: [],
-      linkedin: [],
+      topics: '',
+      languages: '',
+      linkedin: '',
     },
     validators: {
       onSubmit: formSchema,
