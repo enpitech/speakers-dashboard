@@ -19,13 +19,13 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    'cursor-pointer inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-blue-400)]';
+    'cursor-pointer inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-color';
 
   const variants = {
-    default: 'bg-[var(--color-blue-400)] text-background hover:bg-[var(--color-blue-600)]',
-    outline:
-      'border border-[var(--color-blue-400)] bg-[var(--color-background-0)] text-[var(--color-text-600)] hover:bg-[var(--color-blue-100)] hover:border-[var(--color-blue-600)] group',
-    ghost: 'bg-transparent text-[var(--color-text-600)] hover:bg-[var(--color-blue-100)]',
+    default: "bg-primary-color hover:bg-secondary-color text-white px-6 py-2 rounded-lg h-full",  
+      outline:
+      'border border-primary-color bg-background text-text-600 hover:bg-primary-color hover:border-secondary-color group px-6 py-2 rounded-lg h-full hover:text-white',
+    ghost: 'bg-transparent text-text-600 hover:bg-primary-color hover:text-white',
   };
 
   const sizes = {
