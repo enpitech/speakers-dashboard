@@ -49,4 +49,4 @@ export const formFields = [
     placeholder: 'Enter your LinkedIn URL',
   },
 
-]
+] as const
