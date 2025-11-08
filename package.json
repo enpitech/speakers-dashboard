@@ -15,8 +15,7 @@
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "seed": "npx tsx prisma/seed.ts",
-    "start:migrate": "npx prisma migrate deploy && node .output/server/index.mjs"
+    "seed": "npx tsx prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.19.0",
