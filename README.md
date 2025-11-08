@@ -29,21 +29,33 @@ To get a local copy up and running, follow these simple steps.
 
 -   Node.js (check .nvmrc)
 -   npm
+-   Docker
 
 ### Installation
-
-1.  Clone the repo
+1. Fork the repository
+2.  Clone the repo from your fork
     ```sh
     git clone https://github.com/your_username/speakers-dashboard.git
     ```
-2.  Install NPM packages
+3. create a .env file in the root of the project and add the following variables form the .env.example file
+
+4.  Start the database
     ```sh
-    npm install
+    docker compose up db -d
     ```
-3.  Run the development server
+5. generate the Prisma client
+    ```sh
+    npx prisma generate
+    ```
+6. seed the database
+    ```sh
+    npm run seed
+    ```
+7. run the development server
     ```sh
     npm run dev
     ```
+8. visit http://localhost:3000 to see the application
 
 ## Contributing
 

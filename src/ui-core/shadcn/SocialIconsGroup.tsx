@@ -1,25 +1,10 @@
 import { Link } from '@tanstack/react-router';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger  } from './tooltip';
+import type { SocialLink,  } from '~/lib/types';
 import { SocialIcon  } from '~/ui-core';
 
-type SocialPlatform =
-  | 'linkedin'
-  | 'twitter'
-  | 'facebook'
-  | 'instagram'
-  | 'youtube'
-  | 'github'
-  | 'tiktok'
-  | 'spotify'
-  | 'discord';
-
-export interface SocialLink {
-  platform: SocialPlatform;
-  url: string;
-}
-
 interface SocialIconsGroupProps {
-  links: SocialLink[] | Record<SocialPlatform, string>;
+  links: SocialLink[];
   className?: string;
   iconSize?: 'sm' | 'md' | 'lg';
   maxIcons?: number;
@@ -32,15 +17,9 @@ export function SocialIconsGroup({
   maxIcons,
   showCount = false,
 }: SocialIconsGroupProps) {
-  const linksArray = Array.isArray(links)
-    ? links
-    : Object.entries(links).map(([platform, url]) => ({
-        platform: platform as SocialPlatform,
-        url,
-      }));
 
-  const displayLinks = linksArray.slice(0, maxIcons).filter(link => link.url !== '');
-  const remainingIcons = linksArray.slice(maxIcons);
+  const displayLinks = links.slice(0, maxIcons).filter(link => link.url !== '');
+  const remainingIcons = links.slice(maxIcons);
   const remainingCount = remainingIcons.length;
   return (
     <div className={`flex flex-wrap gap-2 ${className}`}>
