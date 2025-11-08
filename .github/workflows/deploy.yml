@@ -52,6 +52,9 @@ jobs:
       - name: 📥 Install deps
         run: npm install
 
+      - name: 🔨 Generate Prisma client
+        run: npx prisma generate
+
       - name: 🔎 Type check
         run: npm run typecheck --if-present
 
