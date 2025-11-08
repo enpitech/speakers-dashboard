@@ -14,3 +14,5 @@ todos.json
 .nitro
 *storybook.log
 storybook-static
+
+generated
