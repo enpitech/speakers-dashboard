@@ -48,4 +48,4 @@ EXPOSE 3000
 
 RUN npx prisma migrate deploy
 
-CMD [ "node", ".output/server/index.mjs" ]
+CMD [ "npm", "run", "start:migrate" ]
