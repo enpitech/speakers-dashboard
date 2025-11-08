@@ -1,8 +1,8 @@
 // Shared types used across the application
-import { SocialPlatform as PrismaSocialPlatformEnum } from '@prisma/client';
 import type {
   SocialLink as PrismaSocialLink,
   SocialPlatform as PrismaSocialPlatform,
+  SocialPlatform as PrismaSocialPlatformEnum,
   Speaker as PrismaSpeaker,
 } from '@prisma/client';
 
@@ -14,4 +14,14 @@ export type SocialLink = PrismaSocialLink;
 
 export type SocialPlatform = PrismaSocialPlatform;
 
-export const SocialPlatformEnum = PrismaSocialPlatformEnum;
+export const SocialPlatformEnum:Record<PrismaSocialPlatformEnum, string> = {
+  LINKEDIN: 'LINKEDIN',
+  TWITTER: 'TWITTER',
+  INSTAGRAM: 'INSTAGRAM',
+  FACEBOOK: 'FACEBOOK',
+  YOUTUBE: 'YOUTUBE',
+  GITHUB: 'GITHUB',
+  TIKTOK: 'TIKTOK',
+  SPOTIFY: 'SPOTIFY',
+  DISCORD: 'DISCORD',
+} 

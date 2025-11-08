@@ -7,6 +7,9 @@ export const getSpeakers = createServerFn({
   try {
     return {
       speakers: await prisma.speaker.findMany({
+        where: {
+          isActive: true,
+        },
         include: {
           socialLinks: true,
         },
