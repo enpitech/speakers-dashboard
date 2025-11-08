@@ -28,6 +28,7 @@ RUN npm ci --include=dev
 
 # Copy application code
 COPY . .
+RUN npx prisma generate
 
 # Build application
 RUN npm run build
@@ -44,4 +45,7 @@ COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
+
+RUN npx prisma migrate deploy
+
 CMD [ "node", ".output/server/index.mjs" ]
