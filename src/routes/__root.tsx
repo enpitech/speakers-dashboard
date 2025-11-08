@@ -45,6 +45,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body>
         <Header />
         <main className="grid place-items-center p-4">{children}</main>
+        {process.env.NODE_ENV === 'development' && (
         <TanStackDevtools
           config={{
             position: 'bottom-right',
@@ -56,6 +57,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             },
           ]}
         />
+        )}
         <Scripts />
       </body>
     </html>
