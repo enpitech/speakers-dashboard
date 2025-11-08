@@ -4,7 +4,7 @@ import type {
   SocialPlatform as PrismaSocialPlatform,
   SocialPlatform as PrismaSocialPlatformEnum,
   Speaker as PrismaSpeaker,
-} from '@prisma/client';
+} from '../../generated/client/client';
 
 export type Speaker = PrismaSpeaker & {
   socialLinks: SocialLink[];
