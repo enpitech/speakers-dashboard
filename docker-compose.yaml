@@ -1,0 +1,17 @@
+name: speakers-dashboard
+
+services:
+  db:
+    container_name: db
+    image: postgres:16.1
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=myuser
+      - PGUSER=myuser
+      - POSTGRES_PASSWORD=mypassword
+    healthcheck:
+      test: ["CMD-SHELL", "sh -c 'pg_isready -d agent'"]
+      interval: 3s
+      timeout: 3s
+      retries: 3

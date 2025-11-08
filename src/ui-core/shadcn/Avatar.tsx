@@ -1,7 +1,7 @@
 import { cn } from '~/lib/utils';
 
 interface AvatarProps {
-  src?: string;
+  src?: string | null;
   alt: string;
   size?: 'sm' | 'md' | 'lg';
   fallback?: string;

@@ -1,49 +1,27 @@
 // Shared types used across the application
+import type {
+  SocialLink as PrismaSocialLink,
+  SocialPlatform as PrismaSocialPlatform,
+  SocialPlatform as PrismaSocialPlatformEnum,
+  Speaker as PrismaSpeaker,
+} from '@prisma/client';
 
-export type SocialNetwork = 
-  | 'linkedin'
-  | 'twitter'
-  | 'facebook'
-  | 'instagram'
-  | 'youtube'
-  | 'github'
-  | 'tiktok'
-  | 'spotify'
-  | 'discord';
-
-export interface SocialLink {
-  platform: SocialNetwork;
-  url: string;
-  icon?: string;
-}
-
-export interface Speaker {
-  id: string;
-  name: string;
-  avatar?: string;
-  location?: string;
-  experience?: string;
-  rating?: number;
-  sessionsUrl?: string;
+export type Speaker = PrismaSpeaker & {
   socialLinks: SocialLink[];
-  bio?: string;
-  topics: string[];
-  languages: string[];
-}
+};
 
+export type SocialLink = PrismaSocialLink;
 
+export type SocialPlatform = PrismaSocialPlatform;
 
-
-
-export interface SpeakerFormData {
-  name: string;
-  avatar?: string;
-  topics: string[];
-  languages: string[];
-  sessionsUrl: string;
-  socialLinks: SocialLink[];
-  bio?: string;
-  location?: string;
-  experience?: string;
-}
-
+export const SocialPlatformEnum:Record<PrismaSocialPlatformEnum, string> = {
+  LINKEDIN: 'LINKEDIN',
+  TWITTER: 'TWITTER',
+  INSTAGRAM: 'INSTAGRAM',
+  FACEBOOK: 'FACEBOOK',
+  YOUTUBE: 'YOUTUBE',
+  GITHUB: 'GITHUB',
+  TIKTOK: 'TIKTOK',
+  SPOTIFY: 'SPOTIFY',
+  DISCORD: 'DISCORD',
+} 

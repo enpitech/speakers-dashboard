@@ -1,4 +1,3 @@
-import { use } from 'react';
 import { SpeakerRow } from './SpeakersRow';
 import type { Speaker } from '~/lib/types';
 import { Table } from '~/ui-core/shadcn/table/Table';
@@ -15,7 +14,6 @@ interface SpeakersTableViewProps {
 }
 
 export function SpeakersTable({ speakers }: SpeakersTableViewProps) {
-
   return (
     <Table
       data={speakers}
@@ -30,11 +28,4 @@ export function SpeakersTable({ speakers }: SpeakersTableViewProps) {
   );
 }
 
-type SuspendedSpeakersTableViewProps = {
-  speakers: Promise<Speaker[]>;
-};
 
-export function SuspendedSpeakersTableView({ speakers }: SuspendedSpeakersTableViewProps) {
-  const speakersData = use(speakers);
-  return <SpeakersTable speakers={speakersData} />;
-}

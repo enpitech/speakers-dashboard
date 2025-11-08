@@ -16,6 +16,7 @@ interface SpeakerRowProps {
   }
 }
 
+
 export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
   const navigate = useNavigate()
   return (

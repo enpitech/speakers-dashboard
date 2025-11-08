@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
-import { SpeakersTable } from '~/features/speakers/components/SpeakersTable'
+import { SpeakersTable } from '~/features/speakers/'
 import { getSpeakers } from '~/features/speakers/api/'
 
 export function DashboardPage() {

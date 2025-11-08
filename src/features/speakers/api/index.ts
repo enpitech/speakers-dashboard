@@ -1,11 +1,21 @@
 import { createServerFn } from '@tanstack/react-start'
-import { mockSpeakers } from './mock'
+import { prisma } from '../../../../prisma/client'
 
 export const getSpeakers = createServerFn({
   method: 'GET',
 }).handler(async () => {
-  await new Promise((resolve) => setTimeout(resolve, 1000))
-  return {
-    speakers: mockSpeakers,
+  try {
+    return {
+      speakers: await prisma.speaker.findMany({
+        where: {
+          isActive: true,
+        },
+        include: {
+          socialLinks: true,
+        },
+      }),
+    }
+  } catch (error) {
+    throw new Error('Failed to get speakers')
   }
 })
