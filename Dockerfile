@@ -15,7 +15,7 @@ ENV HOST="0.0.0.0"
 ENV PORT="3000"
 
 # Install OpenSSL which is required by Prisma
-RUN apt-get update -y && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update -y && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 
 # Throw-away build stage to reduce size of final image
