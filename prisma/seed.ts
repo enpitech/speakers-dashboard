@@ -1,6 +1,6 @@
-import { SocialPlatform } from '../generated/client/client';
+import { SocialPlatform } from '@prisma/client';
 import { prisma } from './client'
-import type { SocialLink as PrismaSocialLink, Speaker as PrismaSpeaker  } from '../generated/client/client';
+import type { SocialLink as PrismaSocialLink, Speaker as PrismaSpeaker  } from '@prisma/client';
 
 type SpeakerSeedData = Omit<PrismaSpeaker, 'id' | 'createdAt' | 'updatedAt' | 'isActive'> & {
   socialLinks: Omit<PrismaSocialLink, 'id' | 'speakerId' | 'createdAt' | 'updatedAt'>[];
