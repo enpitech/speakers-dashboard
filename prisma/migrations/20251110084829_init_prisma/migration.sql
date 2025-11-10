@@ -9,7 +9,7 @@ CREATE TABLE "Speaker" (
     "phone" TEXT NOT NULL,
     "avatar" TEXT,
     "location" TEXT,
-    "experience" TEXT,
+    "yearsOfExperience" INTEGER NOT NULL DEFAULT 0,
     "sessionsUrl" TEXT,
     "bio" TEXT,
     "topics" TEXT[],

@@ -5,7 +5,7 @@ import { getSpeakers } from '~/features/speakers/api/'
 export function DashboardPage() {
   const { data } = useSuspenseQuery({
     queryKey: ['speakers'],
-    queryFn: () => getSpeakers(),
+    queryFn: () => getSpeakers()
   })
   return <SpeakersTable speakers={data.speakers} />
 }
