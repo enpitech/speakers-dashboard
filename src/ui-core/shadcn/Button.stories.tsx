@@ -8,8 +8,6 @@ const meta = {
   args: {
     children: 'Click me',
     variant: 'default',
-    size: 'md',
-    isLoading: false,
     disabled: false,
   },
   argTypes: {
@@ -21,9 +19,7 @@ const meta = {
       control: 'select',
       options: ['sm', 'md', 'lg'],
     },
-    isLoading: {
-      control: 'boolean',
-    },
+  
     disabled: {
       control: 'boolean',
     },
@@ -51,7 +47,6 @@ export const Ghost: Story = {
 
 export const Loading: Story = {
   args: {
-    isLoading: true,
     children: 'Loading…',
   },
 };
