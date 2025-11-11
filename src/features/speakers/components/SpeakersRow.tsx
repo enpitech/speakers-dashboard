@@ -27,7 +27,7 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
           params: { speakerId: speaker.id },
         })
       }
-      className="cursor-pointer hover:bg-gray-50 transition-colors flex duration-100 border-b gap-5 border-gray-100 w-full"
+      className="cursor-pointer hover:bg-muted transition-colors flex duration-100 border-b gap-5 border w-full"
     >
       <TableCell width={columnWidths.name}>
         <div className="flex items-center gap-3 min-w-0 py-4">
@@ -37,7 +37,7 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
             size="sm"
             fallback={speaker.name}
           />
-          <p className="truncate text-gray-600 font-medium">
+          <p className="truncate text-foreground font-medium">
             {speaker.name}
           </p>
         </div>
@@ -45,7 +45,7 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
 
       <TableCell width={columnWidths.topics}>
         <p
-          className="text-sm text-gray-700 wrap-break-word line-clamp-2"
+          className="text-sm text-foreground wrap-break-word line-clamp-2"
         >
           {speaker.topics.join(', ')}
         </p>
@@ -53,7 +53,7 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
 
       <TableCell width={columnWidths.languages}>
         <p
-          className="text-sm text-gray-600 wrap-break-word line-clamp-2"
+          className="text-sm text-foreground wrap-break-word line-clamp-2"
         >
           {speaker.languages.join(', ')}
         </p>

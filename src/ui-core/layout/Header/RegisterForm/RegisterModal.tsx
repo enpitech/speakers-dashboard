@@ -5,12 +5,15 @@ import { Dialog,
   DialogTitle,
   DialogTrigger,
   RegisterForm } from '~/ui-core/'
+import { Button } from '~/ui-core/shadcn/Button'
 
 export function RegisterModal() {
   return (
     <Dialog>
-      <DialogTrigger  className="bg-primary-color hover:bg-secondary-color text-white px-6 py-2 rounded-lg h-full">
+      <DialogTrigger asChild>
+        <Button>
           Register as a lecturer
+        </Button>
       </DialogTrigger>
       <DialogContent className='w-screen'>
         <DialogHeader>

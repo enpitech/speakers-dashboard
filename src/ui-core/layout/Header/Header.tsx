@@ -3,7 +3,7 @@ import { RegisterModal } from './RegisterForm/RegisterModal'
 
 export function Header() {
   return (
-    <header className="border-b border-gray-200 bg-white">
+    <header className="border-b border-gray-200 ">
       <div className="mx-auto px-8 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
