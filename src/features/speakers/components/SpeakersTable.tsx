@@ -38,7 +38,7 @@ export function SpeakersTable({ speakers, isLoading }: SpeakersTableViewProps) {
         }
       emptyMessage="No speakers found"
       aria-label="Speakers list"
-      className="w-full min-h-[500px] bg-white shadow-sm rounded-lg overflow-hidden"
+      className="w-full min-h-[500px]  shadow-sm rounded-lg overflow-hidden"
     />
   )
 }

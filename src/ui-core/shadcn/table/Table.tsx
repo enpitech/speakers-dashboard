@@ -23,7 +23,7 @@ export function Table<T>({
 
  
   return (
-    <div className="w-full overflow-x-auto bg-card relative">
+    <div className="w-full overflow-x-auto relative">
       <div
         className={cn(
           'min-w-full ',

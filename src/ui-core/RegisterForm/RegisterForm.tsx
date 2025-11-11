@@ -78,14 +78,14 @@ export function RegisterForm() {
             type="button"
             variant="outline"
             onClick={() => form.reset()}
-            className="border-primary-color  px-6 py-2 rounded-lg"
+            className="border-primary  px-6 py-2 rounded-lg"
           >
             Reset
           </Button>
           <Button
             type="submit"
             form="register-form"
-            className="bg-primary-color hover:bg-secondary-color text-white px-6 py-2 rounded-lg"
+            className="bg-primary hover:bg-secondary text-white px-6 py-2 rounded-lg"
           >
             Submit
           </Button>
