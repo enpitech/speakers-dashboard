@@ -33,6 +33,10 @@ export const getSpeakers = createServerFn({
           where: {
             OR: [
               { name: { contains: data.search, mode: 'insensitive' } },
+              { topics: { hasSome: [data.search] } },
+              { languages: { hasSome: [data.search.toLowerCase()] }  },
+              { bio: { contains: data.search, mode: 'insensitive' } },
+{}
             ],
           },
         }),
@@ -40,5 +44,23 @@ export const getSpeakers = createServerFn({
     }
   } catch (error) {
     throw new Error('Failed to get speakers')
+  }
+})
+
+const getSpeakerParamsSchema = z.object({
+  id: z.string(),
+})
+type GetSpeakerParams = z.infer<typeof getSpeakerParamsSchema>
+export const getSpeaker = createServerFn({
+  method: 'GET',
+})
+.inputValidator((data: GetSpeakerParams) => data)
+.handler(async ({data}) => {
+  try {
+    return {
+      speaker: await prisma.speaker.findUnique({ where: { id: data.id }, include: { socialLinks: true } }),
+    }
+  } catch (error) {
+    throw new Error('Failed to get speaker')
   }
 })

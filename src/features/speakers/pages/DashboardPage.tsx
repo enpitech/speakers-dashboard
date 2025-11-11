@@ -1,11 +1,25 @@
-import { useSuspenseQuery } from '@tanstack/react-query'
+import { useState } from 'react'
+import { SearchBar } from '../components/SearchBar'
 import { SpeakersTable } from '~/features/speakers/'
-import { getSpeakers } from '~/features/speakers/api/'
+import { useDebounce } from '~/lib/hooks'
+import { useSpeakers } from '~/features/speakers/dal/speakers.resource'
 
 export function DashboardPage() {
-  const { data } = useSuspenseQuery({
-    queryKey: ['speakers'],
-    queryFn: () => getSpeakers()
-  })
-  return <SpeakersTable speakers={data.speakers} />
+  const [search, setSearch] = useState('')
+  const debouncedSearch = useDebounce(search, 300)
+
+  const { data, isFetching } = useSpeakers(debouncedSearch)
+  return (
+    <>
+      <SearchBar
+        search={search}
+        setSearch={setSearch}
+        isFetching={isFetching}
+      />
+      <SpeakersTable
+        speakers={data?.speakers ?? []}
+        isLoading={Boolean(search) && isFetching}
+      />
+    </>
+  )
 }
