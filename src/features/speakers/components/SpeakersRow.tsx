@@ -16,7 +16,6 @@ interface SpeakerRowProps {
   }
 }
 
-
 export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
   const navigate = useNavigate()
   return (
@@ -37,24 +36,18 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
             size="sm"
             fallback={speaker.name}
           />
-          <p className="truncate text-foreground font-medium">
-            {speaker.name}
-          </p>
+          <p className="truncate text-foreground font-medium">{speaker.name}</p>
         </div>
       </TableCell>
 
       <TableCell width={columnWidths.topics}>
-        <p
-          className="text-sm text-foreground wrap-break-word line-clamp-2"
-        >
-          {speaker.topics.join(', ')}
+        <p className="text-sm text-foreground wrap-break-word line-clamp-2">
+          {speaker.topics.map((topic) => topic.label).join(', ')}
         </p>
       </TableCell>
 
       <TableCell width={columnWidths.languages}>
-        <p
-          className="text-sm text-foreground wrap-break-word line-clamp-2"
-        >
+        <p className="text-sm text-foreground wrap-break-word line-clamp-2">
           {speaker.languages.join(', ')}
         </p>
       </TableCell>
