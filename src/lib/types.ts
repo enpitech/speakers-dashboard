@@ -4,17 +4,23 @@ import type {
   SocialPlatform as PrismaSocialPlatform,
   SocialPlatform as PrismaSocialPlatformEnum,
   Speaker as PrismaSpeaker,
-} from '@prisma/client';
-  
+} from '@prisma/client'
+
+export type Option = {
+  value: string
+  label: string
+}
+
 export type Speaker = PrismaSpeaker & {
-  socialLinks: SocialLink[];
-};
+  socialLinks: SocialLink[]
+  topics: Option[]
+}
 
-export type SocialLink = PrismaSocialLink;
+export type SocialLink = PrismaSocialLink
 
-export type SocialPlatform = PrismaSocialPlatform;
+export type SocialPlatform = PrismaSocialPlatform
 
-export const SocialPlatformEnum:Record<PrismaSocialPlatformEnum, string> = {
+export const SocialPlatformEnum: Record<PrismaSocialPlatformEnum, string> = {
   LINKEDIN: 'LINKEDIN',
   TWITTER: 'TWITTER',
   INSTAGRAM: 'INSTAGRAM',
@@ -24,4 +30,4 @@ export const SocialPlatformEnum:Record<PrismaSocialPlatformEnum, string> = {
   TIKTOK: 'TIKTOK',
   SPOTIFY: 'SPOTIFY',
   DISCORD: 'DISCORD',
-} 
+}
