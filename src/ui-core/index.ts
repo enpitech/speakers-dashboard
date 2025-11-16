@@ -12,7 +12,15 @@ export { Spinner } from './shadcn/Spinner'
 export { Row } from './shadcn/table/Row'
 export { Table } from './shadcn/table/Table'
 export { TableCell } from './shadcn/table/TableCell'
-export { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './shadcn/Dialog'
+export {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from './shadcn/Dialog'
 export { Field } from './shadcn/field'
 export { FieldError } from './shadcn/field'
 export { FieldLabel } from './shadcn/field'
@@ -32,5 +40,15 @@ export { CardDescription } from './shadcn/card'
 export { CardFooter } from './shadcn/card'
 export { CardHeader } from './shadcn/card'
 export { CardTitle } from './shadcn/card'
+export {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from './shadcn/command'
+export { Popover, PopoverContent, PopoverTrigger } from './shadcn/popover'
+export { Badge, badgeVariants } from './shadcn/badge'
 
 export * from './layout'
