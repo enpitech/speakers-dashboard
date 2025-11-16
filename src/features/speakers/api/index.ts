@@ -1,7 +1,7 @@
 import { createServerFn } from '@tanstack/react-start'
 import { z } from 'zod'
 import { prisma } from '../../../../prisma/client'
-import { mapTopicsToValueLabel } from '../utils'
+import { mapTopicToValueLabel, mapTopicsToValueLabel } from '../utils'
 
 const getSpeakersParamsSchema = z.object({
   limit: z.number().optional(),
@@ -106,5 +106,43 @@ export const getSpeaker = createServerFn({
       }
     } catch (error) {
       throw new Error('Failed to get speaker')
+    }
+  })
+
+export const getTopics = createServerFn({
+  method: 'GET',
+})
+  .inputValidator(() => {})
+  .handler(async () => {
+    try {
+      const topics = await prisma.topic.findMany()
+      return {
+        topics: mapTopicsToValueLabel(topics),
+      }
+    } catch (error) {
+      throw new Error('Failed to get topics')
+    }
+  })
+
+const createTopicParamsSchema = z.object({
+  title: z.string(),
+})
+type createTopicParams = z.infer<typeof createTopicParamsSchema>
+export const createTopic = createServerFn({
+  method: 'POST',
+})
+  .inputValidator((data: createTopicParams) => data)
+  .handler(async ({ data }) => {
+    try {
+      const topic = await prisma.topic.create({
+        data: {
+          title: data.title,
+        },
+      })
+      return {
+        topic: mapTopicToValueLabel(topic),
+      }
+    } catch (error) {
+      throw new Error('Failed to create topic')
     }
   })

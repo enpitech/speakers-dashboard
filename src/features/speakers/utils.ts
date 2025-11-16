@@ -8,3 +8,10 @@ export function mapTopicsToValueLabel(
     label: topic.title,
   }))
 }
+
+export function mapTopicToValueLabel(topic: Topic) {
+  return {
+    value: topic.id,
+    label: topic.title,
+  }
+}
