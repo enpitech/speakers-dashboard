@@ -1,15 +1,14 @@
 import * as z from 'zod'
 
 export const formSchema = z.object({
-    name: z.string().min(1, 'Name is required'),
-    location: z.string().min(1, 'Location is required'),
-    experience: z.string().min(1, 'Experience is required'),
-    topics: z.string().min(1, 'Topics are required'),
-    languages: z.string().min(1, 'Languages are required'),
-    linkedin: z
-      .string()
-      .url('LinkedIn URL is required'),
-  })
+  name: z.string().min(1, 'Name is required'),
+  location: z.string().min(1, 'Location is required'),
+  experience: z.string().min(1, 'Experience is required'),
+  topics: z.array(z.string()),
+  languages: z.string().min(1, 'Languages are required'),
+  linkedin: z.string().url('LinkedIn URL is required'),
+})
+
 export const formFields = [
   {
     name: 'name',
@@ -31,12 +30,6 @@ export const formFields = [
     placeholder: 'Enter your experience',
   },
   {
-    name: 'topics',
-    label: 'Topics',
-    type: 'text',
-    placeholder: 'Enter your topics',
-  },
-  {
     name: 'languages',
     label: 'Languages',
     type: 'text',
@@ -48,5 +41,4 @@ export const formFields = [
     type: 'text',
     placeholder: 'Enter your LinkedIn URL',
   },
-
 ] as const
