@@ -12,7 +12,15 @@ export { Spinner } from './shadcn/Spinner'
 export { Row } from './shadcn/table/Row'
 export { Table } from './shadcn/table/Table'
 export { TableCell } from './shadcn/table/TableCell'
-export { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './shadcn/Dialog'
+export {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from './shadcn/Dialog'
 export { Field } from './shadcn/field'
 export { FieldError } from './shadcn/field'
 export { FieldLabel } from './shadcn/field'

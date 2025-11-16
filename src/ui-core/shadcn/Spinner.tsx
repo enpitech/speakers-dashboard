@@ -1,9 +1,9 @@
-import { cn } from '~/lib/utils';
+import { cn } from '~/lib/utils'
 
 type SpinnerProps = {
-  size?: 'sm' | 'md' | 'lg';
-  className?: string;
-};
+  size?: 'sm' | 'md' | 'lg'
+  className?: string
+}
 
 export function Spinner({ size = 'sm', className }: SpinnerProps) {
   return (
@@ -16,5 +16,5 @@ export function Spinner({ size = 'sm', className }: SpinnerProps) {
         className,
       )}
     ></div>
-  );
+  )
 }

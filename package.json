@@ -8,7 +8,7 @@
     "test": "vitest run",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "format": "prettier",
+    "format": "prettier --write .",
     "build": "npm run lint && vite build",
     "start": "HOST=0.0.0.0 PORT=3000 node .output/server/index.mjs",
     "check": "prettier --write . && eslint --fix",

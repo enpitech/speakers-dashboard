@@ -22,6 +22,6 @@ if [[ "$currentBranch" == "main" ]]; then
 
   exec <&-
 fi
-
+npm run format
 npm run lint
 npm run typecheck

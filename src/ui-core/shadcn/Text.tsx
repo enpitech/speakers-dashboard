@@ -1,11 +1,11 @@
-import { cn } from '~/lib/utils';
+import { cn } from '~/lib/utils'
 
 type TextProps = {
-  children: React.ReactNode;
-  className?: string;
-  variant?: 'p' | 'span' | 'h1' | 'h2' | 'h3';
-  size?: 'sm' | 'md' | 'lg';
-};
+  children: React.ReactNode
+  className?: string
+  variant?: 'p' | 'span' | 'h1' | 'h2' | 'h3'
+  size?: 'sm' | 'md' | 'lg'
+}
 
 export function Text({ children, className, variant = 'p', size }: TextProps) {
   const variantClasses = {
@@ -14,7 +14,7 @@ export function Text({ children, className, variant = 'p', size }: TextProps) {
     h1: 'text-foreground p-2 font-bold text-primary text-4xl',
     h2: 'text-foreground p-2 font-bold text-primary text-xl',
     h3: 'text-foreground p-2 font-bold text-primary text-lg',
-  };
+  }
 
   const sizeClasses = {
     sm: 'text-sm',
@@ -28,7 +28,7 @@ export function Text({ children, className, variant = 'p', size }: TextProps) {
     '6xl': 'text-6xl',
     '7xl': 'text-7xl',
     '8xl': 'text-8xl',
-  };
+  }
 
   const textSize =
     sizeClasses[
@@ -41,19 +41,39 @@ export function Text({ children, className, variant = 'p', size }: TextProps) {
             : variant === 'h3'
               ? '2xl'
               : 'md'
-    ];
+    ]
   switch (variant) {
     case 'p':
-      return <p className={cn(variantClasses.p, textSize, className)}>{children}</p>;
+      return (
+        <p className={cn(variantClasses.p, textSize, className)}>{children}</p>
+      )
     case 'span':
-      return <span className={cn(variantClasses.span, textSize, className)}>{children}</span>;
+      return (
+        <span className={cn(variantClasses.span, textSize, className)}>
+          {children}
+        </span>
+      )
     case 'h1':
-      return <h1 className={cn(variantClasses.h1, textSize, className)}>{children}</h1>;
+      return (
+        <h1 className={cn(variantClasses.h1, textSize, className)}>
+          {children}
+        </h1>
+      )
     case 'h2':
-      return <h2 className={cn(variantClasses.h2, textSize, className)}>{children}</h2>;
+      return (
+        <h2 className={cn(variantClasses.h2, textSize, className)}>
+          {children}
+        </h2>
+      )
     case 'h3':
-      return <h3 className={cn(variantClasses.h3, textSize, className)}>{children}</h3>;
+      return (
+        <h3 className={cn(variantClasses.h3, textSize, className)}>
+          {children}
+        </h3>
+      )
     default:
-      return <p className={cn(variantClasses.p, textSize, className)}>{children}</p>;
+      return (
+        <p className={cn(variantClasses.p, textSize, className)}>{children}</p>
+      )
   }
 }

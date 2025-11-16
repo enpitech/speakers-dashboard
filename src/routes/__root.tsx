@@ -46,17 +46,17 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Header />
         <main className="grid place-items-center p-4">{children}</main>
         {process.env.NODE_ENV === 'development' && (
-        <TanStackDevtools
-          config={{
-            position: 'bottom-right',
-          }}
-          plugins={[
-            {
-              name: 'Tanstack Router',
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-          ]}
-        />
+          <TanStackDevtools
+            config={{
+              position: 'bottom-right',
+            }}
+            plugins={[
+              {
+                name: 'Tanstack Router',
+                render: <TanStackRouterDevtoolsPanel />,
+              },
+            ]}
+          />
         )}
         <Scripts />
       </body>

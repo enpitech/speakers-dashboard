@@ -8,7 +8,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link to="/">
-            <img src="/logo.svg" alt="Logo" />
+              <img src="/logo.svg" alt="Logo" />
             </Link>
           </div>
           <RegisterModal />

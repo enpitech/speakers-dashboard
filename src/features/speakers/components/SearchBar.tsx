@@ -1,4 +1,4 @@
-import { Input,Spinner } from '~/ui-core'
+import { Input, Spinner } from '~/ui-core'
 
 type SearchBarProps = {
   search: string
