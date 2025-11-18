@@ -1,4 +1,4 @@
-import { SpeakerRow } from './SpeakersRow'
+import { SpeakerRow } from './SpeakerRow'
 import type { Speaker } from '~/lib/types'
 import { Table } from '~/ui-core/shadcn/table/Table'
 import { TableCell } from '~/ui-core/shadcn/table/TableCell'
