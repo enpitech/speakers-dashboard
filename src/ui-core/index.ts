@@ -50,5 +50,22 @@ export {
 } from './shadcn/command'
 export { Popover, PopoverContent, PopoverTrigger } from './shadcn/popover'
 export { Badge, badgeVariants } from './shadcn/badge'
-
+export {
+  DropdownMenu,
+  DropdownMenuPortal,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+} from './shadcn/dropdown-menu'
+export { ScrollArea, ScrollBar } from './shadcn/scroll-area'
 export * from './layout'
