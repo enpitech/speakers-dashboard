@@ -1,4 +1,5 @@
 import * as z from 'zod'
+import { SocialPlatformEnum } from '~/lib/types'
 
 export const formSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -7,7 +8,30 @@ export const formSchema = z.object({
   topics: z.array(z.string()),
   languages: z.string().min(1, 'Languages are required'),
   linkedin: z.string().url('LinkedIn URL is required'),
+  socialLinks: z.array(
+    z.object({
+      platform: z.nativeEnum(SocialPlatformEnum),
+      url: z.string(),
+    }),
+  ),
 })
+
+export type FormValues = z.infer<typeof formSchema>
+
+export type SocialPlatform =
+  (typeof SocialPlatformEnum)[keyof typeof SocialPlatformEnum]
+
+export const SocialPlatformAliases: Record<SocialPlatform, string> = {
+  [SocialPlatformEnum.LINKEDIN]: 'LinkedIn',
+  [SocialPlatformEnum.TWITTER]: 'Twitter',
+  [SocialPlatformEnum.INSTAGRAM]: 'Instagram',
+  [SocialPlatformEnum.FACEBOOK]: 'Facebook',
+  [SocialPlatformEnum.YOUTUBE]: 'YouTube',
+  [SocialPlatformEnum.GITHUB]: 'GitHub',
+  [SocialPlatformEnum.TIKTOK]: 'TikTok',
+  [SocialPlatformEnum.SPOTIFY]: 'Spotify',
+  [SocialPlatformEnum.DISCORD]: 'Discord',
+}
 
 export const formFields = [
   {
@@ -16,7 +40,6 @@ export const formFields = [
     type: 'text',
     placeholder: 'Enter your name',
   },
-
   {
     name: 'location',
     label: 'Location',
@@ -34,11 +57,5 @@ export const formFields = [
     label: 'Languages',
     type: 'text',
     placeholder: 'Enter your languages',
-  },
-  {
-    name: 'linkedin',
-    label: 'LinkedIn',
-    type: 'text',
-    placeholder: 'Enter your LinkedIn URL',
   },
 ] as const
