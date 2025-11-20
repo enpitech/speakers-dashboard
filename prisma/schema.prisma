@@ -26,13 +26,20 @@ model Speaker {
   socialLinks SocialLink[]
   bio String?
   topics String[]
+  topicsField Topic[]
   languages String[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   isActive Boolean? @default(true)
 }
 
-
+model Topic {
+  id String @id @default(uuid())
+  title String @unique
+  speakers Speaker[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
 model SocialLink {
   id String @id @default(uuid())
   platform SocialPlatform
