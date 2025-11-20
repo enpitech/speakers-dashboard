@@ -15,8 +15,7 @@
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "seed": "npx tsx prisma/seed.ts",
-    "data-migration:add-topics-field-column": "npx tsx prisma/migrations/add-topics-field-column.ts"
+    "seed": "npx tsx prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.19.0",
