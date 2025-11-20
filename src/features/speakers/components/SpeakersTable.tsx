@@ -18,24 +18,23 @@ interface SpeakersTableViewProps {
 export function SpeakersTable({ speakers, isLoading }: SpeakersTableViewProps) {
   return (
     <Table
-    
       data={speakers}
       isLoading={isLoading}
       renderRow={(speaker) => (
         <SpeakerRow
           key={speaker.id}
-        speaker={speaker}
+          speaker={speaker}
           columnWidths={columnWidths}
         />
       )}
-        headers={
-          <>
-            <TableCell>Name</TableCell>
-            <TableCell>Topics</TableCell>
-            <TableCell>Languages</TableCell>
-            <TableCell>Social</TableCell>
-            </>
-        }
+      headers={
+        <>
+          <TableCell>Name</TableCell>
+          <TableCell>Topics</TableCell>
+          <TableCell>Languages</TableCell>
+          <TableCell>Social</TableCell>
+        </>
+      }
       emptyMessage="No speakers found"
       aria-label="Speakers list"
       className="w-full min-h-[500px]  shadow-sm rounded-lg overflow-hidden"

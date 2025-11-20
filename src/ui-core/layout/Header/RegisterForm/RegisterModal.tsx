@@ -18,8 +18,8 @@ export function RegisterModal() {
       <DialogContent className="w-screen">
         <DialogHeader>
           <DialogTitle>Register as a lecturer</DialogTitle>
-          <DialogDescription className="hidden">
-            Register as a lecturer
+          <DialogDescription>
+            Fill in the following details to register as a lecturer.
           </DialogDescription>
         </DialogHeader>
         <RegisterForm />

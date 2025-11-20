@@ -8,8 +8,5 @@
   "git": true,
   "version": 1,
   "framework": "react-cra",
-  "chosenAddOns": [
-    "eslint",
-    "start"
-  ]
+  "chosenAddOns": ["eslint", "start"]
 }

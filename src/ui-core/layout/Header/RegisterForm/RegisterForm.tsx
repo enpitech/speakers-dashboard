@@ -7,10 +7,7 @@ import {
   Button,
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
-  CardHeader,
-  CardTitle,
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
@@ -49,6 +46,9 @@ export function RegisterForm() {
     validators: {
       onSubmit: formSchema,
     },
+    onSubmit: (values) => {
+      console.log({ values })
+    },
   })
 
   if (!data) {
@@ -58,19 +58,13 @@ export function RegisterForm() {
   return (
     <ScrollArea className="h-128">
       <Card>
-        <CardHeader>
-          <CardTitle>Register as a lecturer</CardTitle>
-          <CardDescription>
-            Fill in the following details to register as a lecturer.
-          </CardDescription>
-        </CardHeader>
         <CardContent>
           <form
             id="register-form"
             onSubmit={(e) => {
               e.preventDefault()
+              e.stopPropagation()
               form.handleSubmit()
-              alert('Form submitted')
             }}
           >
             <div className="grid md:grid-cols-2 grid-cols-1 gap-4 items-end">
@@ -233,6 +227,7 @@ export function RegisterForm() {
                         loading={createTopicMutate.isPending}
                         onChange={field.handleChange}
                       />
+                      <FieldError errors={field.state.meta.errors} />
                     </Field>
                   )
                 }}

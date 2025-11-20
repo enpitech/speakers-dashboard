@@ -37,6 +37,14 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.TWITTER,
         url: 'https://twitter.com/sarahcodes',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/sarah-chen-tech',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/sarahcodes',
+      },
       { platform: SocialPlatform.GITHUB, url: 'https://github.com/sarahchen' },
     ],
     topics: [
@@ -71,6 +79,14 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.TWITTER,
         url: 'https://twitter.com/marcus_codes',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/marcusjohnson',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/marcus_codes',
+      },
     ],
   },
   {
@@ -90,6 +106,10 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@priyaml',
     bio: 'AI researcher and educator passionate about making machine learning accessible and ethical. TEDx speaker.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/priyasharma',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/priyasharma',
@@ -123,6 +143,14 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.TWITTER,
         url: 'https://twitter.com/alex_security',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/alexrivera',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/alex_security',
+      },
       { platform: SocialPlatform.GITHUB, url: 'https://github.com/alexsec' },
     ],
   },
@@ -143,6 +171,18 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@emmadesigns',
     bio: 'UX designer and accessibility advocate. Lead designer at a major fintech company. Author and workshop facilitator.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/emmalindstrom',
+      },
+      {
+        platform: SocialPlatform.INSTAGRAM,
+        url: 'https://instagram.com/emma_ux',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/emma_designs',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/emmalindstrom',
@@ -186,6 +226,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.YOUTUBE,
         url: 'https://youtube.com/@kenjigamedev',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/kenjitanaka',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/kenji_gamedev',
+      },
+      {
+        platform: SocialPlatform.YOUTUBE,
+        url: 'https://youtube.com/@kenjigamedev',
+      },
     ],
   },
   {
@@ -205,6 +257,14 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@oliviacloud',
     bio: 'Cloud architect and AWS certified solutions architect. Speaker at re:Invent and CloudNativeCon.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/oliviamartinez',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/olivia_cloud',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/oliviamartinez',
@@ -240,6 +300,14 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.TWITTER,
         url: 'https://twitter.com/david_web3',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/davidkim',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/david_web3',
+      },
       { platform: SocialPlatform.GITHUB, url: 'https://github.com/davidkim' },
       { platform: SocialPlatform.DISCORD, url: 'https://discord.com/davidkim' },
     ],
@@ -261,6 +329,18 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@sophiedevops',
     bio: 'DevOps engineer and automation enthusiast. Speaker at DevOps Days and KubeCon. Terraform certified.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/sophiedubois',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/sophie_devops',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/sophiedubois',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/sophiedubois',
@@ -304,6 +384,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.GITHUB,
         url: 'https://github.com/ahmedhassan',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/ahmedhassan',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/ahmed_ios',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/ahmedhassan',
+      },
     ],
   },
   {
@@ -323,6 +415,14 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@bellafrontend',
     bio: 'Frontend developer and CSS wizard. Core team member of Vue.js. International conference speaker.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/isabellacosta',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/bella_codes',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/isabellacosta',
@@ -359,6 +459,14 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.TWITTER,
         url: 'https://twitter.com/thomas_db',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/thomasmueller',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/thomas_db',
+      },
     ],
   },
   {
@@ -378,6 +486,18 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@yukiux',
     bio: 'Product designer and UX researcher. Specializes in user-centered design methodologies. Workshop facilitator.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/yukinakamura',
+      },
+      {
+        platform: SocialPlatform.INSTAGRAM,
+        url: 'https://instagram.com/yuki_ux',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/yuki_design',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/yukinakamura',
@@ -421,6 +541,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.GITHUB,
         url: 'https://github.com/carlosrodriguez',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/carlosrodriguez',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/carlos_flutter',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/carlosrodriguez',
+      },
     ],
   },
   {
@@ -440,6 +572,18 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@racheldata',
     bio: 'Data engineer specializing in large-scale data pipelines. Speaker at Strata Data Conference. AWS Big Data certified.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/rachelgreen',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/rachel_data',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/rachelgreen',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/rachelgreen',
@@ -479,6 +623,14 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.TWITTER,
         url: 'https://twitter.com/lars_agile',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/larsandersen',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/lars_agile',
+      },
     ],
   },
   {
@@ -498,6 +650,14 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@aishaseec',
     bio: 'Security researcher and penetration tester. OSCP certified. Advocates for cybersecurity education in Africa.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/aishaosman',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/aisha_sec',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/aishaosman',
@@ -526,6 +686,18 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@nathanrust',
     bio: 'Systems programmer and Rust evangelist. Core contributor to Rust projects. Speaker at RustConf and FOSDEM.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/nathanbrooks',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/nathan_rust',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/nathanbrooks',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/nathanbrooks',
@@ -569,6 +741,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.INSTAGRAM,
         url: 'https://instagram.com/mei_visualizes',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/meilinwong',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/mei_dataviz',
+      },
+      {
+        platform: SocialPlatform.INSTAGRAM,
+        url: 'https://instagram.com/mei_visualizes',
+      },
     ],
   },
   {
@@ -588,6 +772,14 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@diegopython',
     bio: 'Python developer and backend specialist. Core contributor to Django. PyCon speaker and organizer.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/diegosilva',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/diego_python',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/diegosilva',
@@ -620,6 +812,10 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/annakowalski',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/annakowalski',
+      },
       { platform: SocialPlatform.TWITTER, url: 'https://twitter.com/anna_qa' },
     ],
   },
@@ -640,6 +836,18 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@ryangraphql',
     bio: 'GraphQL specialist and API architect. Speaker at GraphQL Summit. Creator of educational content for developers.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/ryanoconnor',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/ryan_graphql',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/ryanoconnor',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/ryanoconnor',
@@ -683,6 +891,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.GITHUB,
         url: 'https://github.com/fatimaalrashid',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/fatimaalrashid',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/fatima_ai',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/fatimaalrashid',
+      },
     ],
   },
   {
@@ -702,6 +922,18 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@lucasiot',
     bio: 'IoT engineer and maker. Builds innovative connected devices. Speaker at IoT conferences and Maker Faires.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/lucasfernandes',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/lucas_iot',
+      },
+      {
+        platform: SocialPlatform.YOUTUBE,
+        url: 'https://youtube.com/@lucasiot',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/lucasfernandes',
@@ -745,6 +977,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.GITHUB,
         url: 'https://github.com/hannahschmidt',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/hannahschmidt',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/hannah_angular',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/hannahschmidt',
+      },
     ],
   },
   {
@@ -764,6 +1008,14 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@jamesandroid',
     bio: 'Android developer and tech community builder. Google Developer Expert. Advocates for tech education in Africa.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/jamesokoye',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/james_android',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/jamesokoye',
@@ -792,6 +1044,18 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@elenafullstack',
     bio: 'Full-stack developer and technical educator. Creates tutorials and courses for aspiring developers. Conference speaker.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/elenapopescu',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/elena_fullstack',
+      },
+      {
+        platform: SocialPlatform.YOUTUBE,
+        url: 'https://youtube.com/@elenafullstack',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/elenapopescu',
@@ -835,6 +1099,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.GITHUB,
         url: 'https://github.com/mohammadreza',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/mohammadreza',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/mohammad_java',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/mohammadreza',
+      },
     ],
   },
   {
@@ -854,6 +1130,14 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@victorialeads',
     bio: 'CTO and engineering leader. Passionate about building high-performing teams and inclusive tech culture. Keynote speaker.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/victorialee',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/victoria_leads',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/victorialee',
@@ -893,6 +1177,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.GITHUB,
         url: 'https://github.com/pablohernandez',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/pablohernandez',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/pablo_data',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/pablohernandez',
+      },
     ],
   },
   {
@@ -912,6 +1208,14 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@siticloud',
     bio: 'Cloud engineer and SRE specialist. Google Cloud certified. Helps organizations migrate to cloud infrastructure.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/sitinurhaliza',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/siti_cloud',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/sitinurhaliza',
@@ -951,6 +1255,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.GITHUB,
         url: 'https://github.com/erikjohansson',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/erikjohansson',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/erik_opensource',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/erikjohansson',
+      },
     ],
   },
   {
@@ -970,6 +1286,14 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@ameliadocs',
     bio: 'Technical writer and documentation specialist. Advocates for better developer documentation. Speaker at Write the Docs.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/ameliawatson',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/amelia_docs',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/ameliawatson',
@@ -1010,6 +1334,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.GITHUB,
         url: 'https://github.com/hassanelamin',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/hassanelamin',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/hassan_web',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/hassanelamin',
+      },
     ],
   },
   {
@@ -1029,6 +1365,14 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@sofiastartup',
     bio: 'Startup CTO and product strategist. Built and scaled multiple tech products. Mentor at startup accelerators.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/sofiapapadopoulos',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/sofia_startup',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/sofiapapadopoulos',
@@ -1068,6 +1412,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.GITHUB,
         url: 'https://github.com/benjaminnyamsi',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/benjaminnyamsi',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/benjamin_rn',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/benjaminnyamsi',
+      },
     ],
   },
   {
@@ -1095,6 +1451,14 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.TWITTER,
         url: 'https://twitter.com/ingrid_saas',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/ingridhansen',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/ingrid_saas',
+      },
     ],
   },
   {
@@ -1114,6 +1478,14 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@rajmlops',
     bio: 'ML engineer specializing in production ML systems. Helps teams deploy and scale machine learning models. Conference speaker.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/rajpatel',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/raj_mlops',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/rajpatel',
@@ -1154,6 +1526,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.GITHUB,
         url: 'https://github.com/marinakovac',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/marinakovac',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/marina_gamedev',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/marinakovac',
+      },
     ],
   },
   {
@@ -1181,6 +1565,14 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.TWITTER,
         url: 'https://twitter.com/samuel_fintech',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/samuelnguyen',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/samuel_fintech',
+      },
     ],
   },
   {
@@ -1200,6 +1592,14 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@leiladesign',
     bio: 'UI designer and design system specialist. Creates scalable design systems for large organizations. Workshop facilitator.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/leilamoradi',
+      },
+      {
+        platform: SocialPlatform.INSTAGRAM,
+        url: 'https://instagram.com/leila_design',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/leilamoradi',
@@ -1240,6 +1640,18 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.GITHUB,
         url: 'https://github.com/oscarlundgren',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/oscarlundgren',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/oscar_systems',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/oscarlundgren',
+      },
     ],
   },
   {
@@ -1267,6 +1679,14 @@ const speakers: SpeakerSeedData[] = [
         platform: SocialPlatform.TWITTER,
         url: 'https://twitter.com/zara_techwriter',
       },
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/zarakhan',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/zara_techwriter',
+      },
     ],
   },
   {
@@ -1286,6 +1706,22 @@ const speakers: SpeakerSeedData[] = [
     sessionsUrl: 'https://youtube.com/@tomasperf',
     bio: 'Web performance consultant obsessed with speed. Helps companies optimize their web applications. Chrome DevRel contributor.',
     socialLinks: [
+      {
+        platform: SocialPlatform.LINKEDIN,
+        url: 'https://linkedin.com/in/tomasibanez',
+      },
+      {
+        platform: SocialPlatform.TWITTER,
+        url: 'https://twitter.com/tomas_webperf',
+      },
+      {
+        platform: SocialPlatform.GITHUB,
+        url: 'https://github.com/tomasibanez',
+      },
+      {
+        platform: SocialPlatform.YOUTUBE,
+        url: 'https://youtube.com/@tomasperf',
+      },
       {
         platform: SocialPlatform.LINKEDIN,
         url: 'https://linkedin.com/in/tomasibanez',

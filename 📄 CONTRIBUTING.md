@@ -15,14 +15,12 @@ This license allows open collaboration but restricts commercial hosting and SaaS
    governed by the same Business Source License (BSL) used in this repository.
 
 2. **Allowed Uses**
-
    - You may fork and modify the repository for personal, educational,
      research, or internal business purposes.
    - You may submit bug fixes, improvements, or new features through pull
      requests.
 
 3. **Prohibited Uses**
-
    - You may not offer the software or any derivative as a hosted or
      Software-as-a-Service (SaaS) product that competes with Speakers Dashboard
      or other Enpitech products.
@@ -30,7 +28,6 @@ This license allows open collaboration but restricts commercial hosting and SaaS
      this repository except under the same license.
 
 4. **Code Standards**
-
    - Use clear, consistent TypeScript and React code style.
    - Follow existing folder and component conventions.
    - Include documentation or comments for all nontrivial logic.

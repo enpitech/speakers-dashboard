@@ -138,6 +138,10 @@ export const createTopic = createServerFn({
         data: {
           title: data.title,
         },
+        select: {
+          id: true,
+          title: true,
+        },
       })
       return {
         topic: mapTopicToValueLabel(topic),

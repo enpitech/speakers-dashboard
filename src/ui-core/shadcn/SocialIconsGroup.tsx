@@ -1,14 +1,19 @@
-import { Link } from '@tanstack/react-router';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger  } from './tooltip';
-import type { SocialLink,  } from '~/lib/types';
-import { SocialIcon  } from '~/ui-core';
+import { Link } from '@tanstack/react-router'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from './tooltip'
+import type { SocialLink } from '~/lib/types'
+import { SocialIcon } from '~/ui-core'
 
 interface SocialIconsGroupProps {
-  links: SocialLink[];
-  className?: string;
-  iconSize?: 'sm' | 'md' | 'lg';
-  maxIcons?: number;
-  showCount?: boolean;
+  links: SocialLink[]
+  className?: string
+  iconSize?: 'sm' | 'md' | 'lg'
+  maxIcons?: number
+  showCount?: boolean
 }
 
 export function SocialIconsGroup({
@@ -17,10 +22,11 @@ export function SocialIconsGroup({
   maxIcons,
   showCount = false,
 }: SocialIconsGroupProps) {
-
-  const displayLinks = links.slice(0, maxIcons).filter(link => link.url !== '');
-  const remainingIcons = links.slice(maxIcons);
-  const remainingCount = remainingIcons.length;
+  const displayLinks = links
+    .slice(0, maxIcons)
+    .filter((link) => link.url !== '')
+  const remainingIcons = links.slice(maxIcons)
+  const remainingCount = remainingIcons.length
   return (
     <div className={`flex flex-wrap gap-2 ${className}`}>
       {displayLinks.map((link, index) => (
@@ -46,7 +52,7 @@ export function SocialIconsGroup({
         </TooltipProvider>
       )}
     </div>
-  );
+  )
 }
 const SocialIconLink = ({ link }: { link: SocialLink }) => {
   return (
@@ -59,5 +65,5 @@ const SocialIconLink = ({ link }: { link: SocialLink }) => {
     >
       <SocialIcon platform={link.platform} />
     </Link>
-  );
-};
+  )
+}

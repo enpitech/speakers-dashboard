@@ -1,29 +1,34 @@
-import { cn } from '~/lib/utils';
+import { cn } from '~/lib/utils'
 
 interface AvatarProps {
-  src?: string | null;
-  alt: string;
-  size?: 'sm' | 'md' | 'lg';
-  fallback?: string;
-  className?: string;
+  src?: string | null
+  alt: string
+  size?: 'sm' | 'md' | 'lg'
+  fallback?: string
+  className?: string
 }
 
 const getFallbackInitials = (name: string) => {
   return name
     .split(' ')
-    .map(word => word[0])
+    .map((word) => word[0])
     .join('')
     .toUpperCase()
-    .slice(0, 2);
-};
+    .slice(0, 2)
+}
 
-export function Avatar({ src, alt, size = 'md', fallback = 'User', className }: AvatarProps) {
-
+export function Avatar({
+  src,
+  alt,
+  size = 'md',
+  fallback = 'User',
+  className,
+}: AvatarProps) {
   const sizeClasses = {
     sm: 'h-8 w-8 text-sm',
     md: 'h-12 w-12 text-base',
     lg: 'h-16 w-16 text-lg',
-  };
+  }
 
   return (
     <div
@@ -31,7 +36,7 @@ export function Avatar({ src, alt, size = 'md', fallback = 'User', className }: 
         'relative rounded-full overflow-hidden ring-2 ring-[var(--color-background-1)]',
         'bg-[var(--color-background-2)]',
         sizeClasses[size],
-        className
+        className,
       )}
     >
       {src ? (
@@ -51,5 +56,5 @@ export function Avatar({ src, alt, size = 'md', fallback = 'User', className }: 
         </div>
       )}
     </div>
-  );
+  )
 }
