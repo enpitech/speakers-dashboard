@@ -20,8 +20,6 @@ export function Table<T>({
   className,
   'aria-label': ariaLabel = 'Data table',
 }: TableProps<T>) {
-
- 
   return (
     <div className="w-full overflow-x-auto relative">
       <div
@@ -35,27 +33,19 @@ export function Table<T>({
         role="table"
         aria-label={ariaLabel}
       >
-        {headers && (
-          <Row
+        {headers && <Row className={cn('border-b')}>{headers}</Row>}
+        {data.length > 0 && (
+          <div
+            role="rowgroup"
             className={cn(
-              'border-b',
+              'divide-y',
+              'overflow-y-auto',
+              'max-h-[500px]',
+              isLoading && 'blur-sm',
             )}
           >
-            {headers}
-          </Row>
-        )}
-{data.length > 0 && (
-        <div
-          role="rowgroup"
-          className={cn(
-            'divide-y',
-            'overflow-y-auto',
-            'max-h-[500px]',
-            isLoading && 'blur-sm',
-          )}
-        >
-          {data.map((item, index) => renderRow(item, index))}
-        </div>
+            {data.map((item, index) => renderRow(item, index))}
+          </div>
         )}
         {data.length === 0 && (
           <div className="flex items-center justify-center h-full mt-4">

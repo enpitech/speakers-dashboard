@@ -1,4 +1,4 @@
-import { Input,Spinner } from '~/ui-core'
+import { Input, Spinner } from '~/ui-core'
 
 type SearchBarProps = {
   search: string
@@ -14,7 +14,6 @@ export function SearchBar({ search, setSearch, isFetching }: SearchBarProps) {
         placeholder="Search speakers by name, topics, languages, etc."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        disabled={isFetching}
       />
       {isFetching && <Spinner className="absolute right-2 top-2 " size="sm" />}
     </div>

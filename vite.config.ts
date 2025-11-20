@@ -16,6 +16,6 @@ const config = defineConfig({
     nitroV2Plugin({ preset: 'node-server' }),
     viteReact(),
   ],
-})  
+})
 
 export default config
