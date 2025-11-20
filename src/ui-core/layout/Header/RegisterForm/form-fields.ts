@@ -4,7 +4,7 @@ export const formSchema = z.object({
   name: z.string().min(1, 'Name is required'),
   location: z.string().min(1, 'Location is required'),
   experience: z.string().min(1, 'Experience is required'),
-  topics: z.array(z.string()),
+  topics: z.array(z.string()).min(1, 'At least one topic is required'),
   languages: z.string().min(1, 'Languages are required'),
   linkedin: z.string().url('LinkedIn URL is required'),
 })
