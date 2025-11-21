@@ -1,4 +1,3 @@
-
 import { useForm } from '@tanstack/react-form'
 import { formSchema } from '../components/RegisterForm/form-fields'
 import type { FormValues } from '../components/RegisterForm/form-fields'
