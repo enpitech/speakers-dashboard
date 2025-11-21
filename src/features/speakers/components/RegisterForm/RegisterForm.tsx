@@ -1,6 +1,5 @@
-import { useForm } from '@tanstack/react-form'
-
-import { formFields, formSchema } from './form-fields'
+import { useRegisterForm } from '../../hooks/useRegisterForm'
+import { formFields } from './form-fields'
 import {
   Button,
   Card,
@@ -12,35 +11,17 @@ import {
   Input,
 } from '~/ui-core'
 import { Combobox } from '~/ui-core/shadcn/combobox'
-import {
-  useCreateTopic,
-  useTopics,
-} from '~/features/speakers/dal/speakers.resource'
 
-export function RegisterForm() {
-  const { data } = useTopics()
-  const createTopicMutate = useCreateTopic()
+interface Props {
+  topics?: { value: string; label: string }[]
+  createTopic: (
+    title: string,
+  ) => Promise<{ topic: { value: string; label: string } }>
+  isCreatingTopic: boolean
+}
 
-  const form = useForm({
-    defaultValues: {
-      name: '',
-      location: '',
-      experience: '',
-      languages: '',
-      linkedin: '',
-      topics: [] as string[],
-    },
-    validators: {
-      onSubmit: formSchema,
-    },
-    onSubmit: (values) => {
-      console.log({ values })
-    },
-  })
-
-  if (!data) {
-    return null
-  }
+export function RegisterForm({ topics, createTopic, isCreatingTopic }: Props) {
+  const form = useRegisterForm()
 
   return (
     <Card className="shadow-none">
@@ -77,36 +58,37 @@ export function RegisterForm() {
               />
             ))}
           </div>
-          <div className="mt-4">
-            <form.Field
-              name="topics"
-              mode="array"
-              children={(field) => {
-                return (
-                  <Field>
-                    <FieldLabel htmlFor="topics">Topics</FieldLabel>
-                    <Combobox
-                      multiple
-                      placeholder="Select topics..."
-                      selected={field.state.value}
-                      options={data.topics.map((t) => ({
-                        value: t.label,
-                        label: t.label,
-                      }))}
-                      onSave={async (value) => {
-                        const result =
-                          await createTopicMutate.mutateAsync(value)
-                        return result.topic
-                      }}
-                      loading={createTopicMutate.isPending}
-                      onChange={field.handleChange}
-                    />
-                    <FieldError errors={field.state.meta.errors} />
-                  </Field>
-                )
-              }}
-            />
-          </div>
+          {topics && (
+            <div className="mt-4">
+              <form.Field
+                name="topics"
+                mode="array"
+                children={(field) => {
+                  return (
+                    <Field>
+                      <FieldLabel htmlFor="topics">Topics</FieldLabel>
+                      <Combobox
+                        multiple
+                        placeholder="Select topics..."
+                        selected={field.state.value}
+                        options={topics.map((t) => ({
+                          value: t.label,
+                          label: t.label,
+                        }))}
+                        onSave={async (value) => {
+                          const result = await createTopic(value)
+                          return result.topic
+                        }}
+                        loading={isCreatingTopic}
+                        onChange={field.handleChange}
+                      />
+                      <FieldError errors={field.state.meta.errors} />
+                    </Field>
+                  )
+                }}
+              />
+            </div>
+          )}
         </form>
       </CardContent>
       <CardFooter>
