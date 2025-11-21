@@ -1,9 +1,7 @@
-import { useForm, useStore } from '@tanstack/react-form'
-
+import { useStore } from '@tanstack/react-form'
 import { X } from 'lucide-react'
-import { SocialPlatformAliases, formFields, formSchema } from './form-fields'
-import type { FormValues } from './form-fields'
-
+import { useRegisterForm } from '../../hooks/useRegisterForm'
+import { SocialPlatformAliases, formFields } from './form-fields'
 import {
   Button,
   Card,
@@ -23,44 +21,19 @@ import {
   ScrollArea,
 } from '~/ui-core'
 import { Combobox } from '~/ui-core/shadcn/combobox'
-import {
-  useCreateTopic,
-  useTopics,
-} from '~/features/speakers/dal/speakers.resource'
 import { SocialPlatformEnum } from '~/lib/types'
 
-export function RegisterForm() {
-  const { data } = useTopics()
-  const createTopicMutate = useCreateTopic()
+interface Props {
+  topics?: { value: string; label: string }[]
+  createTopic: (
+    title: string,
+  ) => Promise<{ topic: { value: string; label: string } }>
+  isCreatingTopic: boolean
+}
 
-  const form = useForm({
-    defaultValues: {
-      name: '',
-      location: '',
-      experience: '',
-      languages: '',
-      topics: [] as string[],
-      socialLinks: [
-        {
-          platform: SocialPlatformEnum.LINKEDIN,
-          url: '',
-        },
-      ],
-    } as FormValues,
-    validators: {
-      onSubmit: formSchema,
-    },
-    onSubmit: (values) => {
-      // eslint-disable-next-line no-console
-      console.log({ values })
-    },
-  })
-
+export function RegisterForm({ topics, createTopic, isCreatingTopic }: Props) {
+  const form = useRegisterForm()
   const socialLinks = useStore(form.store, (state) => state.values.socialLinks)
-
-  if (!data) {
-    return null
-  }
 
   return (
     <ScrollArea className="h-100">
@@ -203,36 +176,37 @@ export function RegisterForm() {
                 />
               ))}
             </div>
-            <div className="mt-4">
-              <form.Field
-                name="topics"
-                mode="array"
-                children={(field) => {
-                  return (
-                    <Field>
-                      <FieldLabel htmlFor="topics">Topics</FieldLabel>
-                      <Combobox
-                        multiple
-                        placeholder="Select topics..."
-                        selected={field.state.value}
-                        options={data.topics.map((t) => ({
-                          value: t.label,
-                          label: t.label,
-                        }))}
-                        onSave={async (value) => {
-                          const result =
-                            await createTopicMutate.mutateAsync(value)
-                          return result.topic
-                        }}
-                        loading={createTopicMutate.isPending}
-                        onChange={field.handleChange}
-                      />
-                      <FieldError errors={field.state.meta.errors} />
-                    </Field>
-                  )
-                }}
-              />
-            </div>
+            {topics && (
+              <div className="mt-4">
+                <form.Field
+                  name="topics"
+                  mode="array"
+                  children={(field) => {
+                    return (
+                      <Field>
+                        <FieldLabel htmlFor="topics">Topics</FieldLabel>
+                        <Combobox
+                          multiple
+                          placeholder="Select topics..."
+                          selected={field.state.value}
+                          options={topics.map((t) => ({
+                            value: t.label,
+                            label: t.label,
+                          }))}
+                          onSave={async (value) => {
+                            const result = await createTopic(value)
+                            return result.topic
+                          }}
+                          loading={isCreatingTopic}
+                          onChange={field.handleChange}
+                        />
+                        <FieldError errors={field.state.meta.errors} />
+                      </Field>
+                    )
+                  }}
+                />
+              </div>
+            )}
           </form>
         </CardContent>
         <CardFooter>

@@ -1,3 +1,5 @@
+import { useTopics } from '../../api/get-topics'
+import { useCreateTopic } from '../../api/create-topic'
 import {
   Dialog,
   DialogContent,
@@ -10,6 +12,9 @@ import {
 import { Button } from '~/ui-core/shadcn/Button'
 
 export function RegisterModal() {
+  const topicsQuery = useTopics()
+  const createTopicMutate = useCreateTopic()
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -22,7 +27,11 @@ export function RegisterModal() {
             Fill in the following details to register as a lecturer.
           </DialogDescription>
         </DialogHeader>
-        <RegisterForm />
+        <RegisterForm
+          topics={topicsQuery.data?.topics}
+          createTopic={createTopicMutate.mutateAsync}
+          isCreatingTopic={createTopicMutate.isPending}
+        />
       </DialogContent>
     </Dialog>
   )

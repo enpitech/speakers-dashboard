@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { RegisterModal } from './RegisterForm/RegisterModal'
+import { RegisterModal } from '../../../features/speakers/components/RegisterForm/RegisterModal'
 
 export function Header() {
   return (
