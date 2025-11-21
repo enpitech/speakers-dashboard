@@ -68,4 +68,16 @@ export {
   DropdownMenuSubContent,
 } from './shadcn/dropdown-menu'
 export { ScrollArea, ScrollBar } from './shadcn/scroll-area'
+
+export {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupText,
+  InputGroupInput,
+  InputGroupTextarea,
+} from './shadcn/input-group'
+
+export { Textarea } from './shadcn/textarea'
+
 export * from './layout'

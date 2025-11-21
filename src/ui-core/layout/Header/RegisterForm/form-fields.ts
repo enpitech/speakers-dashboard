@@ -11,7 +11,7 @@ export const formSchema = z.object({
   socialLinks: z.array(
     z.object({
       platform: z.nativeEnum(SocialPlatformEnum),
-      url: z.string(),
+      url: z.string().url('URL is required'),
     }),
   ),
 })

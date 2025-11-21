@@ -1,5 +1,6 @@
-import { useForm } from '@tanstack/react-form'
+import { useForm, useStore } from '@tanstack/react-form'
 
+import { X } from 'lucide-react'
 import { SocialPlatformAliases, formFields, formSchema } from './form-fields'
 import type { FormValues } from './form-fields'
 
@@ -16,6 +17,9 @@ import {
   FieldError,
   FieldLabel,
   Input,
+  InputGroup,
+  InputGroupButton,
+  InputGroupInput,
   ScrollArea,
 } from '~/ui-core'
 import { Combobox } from '~/ui-core/shadcn/combobox'
@@ -47,16 +51,19 @@ export function RegisterForm() {
       onSubmit: formSchema,
     },
     onSubmit: (values) => {
+      // eslint-disable-next-line no-console
       console.log({ values })
     },
   })
+
+  const socialLinks = useStore(form.store, (state) => state.values.socialLinks)
 
   if (!data) {
     return null
   }
 
   return (
-    <ScrollArea className="h-128">
+    <ScrollArea className="h-100">
       <Card>
         <CardContent>
           <form
@@ -92,116 +99,109 @@ export function RegisterForm() {
               ))}
 
               <form.Field
-                name="socialLinks[0]"
-                children={(field) => {
+                name="socialLinks[0].url"
+                children={(linkedinField) => {
                   return (
-                    <Field key={field.name}>
-                      <FieldLabel htmlFor={field.name}>LinkedIn</FieldLabel>
+                    <Field key={linkedinField.name}>
+                      <FieldLabel htmlFor={linkedinField.name}>
+                        LinkedIn
+                      </FieldLabel>
                       <Input
-                        id={field.name}
-                        name={field.name}
+                        id={linkedinField.name}
+                        name={linkedinField.name}
                         placeholder="Enter your LinkedIn URL"
                         onChange={(e) =>
-                          field.handleChange({
-                            url: e.target.value,
-                            platform: SocialPlatformEnum.LINKEDIN,
-                          })
+                          linkedinField.handleChange(e.target.value)
                         }
                       />
-                      <FieldError errors={field.state.meta.errors} />
+                      <FieldError errors={linkedinField.state.meta.errors} />
+
+                      <form.Field
+                        name="socialLinks"
+                        mode="array"
+                        children={(field) => {
+                          return (
+                            <DropdownMenu>
+                              <DropdownMenuTrigger asChild>
+                                <span className="text-xs text-muted-foreground cursor-pointer hover:underline">
+                                  + Add more social links
+                                </span>
+                              </DropdownMenuTrigger>
+                              <DropdownMenuContent>
+                                {Object.values(SocialPlatformEnum)
+                                  .filter(
+                                    (p) => p !== SocialPlatformEnum.LINKEDIN,
+                                  )
+                                  .map((platform) => (
+                                    <DropdownMenuCheckboxItem
+                                      key={platform}
+                                      checked={field.state.value.some(
+                                        (socialLink) =>
+                                          socialLink.platform === platform,
+                                      )}
+                                      onCheckedChange={(checked) => {
+                                        if (checked) {
+                                          field.pushValue({
+                                            platform,
+                                            url: '',
+                                          })
+                                        } else {
+                                          field.removeValue(
+                                            field.state.value.findIndex(
+                                              (socialLink) =>
+                                                socialLink.platform ===
+                                                platform,
+                                            ),
+                                          )
+                                        }
+                                      }}
+                                    >
+                                      {SocialPlatformAliases[platform]}
+                                    </DropdownMenuCheckboxItem>
+                                  ))}
+                              </DropdownMenuContent>
+                            </DropdownMenu>
+                          )
+                        }}
+                      />
                     </Field>
                   )
                 }}
               />
 
-              <form.Field
-                name="socialLinks"
-                mode="array"
-                children={(fieldForm) => {
-                  return (
-                    <>
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <Button type="button" variant="outline">
-                            + Add more social links
-                          </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent>
-                          {Object.values(SocialPlatformEnum)
-                            .filter((p) => p !== SocialPlatformEnum.LINKEDIN)
-                            .map((platform) => (
-                              <DropdownMenuCheckboxItem
-                                key={platform}
-                                checked={fieldForm.state.value.some(
-                                  (socialLink) =>
-                                    socialLink.platform === platform,
-                                )}
-                                onCheckedChange={(checked) => {
-                                  if (checked) {
-                                    fieldForm.pushValue({
-                                      platform,
-                                      url: '',
-                                    })
-                                  } else {
-                                    fieldForm.removeValue(
-                                      fieldForm.state.value.findIndex(
-                                        (socialLink) =>
-                                          socialLink.platform === platform,
-                                      ),
-                                    )
-                                  }
-                                }}
-                              >
-                                {SocialPlatformAliases[platform]}
-                              </DropdownMenuCheckboxItem>
-                            ))}
-                        </DropdownMenuContent>
-                      </DropdownMenu>
+              {socialLinks.slice(1).map((socialLink, index) => (
+                <form.Field
+                  key={socialLink.platform}
+                  name={`socialLinks[${index + 1}].url`}
+                  children={(field) => {
+                    return (
+                      <Field key={socialLink.platform} className="self-start">
+                        <FieldLabel htmlFor={socialLink.platform}>
+                          {SocialPlatformAliases[socialLink.platform]}
+                        </FieldLabel>
+                        <InputGroup>
+                          <InputGroupInput
+                            id={socialLink.platform}
+                            placeholder={`Enter your ${SocialPlatformAliases[socialLink.platform]} URL`}
+                            value={socialLink.url}
+                            onChange={(e) => field.handleChange(e.target.value)}
+                          />
 
-                      {fieldForm.state.value
-                        .slice(1)
-                        .map((socialLink, index) => (
-                          <Field key={socialLink.platform}>
-                            <FieldLabel htmlFor={socialLink.platform}>
-                              {SocialPlatformAliases[socialLink.platform]}
-                            </FieldLabel>
-                            <Input
-                              id={socialLink.platform}
-                              placeholder={`Enter your ${SocialPlatformAliases[socialLink.platform]} URL`}
-                              value={socialLink.url}
-                              onChange={(e) =>
-                                fieldForm.handleChange((prev) => {
-                                  return prev.map((sl) => {
-                                    if (sl.platform === socialLink.platform) {
-                                      return {
-                                        ...sl,
-                                        url: e.target.value,
-                                      }
-                                    } else {
-                                      return sl
-                                    }
-                                  })
-                                })
-                              }
-                            />
-                            <Button
-                              type="button"
-                              variant="outline"
-                              onClick={() => {
-                                const updated = [...fieldForm.state.value]
-                                updated.splice(index + 1, 1)
-                                fieldForm.setValue(updated)
-                              }}
-                            >
-                              Remove
-                            </Button>
-                            <FieldError errors={fieldForm.state.meta.errors} />
-                          </Field>
-                        ))}
-                    </>
-                  )
-                }}
-              />
+                          <InputGroupButton
+                            type="button"
+                            onClick={() => {
+                              form.removeFieldValue('socialLinks', index + 1)
+                            }}
+                          >
+                            <X size={16} />
+                          </InputGroupButton>
+                        </InputGroup>
+                        <FieldError errors={field.state.meta.errors} />
+                      </Field>
+                    )
+                  }}
+                />
+              ))}
             </div>
             <div className="mt-4">
               <form.Field
