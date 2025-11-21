@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useTopics } from '../../api/get-topics'
 import { useCreateTopic } from '../../api/create-topic'
 import {
@@ -14,9 +15,10 @@ import { Button } from '~/ui-core/shadcn/Button'
 export function RegisterModal() {
   const topicsQuery = useTopics()
   const createTopicMutate = useCreateTopic()
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button>Register as a lecturer</Button>
       </DialogTrigger>
@@ -31,6 +33,7 @@ export function RegisterModal() {
           topics={topicsQuery.data?.topics}
           createTopic={createTopicMutate.mutateAsync}
           isCreatingTopic={createTopicMutate.isPending}
+          onSuccess={() => setIsOpen(false)}
         />
       </DialogContent>
     </Dialog>

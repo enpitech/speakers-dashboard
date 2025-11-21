@@ -1,5 +1,6 @@
 import { useStore } from '@tanstack/react-form'
 import { X } from 'lucide-react'
+import { SocialPlatform } from '@prisma/client'
 import { useRegisterForm } from '../../hooks/useRegisterForm'
 import { SocialPlatformAliases, formFields } from './form-fields'
 import {
@@ -21,7 +22,6 @@ import {
   ScrollArea,
 } from '~/ui-core'
 import { Combobox } from '~/ui-core/shadcn/combobox'
-import { SocialPlatformEnum } from '~/lib/types'
 
 interface Props {
   topics?: { value: string; label: string }[]
@@ -29,14 +29,20 @@ interface Props {
     title: string,
   ) => Promise<{ topic: { value: string; label: string } }>
   isCreatingTopic: boolean
+  onSuccess: () => void
 }
 
-export function RegisterForm({ topics, createTopic, isCreatingTopic }: Props) {
-  const form = useRegisterForm()
+export function RegisterForm({
+  topics,
+  createTopic,
+  isCreatingTopic,
+  onSuccess,
+}: Props) {
+  const form = useRegisterForm(onSuccess)
   const socialLinks = useStore(form.store, (state) => state.values.socialLinks)
 
   return (
-    <ScrollArea className="h-100">
+    <ScrollArea className="h-108">
       <Card>
         <CardContent>
           <form
@@ -54,15 +60,22 @@ export function RegisterForm({ topics, createTopic, isCreatingTopic }: Props) {
                   name={fieldForm.name}
                   children={(field) => {
                     return (
-                      <Field key={fieldForm.name}>
+                      <Field key={fieldForm.name} className="self-start">
                         <FieldLabel htmlFor={fieldForm.name}>
                           {fieldForm.label}
                         </FieldLabel>
                         <Input
                           id={fieldForm.name}
+                          type={fieldForm.type}
                           name={fieldForm.name}
                           placeholder={fieldForm.placeholder}
-                          onChange={(e) => field.handleChange(e.target.value)}
+                          onChange={(e) =>
+                            field.handleChange(
+                              fieldForm.type === 'number'
+                                ? +e.target.value
+                                : e.target.value,
+                            )
+                          }
                         />
                         <FieldError errors={field.state.meta.errors} />
                       </Field>
@@ -101,10 +114,8 @@ export function RegisterForm({ topics, createTopic, isCreatingTopic }: Props) {
                                 </span>
                               </DropdownMenuTrigger>
                               <DropdownMenuContent>
-                                {Object.values(SocialPlatformEnum)
-                                  .filter(
-                                    (p) => p !== SocialPlatformEnum.LINKEDIN,
-                                  )
+                                {Object.values(SocialPlatform)
+                                  .filter((p) => p !== SocialPlatform.LINKEDIN)
                                   .map((platform) => (
                                     <DropdownMenuCheckboxItem
                                       key={platform}

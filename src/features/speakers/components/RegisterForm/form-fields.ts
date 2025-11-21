@@ -1,16 +1,19 @@
 import * as z from 'zod'
-import { SocialPlatformEnum } from '~/lib/types'
+import { SocialPlatform as PrismaSocialPlatformEnum } from '@prisma/client'
 
 export const formSchema = z.object({
   name: z.string().min(1, 'Name is required'),
+  email: z.string().email('Invalid email'),
+  phone: z
+    .string()
+    .regex(/^\d{3}-\d{7}$/, 'Phone must be in the format XXX-XXXXXXX'),
   location: z.string().min(1, 'Location is required'),
-  experience: z.string().min(1, 'Experience is required'),
   topics: z.array(z.string()).min(1, 'At least one topic is required'),
   languages: z.string().min(1, 'Languages are required'),
-  linkedin: z.string().url('LinkedIn URL is required'),
+  yearsOfExperience: z.number().min(0, 'Years of experience must be a number'),
   socialLinks: z.array(
     z.object({
-      platform: z.nativeEnum(SocialPlatformEnum),
+      platform: z.nativeEnum(PrismaSocialPlatformEnum),
       url: z.string().url('URL is required'),
     }),
   ),
@@ -19,18 +22,18 @@ export const formSchema = z.object({
 export type FormValues = z.infer<typeof formSchema>
 
 export type SocialPlatform =
-  (typeof SocialPlatformEnum)[keyof typeof SocialPlatformEnum]
+  (typeof PrismaSocialPlatformEnum)[keyof typeof PrismaSocialPlatformEnum]
 
 export const SocialPlatformAliases: Record<SocialPlatform, string> = {
-  [SocialPlatformEnum.LINKEDIN]: 'LinkedIn',
-  [SocialPlatformEnum.TWITTER]: 'Twitter',
-  [SocialPlatformEnum.INSTAGRAM]: 'Instagram',
-  [SocialPlatformEnum.FACEBOOK]: 'Facebook',
-  [SocialPlatformEnum.YOUTUBE]: 'YouTube',
-  [SocialPlatformEnum.GITHUB]: 'GitHub',
-  [SocialPlatformEnum.TIKTOK]: 'TikTok',
-  [SocialPlatformEnum.SPOTIFY]: 'Spotify',
-  [SocialPlatformEnum.DISCORD]: 'Discord',
+  [PrismaSocialPlatformEnum.LINKEDIN]: 'LinkedIn',
+  [PrismaSocialPlatformEnum.TWITTER]: 'Twitter',
+  [PrismaSocialPlatformEnum.INSTAGRAM]: 'Instagram',
+  [PrismaSocialPlatformEnum.FACEBOOK]: 'Facebook',
+  [PrismaSocialPlatformEnum.YOUTUBE]: 'YouTube',
+  [PrismaSocialPlatformEnum.GITHUB]: 'GitHub',
+  [PrismaSocialPlatformEnum.TIKTOK]: 'TikTok',
+  [PrismaSocialPlatformEnum.SPOTIFY]: 'Spotify',
+  [PrismaSocialPlatformEnum.DISCORD]: 'Discord',
 }
 
 export const formFields = [
@@ -41,21 +44,33 @@ export const formFields = [
     placeholder: 'Enter your name',
   },
   {
+    name: 'email',
+    label: 'Email',
+    type: 'email',
+    placeholder: 'Enter your email',
+  },
+  {
+    name: 'phone',
+    label: 'Phone',
+    type: 'tel',
+    placeholder: 'Enter your phone',
+  },
+  {
     name: 'location',
     label: 'Location',
     type: 'text',
     placeholder: 'Enter your location',
   },
   {
-    name: 'experience',
-    label: 'Experience',
-    type: 'text',
-    placeholder: 'Enter your experience',
-  },
-  {
     name: 'languages',
     label: 'Languages',
     type: 'text',
     placeholder: 'Enter your languages',
+  },
+  {
+    name: 'yearsOfExperience',
+    label: 'Years of Experience',
+    type: 'number',
+    placeholder: 'Enter your years of experience',
   },
 ] as const

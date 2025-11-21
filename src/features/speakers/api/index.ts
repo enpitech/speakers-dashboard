@@ -15,7 +15,7 @@ const getSpeakersParamsSchema = z.object({
       'location',
       'topics',
       'languages',
-      'experience',
+      'yearsOfExperience',
       'sessionsUrl',
       'bio',
       'socialLinks',
