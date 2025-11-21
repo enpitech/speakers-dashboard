@@ -5,21 +5,26 @@ import { useCreateSpeaker } from '../api/create-speaker'
 import type { FormValues } from '../components/RegisterForm/form-fields'
 import { SocialPlatformEnum } from '~/lib/types'
 
+const defaultValues = {
+  name: '',
+  location: '',
+  languages: '',
+  topics: [] as string[],
+  yearsOfExperience: 0,
+  email: '',
+  phone: '',
+  socialLinks: [
+    {
+      platform: SocialPlatformEnum.LINKEDIN,
+      url: '',
+    },
+  ],
+} as FormValues
+
 export const useRegisterForm = (onSuccess: () => void) => {
   const createSpeaker = useCreateSpeaker()
   return useForm({
-    defaultValues: {
-      name: '',
-      location: '',
-      languages: '',
-      topics: [] as string[],
-      socialLinks: [
-        {
-          platform: SocialPlatformEnum.LINKEDIN,
-          url: '',
-        },
-      ],
-    } as FormValues,
+    defaultValues,
     validators: {
       onSubmit: formSchema,
     },
