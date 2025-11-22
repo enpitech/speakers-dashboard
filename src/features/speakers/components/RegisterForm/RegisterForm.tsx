@@ -95,7 +95,7 @@ export function RegisterForm({
                       <Input
                         id={linkedinField.name}
                         name={linkedinField.name}
-                        placeholder="Enter your LinkedIn URL"
+                        placeholder="Enter URL"
                         onChange={(e) =>
                           linkedinField.handleChange(e.target.value)
                         }
@@ -166,13 +166,14 @@ export function RegisterForm({
                         <InputGroup>
                           <InputGroupInput
                             id={socialLink.platform}
-                            placeholder={`Enter your ${SocialPlatformAliases[socialLink.platform]} URL`}
+                            placeholder="Enter URL"
                             value={socialLink.url}
                             onChange={(e) => field.handleChange(e.target.value)}
                           />
 
                           <InputGroupButton
                             type="button"
+                            className="cursor-pointer hover:bg-transparent"
                             onClick={() => {
                               form.removeFieldValue('socialLinks', index + 1)
                             }}

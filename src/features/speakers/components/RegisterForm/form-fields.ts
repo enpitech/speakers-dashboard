@@ -2,19 +2,17 @@ import * as z from 'zod'
 import { SocialPlatform as PrismaSocialPlatformEnum } from '@prisma/client'
 
 export const formSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
+  name: z.string().min(1, 'Required'),
   email: z.string().email('Invalid email'),
-  phone: z
-    .string()
-    .regex(/^\d{3}-\d{7}$/, 'Phone must be in the format XXX-XXXXXXX'),
-  location: z.string().min(1, 'Location is required'),
+  phone: z.string().regex(/^\d{10}$/, 'Phone must contain exactly 10 digits'),
+  location: z.string().min(1, 'Required'),
   topics: z.array(z.string()).min(1, 'At least one topic is required'),
-  languages: z.string().min(1, 'Languages are required'),
-  yearsOfExperience: z.number().min(0, 'Years of experience must be a number'),
+  languages: z.string().min(1, 'Required'),
+  yearsOfExperience: z.number().min(0),
   socialLinks: z.array(
     z.object({
       platform: z.nativeEnum(PrismaSocialPlatformEnum),
-      url: z.string().url('URL is required'),
+      url: z.string().url('Required'),
     }),
   ),
 })
@@ -41,36 +39,36 @@ export const formFields = [
     name: 'name',
     label: 'Name',
     type: 'text',
-    placeholder: 'Enter your name',
+    placeholder: 'Enter name',
   },
   {
     name: 'email',
     label: 'Email',
     type: 'email',
-    placeholder: 'Enter your email',
+    placeholder: 'Enter email',
   },
   {
     name: 'phone',
     label: 'Phone',
     type: 'tel',
-    placeholder: 'Enter your phone',
+    placeholder: 'Enter phone',
   },
   {
     name: 'location',
     label: 'Location',
     type: 'text',
-    placeholder: 'Enter your location',
+    placeholder: 'Enter location',
   },
   {
     name: 'languages',
     label: 'Languages',
     type: 'text',
-    placeholder: 'Enter your languages',
+    placeholder: 'Enter languages',
   },
   {
     name: 'yearsOfExperience',
     label: 'Years of Experience',
     type: 'number',
-    placeholder: 'Enter your years of experience',
+    placeholder: 'Enter years',
   },
 ] as const
