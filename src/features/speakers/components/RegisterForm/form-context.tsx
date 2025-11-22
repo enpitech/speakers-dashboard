@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react'
-import type { PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react'
 import type { useRegisterForm } from '../../hooks/useRegisterForm'
 
 type UseFormType = ReturnType<typeof useRegisterForm>
