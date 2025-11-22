@@ -6,8 +6,14 @@ import type {
   Speaker as PrismaSpeaker,
 } from '@prisma/client'
 
+export type Option = {
+  value: string
+  label: string
+}
+
 export type Speaker = PrismaSpeaker & {
   socialLinks: SocialLink[]
+  topics: Option[]
 }
 
 export type SocialLink = PrismaSocialLink

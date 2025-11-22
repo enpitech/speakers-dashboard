@@ -20,7 +20,7 @@ export function SpeakerPage() {
         <h1 className="text-2xl font-bold">{data.speaker.name}</h1>
         <p className="text-gray-600">{data.speaker.bio}</p>
         <p className="text-gray-600">
-          Topics: {data.speaker.topics.join(', ')}
+          Topics: {data.speaker.topics.map((topic) => topic.label).join(', ')}
         </p>
         <p className="text-gray-600">
           Languages: {data.speaker.languages.join(', ')}

@@ -8,6 +8,7 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 import appCss from '../styles.css?url'
 import type { QueryClient } from '@tanstack/react-query'
 import { Header } from '~/ui-core/'
+import { Toaster } from '~/ui-core/shadcn/sonner'
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   {
@@ -43,6 +44,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <Toaster />
         <Header />
         <main className="grid place-items-center p-4">{children}</main>
         {process.env.NODE_ENV === 'development' && (

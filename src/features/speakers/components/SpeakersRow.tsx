@@ -37,12 +37,13 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
             fallback={speaker.name}
           />
           <p className="truncate text-foreground font-medium">{speaker.name}</p>
+          <p className="truncate text-foreground font-medium">{speaker.name}</p>
         </div>
       </TableCell>
 
       <TableCell width={columnWidths.topics}>
         <p className="text-sm text-foreground wrap-break-word line-clamp-2">
-          {speaker.topics.join(', ')}
+          {speaker.topics.map((topic) => topic.label).join(', ')}
         </p>
       </TableCell>
 
