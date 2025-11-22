@@ -34,7 +34,7 @@ export const SocialPlatformAliases: Record<SocialPlatform, string> = {
   [PrismaSocialPlatformEnum.DISCORD]: 'Discord',
 }
 
-export const formFields = [
+export const baseFormFields = [
   {
     name: 'name',
     label: 'Name',
