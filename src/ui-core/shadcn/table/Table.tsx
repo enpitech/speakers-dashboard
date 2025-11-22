@@ -14,7 +14,7 @@ interface TableProps<T> {
 
 export function Table<T>({
   data,
-isLoading,
+  isLoading,
   renderRow,
   headers,
   className,
