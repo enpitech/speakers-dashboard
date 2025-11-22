@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { SearchBar } from '../components/SearchBar'
 import { SpeakersTable } from '~/features/speakers/'
-import { useDebounce } from '~/lib/hooks'
+import { useDebounce } from '~/hooks'
 import { useSpeakers } from '~/features/speakers/dal/speakers.resource'
 
 export function DashboardPage() {

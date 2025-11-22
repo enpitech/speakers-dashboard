@@ -29,7 +29,7 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
       className="cursor-pointer hover:bg-muted transition-colors flex duration-100 border-b gap-5 border w-full"
     >
       <TableCell width={columnWidths.name}>
-        <div className="flex items-center gap-3 min-w-0 py-4">
+        <div className="flex items-center gap-3 min-w-0 py-4 animate-in fade-in slide-in-from-left-4 duration-500">
           <Avatar
             src={speaker.avatar}
             alt={speaker.name}
@@ -41,13 +41,13 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
       </TableCell>
 
       <TableCell width={columnWidths.topics}>
-        <p className="text-sm text-foreground wrap-break-word line-clamp-2">
+        <p className="text-sm text-foreground wrap-break-word line-clamp-2 animate-in fade-in slide-in-from-right-4 duration-500">
           {speaker.topics.join(', ')}
         </p>
       </TableCell>
 
       <TableCell width={columnWidths.languages}>
-        <p className="text-sm text-foreground wrap-break-word line-clamp-2">
+        <p className="text-sm text-foreground wrap-break-word line-clamp-2 animate-in fade-in slide-in-from-right-4 duration-500">
           {speaker.languages.join(', ')}
         </p>
       </TableCell>
@@ -57,6 +57,7 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
           links={speaker.socialLinks}
           maxIcons={6}
           showCount={false}
+          className="animate-in fade-in slide-in-from-right-4 duration-500"
         />
       </TableCell>
     </Row>

@@ -14,14 +14,14 @@ interface TableProps<T> {
 
 export function Table<T>({
   data,
-  isLoading,
+isLoading,
   renderRow,
   headers,
   className,
   'aria-label': ariaLabel = 'Data table',
 }: TableProps<T>) {
   return (
-    <div className="w-full overflow-x-auto relative">
+    <div className="w-full overflow-x-auto relative animate-in fade-in slide-in-from-top-4 duration-500">
       <div
         className={cn(
           'min-w-full ',
@@ -33,7 +33,15 @@ export function Table<T>({
         role="table"
         aria-label={ariaLabel}
       >
-        {headers && <Row className={cn('border-b')}>{headers}</Row>}
+        {headers && (
+          <Row
+            className={cn(
+              'border-b animate-in fade-in slide-in-from-top-4 duration-500',
+            )}
+          >
+            {headers}
+          </Row>
+        )}
         {data.length > 0 && (
           <div
             role="rowgroup"
