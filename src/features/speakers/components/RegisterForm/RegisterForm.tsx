@@ -1,11 +1,13 @@
 import { useStore } from '@tanstack/react-form'
 import { useRegisterForm } from '../../hooks/useRegisterForm'
+import { useCreateSpeaker } from '../../api/create-speaker'
 import { FormProvider } from './form-context'
 import { SelectTopics } from './SelectTopics'
 import { SocialLinkField } from './SocialLinkField'
 import { LinkedinField } from './LinkedinField'
 import { BaseFields } from './BaseFields'
 import { FormField } from './FormField'
+import type { FormValues } from './form-fields'
 import {
   Button,
   Card,
@@ -30,7 +32,8 @@ export function RegisterForm({
   isCreatingTopic,
   onSuccess,
 }: Props) {
-  const form = useRegisterForm(onSuccess)
+  const createSpeaker = useCreateSpeaker({ onSuccess })
+  const form = useRegisterForm()
   const socialLinks = useStore(form.store, (state) => state.values.socialLinks)
 
   return (
@@ -43,7 +46,17 @@ export function RegisterForm({
               onSubmit={(e) => {
                 e.preventDefault()
                 e.stopPropagation()
-                form.handleSubmit()
+                form.handleSubmit({
+                  submit: (value: FormValues) => {
+                    const speakerData = {
+                      ...value,
+                      sessionsUrl: '',
+                      isActive: false,
+                    }
+
+                    createSpeaker.mutateAsync(speakerData)
+                  },
+                })
               }}
             >
               <div className="grid md:grid-cols-2 grid-cols-1 gap-4 items-end">
@@ -90,10 +103,15 @@ export function RegisterForm({
               variant="outline"
               onClick={() => form.reset()}
               className="border-primary px-6 py-2 rounded-lg"
+              disabled={createSpeaker.isPending}
             >
               Reset
             </Button>
-            <Button type="submit" form="register-form">
+            <Button
+              type="submit"
+              form="register-form"
+              disabled={createSpeaker.isPending}
+            >
               Submit
             </Button>
           </Field>

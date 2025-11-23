@@ -25,7 +25,7 @@ const createSpeakerParamsSchema = z.object({
   isActive: z.boolean().default(false),
 })
 
-type createSpeakerParams = z.infer<typeof createSpeakerParamsSchema>
+export type createSpeakerParams = z.infer<typeof createSpeakerParamsSchema>
 
 export const createSpeaker = createServerFn({
   method: 'POST',
@@ -64,11 +64,14 @@ export const createSpeaker = createServerFn({
     }
   })
 
-export const useCreateSpeaker = () => {
+export const useCreateSpeaker = ({ onSuccess }: { onSuccess?: () => void }) => {
   const queryClient = useQueryClient()
   return useMutation({
     mutationKey: ['topic'],
     mutationFn: (data: createSpeakerParams) => createSpeaker({ data }),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['topics'] }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['topics'] })
+      onSuccess?.()
+    },
   })
 }

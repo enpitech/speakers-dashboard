@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useTopics } from '../../api/get-topics'
 import { useCreateTopic } from '../../api/create-topic'
 import {
+  Button,
   Dialog,
   DialogContent,
   DialogDescription,
@@ -10,7 +11,6 @@ import {
   DialogTrigger,
   RegisterForm,
 } from '~/ui-core/'
-import { Button } from '~/ui-core/shadcn/Button'
 
 export function RegisterModal() {
   const topicsQuery = useTopics()
