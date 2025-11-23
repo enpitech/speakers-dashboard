@@ -18,7 +18,7 @@ type BaseProps = {
 type InputProps = BaseProps & {
   variant: 'input'
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-  type: React.InputHTMLAttributes<HTMLInputElement>['type']
+  type: React.HTMLInputTypeAttribute
 }
 
 type TextareaProps = BaseProps & {
