@@ -4,6 +4,8 @@ import { SocialPlatform as PrismaSocialPlatformEnum } from '@prisma/client'
 export const formSchema = z.object({
   name: z.string().min(1, 'Required'),
   email: z.string().email('Invalid email'),
+  avatar: z.string().url('Invalid URL'),
+  bio: z.string().min(1, 'Required'),
   phone: z.string().regex(/^\d{10}$/, 'Phone must contain exactly 10 digits'),
   location: z.string().min(1, 'Required'),
   topics: z.array(z.string()).min(1, 'At least one topic is required'),
@@ -12,7 +14,7 @@ export const formSchema = z.object({
   socialLinks: z.array(
     z.object({
       platform: z.nativeEnum(PrismaSocialPlatformEnum),
-      url: z.string().url('Required'),
+      url: z.string().url('Invalid URL'),
     }),
   ),
 })
@@ -70,5 +72,11 @@ export const baseFormFields = [
     label: 'Years of Experience',
     type: 'number',
     placeholder: 'Enter years',
+  },
+  {
+    name: 'avatar',
+    label: 'Image URL',
+    type: 'url',
+    placeholder: 'Enter URL',
   },
 ] as const

@@ -13,6 +13,8 @@ const defaultValues = {
   yearsOfExperience: 0,
   email: '',
   phone: '',
+  bio: '',
+  avatar: '',
   socialLinks: [
     {
       platform: SocialPlatformEnum.LINKEDIN,
@@ -32,9 +34,7 @@ export const useRegisterForm = (onSuccess: () => void) => {
       try {
         const speakerData = {
           ...value,
-          avatar: '',
           sessionsUrl: '',
-          bio: '',
           isActive: false,
         }
         await createSpeaker.mutateAsync(speakerData)

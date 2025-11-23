@@ -5,6 +5,7 @@ import { SelectTopics } from './SelectTopics'
 import { SocialLinkField } from './SocialLinkField'
 import { LinkedinField } from './LinkedinField'
 import { BaseFields } from './BaseFields'
+import { FormField } from './FormField'
 import {
   Button,
   Card,
@@ -47,6 +48,7 @@ export function RegisterForm({
             >
               <div className="grid md:grid-cols-2 grid-cols-1 gap-4 items-end">
                 <BaseFields />
+
                 <LinkedinField />
                 {socialLinks.slice(1).map((socialLink, index) => (
                   <SocialLinkField
@@ -55,6 +57,21 @@ export function RegisterForm({
                     index={index}
                   />
                 ))}
+
+                <form.Field name="bio">
+                  {(field) => (
+                    <FormField
+                      {...field}
+                      variant="textarea"
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      label="Bio"
+                      fieldClassName="col-span-2"
+                      className="resize-none max-h-3"
+                      maxLength={1000}
+                      errors={field.state.meta.errors}
+                    />
+                  )}
+                </form.Field>
               </div>
               {topics && (
                 <SelectTopics
