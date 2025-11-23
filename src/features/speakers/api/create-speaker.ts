@@ -67,10 +67,10 @@ export const createSpeaker = createServerFn({
 export const useCreateSpeaker = ({ onSuccess }: { onSuccess?: () => void }) => {
   const queryClient = useQueryClient()
   return useMutation({
-    mutationKey: ['topic'],
+    mutationKey: ['speaker', 'create'],
     mutationFn: (data: createSpeakerParams) => createSpeaker({ data }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['topics'] })
+      queryClient.invalidateQueries({ queryKey: ['speakers'] })
       onSuccess?.()
     },
   })

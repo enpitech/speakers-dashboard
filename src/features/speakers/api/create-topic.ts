@@ -34,7 +34,7 @@ export const createTopic = createServerFn({
 export const useCreateTopic = () => {
   const queryClient = useQueryClient()
   return useMutation({
-    mutationKey: ['topic'],
+    mutationKey: ['topic', 'create'],
     mutationFn: (title: string) => createTopic({ data: { title } }),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['topics'] }),
   })
