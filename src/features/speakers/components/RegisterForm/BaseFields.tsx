@@ -15,7 +15,7 @@ export const BaseFields = () => {
             return (
               <FormField
                 variant="input"
-                {...field}
+                fieldClassName="self-start"
                 {...fieldForm}
                 onChange={(e) =>
                   field.handleChange(
