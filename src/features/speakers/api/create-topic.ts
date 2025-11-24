@@ -1,7 +1,7 @@
 import { createServerFn } from '@tanstack/react-start'
-import { prisma } from 'prisma/client'
 import z from 'zod'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { prisma } from '../../../../prisma/client'
 import { mapTopicToValueLabel } from '../utils'
 
 const createTopicParamsSchema = z.object({

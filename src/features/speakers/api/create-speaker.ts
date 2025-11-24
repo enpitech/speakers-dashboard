@@ -1,8 +1,8 @@
 import { createServerFn } from '@tanstack/react-start'
-import { prisma } from 'prisma/client'
 import z from 'zod'
 import { SocialPlatform as PrismaSocialPlatformEnum } from '@prisma/client'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { prisma } from '../../../../prisma/client'
 import { mapTopicsToValueLabel } from '../utils'
 
 const createSpeakerParamsSchema = z.object({

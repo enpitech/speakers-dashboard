@@ -1,6 +1,6 @@
 import { createServerFn } from '@tanstack/react-start'
-import { prisma } from 'prisma/client'
 import { useQuery } from '@tanstack/react-query'
+import { prisma } from '../../../../prisma/client'
 import { mapTopicsToValueLabel } from '../utils'
 
 export const getTopics = createServerFn({
