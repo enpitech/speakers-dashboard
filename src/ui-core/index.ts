@@ -49,7 +49,7 @@ export {
   CommandList,
 } from './shadcn/command'
 export { Popover, PopoverContent, PopoverTrigger } from './shadcn/popover'
-export { Badge, badgeVariants } from './shadcn/badge'
+export { Badge, badgeVariants } from './shadcn/Badge'
 export {
   DropdownMenu,
   DropdownMenuPortal,

@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { SearchBar } from '../components/SearchBar'
-import { SpeakersTable } from '~/features/speakers/'
-import { useDebounce } from '~/lib/hooks'
+import { SpeakersGrid } from '../components/SpeakersGrid'
+import { useDebounce } from '~/hooks'
 import { useSpeakers } from '~/features/speakers/dal/speakers.resource'
 
 export function DashboardPage() {
   const [search, setSearch] = useState('')
   const debouncedSearch = useDebounce(search, 300)
 
-  const { data, isFetching } = useSpeakers(debouncedSearch)
+  const { data, isFetching, isLoading } = useSpeakers(debouncedSearch)
   return (
     <>
       <SearchBar
@@ -16,10 +16,7 @@ export function DashboardPage() {
         setSearch={setSearch}
         isFetching={isFetching}
       />
-      <SpeakersTable
-        speakers={data?.speakers ?? []}
-        isLoading={Boolean(search) && isFetching}
-      />
+      <SpeakersGrid speakers={data?.speakers ?? []} isLoading={isLoading} />
     </>
   )
 }

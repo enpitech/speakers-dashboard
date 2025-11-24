@@ -33,8 +33,7 @@ export function Avatar({
   return (
     <div
       className={cn(
-        'relative rounded-full overflow-hidden ring-2 ring-[var(--color-background-1)]',
-        'bg-[var(--color-background-2)]',
+        'relative rounded-full overflow-hidden ring-1 ',
         sizeClasses[size],
         className,
       )}
@@ -48,7 +47,7 @@ export function Avatar({
         />
       ) : (
         <div
-          className="w-full h-full flex items-center justify-center text-[var(--color-text-1)]"
+          className="w-full h-full flex items-center justify-center "
           role="img"
           aria-label={alt}
         >

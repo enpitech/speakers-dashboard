@@ -18,7 +18,7 @@ import {
   PopoverTrigger,
   Spinner,
 } from '~/ui-core'
-import { useWindowSize } from '~/lib/hooks/useWindowSize'
+import { useWindowSize } from '~/hooks/useWindowSize'
 
 const MAX_BADGES = 2
 const WINDOW_SMALL_WIDTH_BREAKPOINT = 400
