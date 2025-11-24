@@ -1,9 +1,4 @@
-import {
-  keepPreviousData,
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from '@tanstack/react-query'
+import { keepPreviousData, useMutation, useQuery } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { createSpeaker, getSpeaker, getSpeakers } from '../api'
 import type { createSpeakerParams } from '../api/create-speaker'
@@ -24,12 +19,10 @@ export const useSpeaker = (speakerId: string) => {
 }
 
 export const useCreateSpeaker = ({ onSuccess }: { onSuccess?: () => void }) => {
-  const queryClient = useQueryClient()
   return useMutation({
     mutationKey: ['speaker', 'create'],
     mutationFn: (data: createSpeakerParams) => createSpeaker({ data }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['speakers'] })
       toast.success('Speaker registered successfully')
       onSuccess?.()
     },
