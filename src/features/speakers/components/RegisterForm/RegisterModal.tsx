@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { RegisterForm } from './RegisterForm'
 import {
   useCreateTopic,
   useTopics,
@@ -11,7 +12,6 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  RegisterForm,
 } from '~/ui-core/'
 
 export function RegisterModal() {
