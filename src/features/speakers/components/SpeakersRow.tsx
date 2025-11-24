@@ -37,6 +37,7 @@ export function SpeakerRow({ speaker, columnWidths }: SpeakerRowProps) {
             fallback={speaker.name}
           />
           <p className="truncate text-foreground font-medium">{speaker.name}</p>
+          <p className="truncate text-foreground font-medium">{speaker.name}</p>
         </div>
       </TableCell>
 

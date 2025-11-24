@@ -61,10 +61,10 @@ export function SpeakerPage() {
             <div className="flex flex-wrap gap-2">
               {speaker.topics.map((topic) => (
                 <span
-                  key={topic}
+                  key={topic.value}
                   className="rounded-full bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground transition-all duration-200 hover:scale-105 hover:shadow-md animate-in fade-in zoom-in"
                 >
-                  {topic}
+                  {topic.label}
                 </span>
               ))}
             </div>

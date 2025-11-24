@@ -9,7 +9,7 @@ import {
 import { Avatar } from '~/ui-core/shadcn/Avatar'
 import { SocialIconsGroup } from '~/ui-core/shadcn/SocialIconsGroup'
 import { Route as SpeakerRoute } from '~/routes/speaker.$speakerId'
-import { Badge } from '~/ui-core/shadcn/Badge'
+import { Badge } from '~/ui-core'
 
 interface SpeakerCardProps {
   speaker: Speaker
@@ -46,7 +46,7 @@ export function SpeakerCard({ speaker }: SpeakerCardProps) {
           <div className="flex flex-wrap gap-2">
             {speaker.topics.map((topic, index) => (
               <Badge variant="secondary" key={index}>
-                {topic}
+                {topic.label}
               </Badge>
             ))}
           </div>
