@@ -7,7 +7,7 @@ export function Header() {
   const [isLight, setIsLight] = useState(false)
 
   return (
-    <header className="border-b border-gray-200 ">
+    <header className="border-b  ">
       <div className="mx-auto px-8 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">

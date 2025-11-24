@@ -19,7 +19,7 @@ export function SpeakerCard({ speaker }: SpeakerCardProps) {
   const navigate = useNavigate()
   return (
     <Card
-      className="flex flex-col h-full hover:shadow-lg transition-shadow cursor-pointer"
+      className="flex flex-col h-full hover:shadow-lg transition-shadow cursor-pointer min-w-[300px]"
       onClick={() =>
         navigate({
           to: SpeakerRoute.to,
@@ -45,7 +45,9 @@ export function SpeakerCard({ speaker }: SpeakerCardProps) {
         {speaker.topics.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {speaker.topics.map((topic, index) => (
-              <Badge key={index}>{topic}</Badge>
+              <Badge variant="secondary" key={index}>
+                {topic}
+              </Badge>
             ))}
           </div>
         )}

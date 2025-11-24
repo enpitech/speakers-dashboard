@@ -22,7 +22,7 @@ code {
   /* Colors using light-dark() function */
   --background: light-dark(oklch(1 0 0), oklch(0.145 0 0));
   --foreground: light-dark(oklch(0.145 0 0), oklch(0.985 0 0));
-  --card: light-dark(oklch(1 0 0), oklch(0.205 0 0));
+  --card: light-dark(oklch(1 0 0), oklch(0.225 0 0));
   --card-foreground: light-dark(oklch(0.145 0 0), oklch(0.985 0 0));
   --popover: light-dark(oklch(1 0 0), oklch(0.269 0 0));
   --popover-foreground: light-dark(oklch(0.145 0 0), oklch(0.985 0 0));
