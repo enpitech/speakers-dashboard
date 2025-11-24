@@ -78,7 +78,7 @@ export function RegisterForm({
                       variant="textarea"
                       onChange={(e) => field.handleChange(e.target.value)}
                       label="Bio"
-                      fieldClassName="col-span-2"
+                      fieldClassName="md:col-span-2"
                       className="resize-none max-h-3"
                       maxLength={1000}
                       errors={field.state.meta.errors}
