@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 import { Check, ChevronsUpDown, X } from 'lucide-react'
 import type { Option } from '~/lib/types'
@@ -113,15 +111,14 @@ export function Combobox(props: ComboboxProps) {
         {(visibleBadges as string[]).map((badge) => (
           <Badge
             key={badge}
-            variant="secondary"
-            className="max-w-[140px] bg-primary gap-0"
+            className="max-w-[140px] gap-0 "
             onClick={(e) => {
               e.stopPropagation()
               removeItem(badge)
             }}
           >
-            <span className="truncate text-white">{badge}</span>
-            <X size={10} className="ml-2 text-white" />
+            <span className="truncate">{badge}</span>
+            <X size={10} className="ml-2" />
           </Badge>
         ))}
         {width > WINDOW_SMALL_WIDTH_BREAKPOINT && hiddenCount > 0 && (
