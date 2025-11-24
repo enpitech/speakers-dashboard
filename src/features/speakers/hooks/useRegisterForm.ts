@@ -1,5 +1,4 @@
 import { useForm } from '@tanstack/react-form'
-import { toast } from 'sonner'
 import { SocialPlatform } from '@prisma/client'
 import { createSpeakerSchema } from '../api/create-speaker'
 import type { createSpeakerParams } from '../api/create-speaker'
@@ -37,11 +36,9 @@ export const useRegisterForm = () => {
     onSubmit: async ({ value, meta }) => {
       try {
         await meta.submit(value)
-        toast.success('Speaker registered successfully')
       } catch (error) {
         // eslint-disable-next-line no-console
         console.error(error)
-        toast.error('Failed to register speaker')
       }
     },
   })
