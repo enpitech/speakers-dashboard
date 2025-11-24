@@ -1,6 +1,5 @@
 import { useStore } from '@tanstack/react-form'
 import { useRegisterForm } from '../../hooks/useRegisterForm'
-import { useCreateSpeaker } from '../../api/create-speaker'
 import { FormProvider } from './form-context'
 import { SelectTopics } from './SelectTopics'
 import { SocialLinkField } from './SocialLinkField'
@@ -8,6 +7,7 @@ import { LinkedinField } from './LinkedinField'
 import { BaseFields } from './BaseFields'
 import { FormField } from './FormField'
 import type { FormValues } from './form-fields'
+import { useCreateSpeaker } from '~/features/speakers/dal/speakers.resource'
 import {
   Button,
   Card,

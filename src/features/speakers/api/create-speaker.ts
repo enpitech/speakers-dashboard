@@ -1,7 +1,6 @@
 import { createServerFn } from '@tanstack/react-start'
 import z from 'zod'
 import { SocialPlatform as PrismaSocialPlatformEnum } from '@prisma/client'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { prisma } from '../../../../prisma/client'
 import { mapTopicsToValueLabel } from '../utils'
 
@@ -63,15 +62,3 @@ export const createSpeaker = createServerFn({
       throw new Error('Failed to create speaker')
     }
   })
-
-export const useCreateSpeaker = ({ onSuccess }: { onSuccess?: () => void }) => {
-  const queryClient = useQueryClient()
-  return useMutation({
-    mutationKey: ['speaker', 'create'],
-    mutationFn: (data: createSpeakerParams) => createSpeaker({ data }),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['speakers'] })
-      onSuccess?.()
-    },
-  })
-}

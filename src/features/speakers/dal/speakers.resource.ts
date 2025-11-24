@@ -1,0 +1,35 @@
+import {
+  keepPreviousData,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from '@tanstack/react-query'
+import { createSpeaker, getSpeaker, getSpeakers } from '../api'
+import type { createSpeakerParams } from '../api/create-speaker'
+
+export const useSpeakers = (debouncedSearch: string) => {
+  return useQuery({
+    queryKey: ['speakers', debouncedSearch],
+    queryFn: () => getSpeakers({ data: { search: debouncedSearch } }),
+    placeholderData: keepPreviousData,
+  })
+}
+
+export const useSpeaker = (speakerId: string) => {
+  return useQuery({
+    queryKey: ['speaker', speakerId],
+    queryFn: () => getSpeaker({ data: { id: speakerId } }),
+  })
+}
+
+export const useCreateSpeaker = ({ onSuccess }: { onSuccess?: () => void }) => {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationKey: ['speaker', 'create'],
+    mutationFn: (data: createSpeakerParams) => createSpeaker({ data }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['speakers'] })
+      onSuccess?.()
+    },
+  })
+}

@@ -1,6 +1,5 @@
 import { createServerFn } from '@tanstack/react-start'
 import z from 'zod'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { prisma } from '../../../../prisma/client'
 import { mapTopicToValueLabel } from '../utils'
 
@@ -30,12 +29,3 @@ export const createTopic = createServerFn({
       throw new Error('Failed to create topic')
     }
   })
-
-export const useCreateTopic = () => {
-  const queryClient = useQueryClient()
-  return useMutation({
-    mutationKey: ['topic', 'create'],
-    mutationFn: (title: string) => createTopic({ data: { title } }),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['topics'] }),
-  })
-}

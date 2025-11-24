@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import { useTopics } from '../../api/get-topics'
-import { useCreateTopic } from '../../api/create-topic'
+import {
+  useCreateTopic,
+  useTopics,
+} from '~/features/speakers/dal/topics.resource'
 import {
   Button,
   Dialog,
