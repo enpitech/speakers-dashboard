@@ -1,8 +1,8 @@
 import { createServerFn } from '@tanstack/react-start'
 import z from 'zod'
+import { SocialPlatform } from '@prisma/client'
 import { prisma } from '../../../../prisma/client'
 import { mapTopicsToValueLabel } from '../utils'
-import { SocialPlatform } from '@prisma/client'
 
 export const createSpeakerSchema = z.object({
   name: z.string().min(1, 'Required'),

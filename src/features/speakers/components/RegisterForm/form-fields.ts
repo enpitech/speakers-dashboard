@@ -1,6 +1,6 @@
-import * as z from 'zod'
 import { SocialPlatform as PrismaSocialPlatformEnum } from '@prisma/client'
-import { createSpeakerSchema } from '../../api/create-speaker'
+import type * as z from 'zod'
+import type { createSpeakerSchema } from '../../api/create-speaker'
 
 export type RegisterFormValues = z.infer<typeof createSpeakerSchema>
 

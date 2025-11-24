@@ -1,11 +1,9 @@
 import { useForm } from '@tanstack/react-form'
 import { toast } from 'sonner'
-import {
-  createSpeakerSchema,
-  type createSpeakerParams,
-} from '../api/create-speaker'
-import type { RegisterFormValues } from '../components/RegisterForm/form-fields'
 import { SocialPlatform } from '@prisma/client'
+import { createSpeakerSchema } from '../api/create-speaker'
+import type { createSpeakerParams } from '../api/create-speaker'
+import type { RegisterFormValues } from '../components/RegisterForm/form-fields'
 
 const defaultValues: RegisterFormValues = {
   name: '',
