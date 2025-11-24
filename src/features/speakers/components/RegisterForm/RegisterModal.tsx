@@ -17,10 +17,10 @@ import {
 export function RegisterModal() {
   const topicsQuery = useTopics()
   const createTopicMutate = useCreateTopic()
-  const [isOpen, setIsOpen] = useState(false)
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false)
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog open={isRegisterModalOpen} onOpenChange={setIsRegisterModalOpen}>
       <DialogTrigger asChild>
         <Button>Register as a lecturer</Button>
       </DialogTrigger>
@@ -35,7 +35,7 @@ export function RegisterModal() {
           topics={topicsQuery.data?.topics}
           createTopic={createTopicMutate.mutateAsync}
           isCreatingTopic={createTopicMutate.isPending}
-          onSuccess={() => setIsOpen(false)}
+          onSuccess={() => setIsRegisterModalOpen(false)}
         />
       </DialogContent>
     </Dialog>
