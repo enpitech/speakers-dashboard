@@ -35,7 +35,7 @@ export function RegisterModal() {
           topics={topicsQuery.data?.topics}
           createTopic={createTopicMutate.mutateAsync}
           isCreatingTopic={createTopicMutate.isPending}
-          onSuccess={() => setIsRegisterModalOpen(false)}
+          closeModal={() => setIsRegisterModalOpen(false)}
         />
       </DialogContent>
     </Dialog>

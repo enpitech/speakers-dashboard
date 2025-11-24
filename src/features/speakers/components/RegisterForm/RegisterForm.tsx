@@ -22,16 +22,16 @@ interface Props {
     title: string,
   ) => Promise<{ topic: { value: string; label: string } }>
   isCreatingTopic: boolean
-  onSuccess: () => void
+  closeModal: () => void
 }
 
 export function RegisterForm({
   topics,
   createTopic,
   isCreatingTopic,
-  onSuccess,
+  closeModal,
 }: Props) {
-  const createSpeaker = useCreateSpeaker({ onSuccess })
+  const createSpeaker = useCreateSpeaker({ onSuccess: closeModal })
   const form = useRegisterForm()
   const socialLinks = useStore(form.store, (state) => state.values.socialLinks)
 
