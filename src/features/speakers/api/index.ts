@@ -47,6 +47,7 @@ export const getSpeakers = createServerFn({
         ...(data.offset && { skip: data.offset }),
         ...(data.search && {
           where: {
+            isActive: true,
             OR: [
               { name: { contains: data.search, mode: 'insensitive' } },
               {
