@@ -6,7 +6,6 @@ import { SocialLinkField } from './SocialLinkField'
 import { LinkedinField } from './LinkedinField'
 import { BaseFields } from './BaseFields'
 import { FormField } from './FormField'
-import type { FormValues } from './form-fields'
 import { useCreateSpeaker } from '~/features/speakers/dal/speakers.resource'
 import {
   Button,
@@ -47,15 +46,7 @@ export function RegisterForm({
                 e.preventDefault()
                 e.stopPropagation()
                 form.handleSubmit({
-                  submit: (value: FormValues) => {
-                    const speakerData = {
-                      ...value,
-                      sessionsUrl: '',
-                      isActive: false,
-                    }
-
-                    createSpeaker.mutateAsync(speakerData)
-                  },
+                  submit: createSpeaker.mutateAsync,
                 })
               }}
             >

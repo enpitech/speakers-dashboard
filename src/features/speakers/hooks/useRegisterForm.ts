@@ -1,11 +1,13 @@
 import { useForm } from '@tanstack/react-form'
 import { toast } from 'sonner'
-import { formSchema } from '../components/RegisterForm/form-fields'
-import type { createSpeakerParams } from '../api/create-speaker'
-import type { FormValues } from '../components/RegisterForm/form-fields'
-import { SocialPlatformEnum } from '~/lib/types'
+import {
+  createSpeakerSchema,
+  type createSpeakerParams,
+} from '../api/create-speaker'
+import type { RegisterFormValues } from '../components/RegisterForm/form-fields'
+import { SocialPlatform } from '@prisma/client'
 
-const defaultValues = {
+const defaultValues: RegisterFormValues = {
   name: '',
   location: '',
   languages: '',
@@ -15,31 +17,28 @@ const defaultValues = {
   phone: '',
   bio: '',
   avatar: '',
+  isActive: false,
+  sessionsUrl: '',
   socialLinks: [
     {
-      platform: SocialPlatformEnum.LINKEDIN,
+      platform: SocialPlatform.LINKEDIN,
       url: '',
     },
   ],
-} as FormValues
+}
 
 export const useRegisterForm = () => {
   return useForm({
     defaultValues,
     validators: {
-      onSubmit: formSchema,
+      onSubmit: createSpeakerSchema,
     },
     onSubmitMeta: {
       submit: (_: createSpeakerParams) => {},
     },
     onSubmit: async ({ value, meta }) => {
       try {
-        const speakerData = {
-          ...value,
-          sessionsUrl: '',
-          isActive: false,
-        }
-        await meta.submit(speakerData)
+        await meta.submit(value)
         toast.success('Speaker registered successfully')
       } catch (error) {
         // eslint-disable-next-line no-console
