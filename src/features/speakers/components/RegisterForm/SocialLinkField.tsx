@@ -1,7 +1,7 @@
 import { X } from 'lucide-react'
 import { useFormContext } from './form-context'
 import { SocialPlatformAliases } from './form-fields'
-import type { SocialPlatform } from '@prisma/client'
+import type { SocialPlatform } from '~/lib/types'
 import {
   Field,
   FieldError,

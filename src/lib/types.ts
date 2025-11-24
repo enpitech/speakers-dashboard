@@ -2,7 +2,6 @@
 import type {
   SocialLink as PrismaSocialLink,
   SocialPlatform as PrismaSocialPlatform,
-  SocialPlatform as PrismaSocialPlatformEnum,
   Speaker as PrismaSpeaker,
 } from '@prisma/client'
 
@@ -20,14 +19,14 @@ export type SocialLink = PrismaSocialLink
 
 export type SocialPlatform = PrismaSocialPlatform
 
-export const SocialPlatformEnum: Record<PrismaSocialPlatformEnum, string> = {
-  LINKEDIN: 'LINKEDIN',
-  TWITTER: 'TWITTER',
-  INSTAGRAM: 'INSTAGRAM',
-  FACEBOOK: 'FACEBOOK',
-  YOUTUBE: 'YOUTUBE',
-  GITHUB: 'GITHUB',
-  TIKTOK: 'TIKTOK',
-  SPOTIFY: 'SPOTIFY',
-  DISCORD: 'DISCORD',
+export enum SocialPlatformEnum {
+  LINKEDIN = 'LINKEDIN',
+  TWITTER = 'TWITTER',
+  INSTAGRAM = 'INSTAGRAM',
+  FACEBOOK = 'FACEBOOK',
+  YOUTUBE = 'YOUTUBE',
+  GITHUB = 'GITHUB',
+  TIKTOK = 'TIKTOK',
+  SPOTIFY = 'SPOTIFY',
+  DISCORD = 'DISCORD',
 }

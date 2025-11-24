@@ -1,5 +1,12 @@
-import { keepPreviousData, useQuery } from '@tanstack/react-query'
+import {
+  keepPreviousData,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from '@tanstack/react-query'
 import { getSpeaker, getSpeakers } from '../api'
+import { createSpeaker } from '../api/create-speaker'
+import type { createSpeakerParams } from '../api/create-speaker'
 
 export const useSpeakers = (debouncedSearch: string) => {
   return useQuery({
@@ -13,5 +20,17 @@ export const useSpeaker = (speakerId: string) => {
   return useQuery({
     queryKey: ['speaker', speakerId],
     queryFn: () => getSpeaker({ data: { id: speakerId } }),
+  })
+}
+
+export const useCreateSpeaker = ({ onSuccess }: { onSuccess?: () => void }) => {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationKey: ['speaker', 'create'],
+    mutationFn: (data: createSpeakerParams) => createSpeaker({ data }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['speakers'] })
+      onSuccess?.()
+    },
   })
 }

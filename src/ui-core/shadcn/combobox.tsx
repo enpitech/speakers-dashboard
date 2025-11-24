@@ -114,13 +114,13 @@ export function Combobox(props: ComboboxProps) {
           <Badge
             key={badge}
             variant="secondary"
-            className="max-w-[140px] bg-primary gap-0"
+            className="max-w-[140px] gap-0"
             onClick={(e) => {
               e.stopPropagation()
               removeItem(badge)
             }}
           >
-            <span className="truncate text-white">{badge}</span>
+            <span className="truncate ">{badge}</span>
             <X size={10} className="ml-2 text-white" />
           </Badge>
         ))}

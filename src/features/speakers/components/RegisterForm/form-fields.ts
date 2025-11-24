@@ -1,5 +1,5 @@
 import * as z from 'zod'
-import { SocialPlatform as PrismaSocialPlatformEnum } from '@prisma/client'
+import { SocialPlatformEnum } from '~/lib/types'
 
 export const formSchema = z.object({
   name: z.string().min(1, 'Required'),
@@ -13,7 +13,7 @@ export const formSchema = z.object({
   yearsOfExperience: z.number().min(0),
   socialLinks: z.array(
     z.object({
-      platform: z.nativeEnum(PrismaSocialPlatformEnum),
+      platform: z.nativeEnum(SocialPlatformEnum),
       url: z.string().url('Invalid URL'),
     }),
   ),
@@ -21,19 +21,16 @@ export const formSchema = z.object({
 
 export type FormValues = z.infer<typeof formSchema>
 
-export type SocialPlatform =
-  (typeof PrismaSocialPlatformEnum)[keyof typeof PrismaSocialPlatformEnum]
-
-export const SocialPlatformAliases: Record<SocialPlatform, string> = {
-  [PrismaSocialPlatformEnum.LINKEDIN]: 'LinkedIn',
-  [PrismaSocialPlatformEnum.TWITTER]: 'Twitter',
-  [PrismaSocialPlatformEnum.INSTAGRAM]: 'Instagram',
-  [PrismaSocialPlatformEnum.FACEBOOK]: 'Facebook',
-  [PrismaSocialPlatformEnum.YOUTUBE]: 'YouTube',
-  [PrismaSocialPlatformEnum.GITHUB]: 'GitHub',
-  [PrismaSocialPlatformEnum.TIKTOK]: 'TikTok',
-  [PrismaSocialPlatformEnum.SPOTIFY]: 'Spotify',
-  [PrismaSocialPlatformEnum.DISCORD]: 'Discord',
+export const SocialPlatformAliases = {
+  [SocialPlatformEnum.LINKEDIN]: 'LinkedIn',
+  [SocialPlatformEnum.TWITTER]: 'Twitter',
+  [SocialPlatformEnum.INSTAGRAM]: 'Instagram',
+  [SocialPlatformEnum.FACEBOOK]: 'Facebook',
+  [SocialPlatformEnum.YOUTUBE]: 'YouTube',
+  [SocialPlatformEnum.GITHUB]: 'GitHub',
+  [SocialPlatformEnum.TIKTOK]: 'TikTok',
+  [SocialPlatformEnum.SPOTIFY]: 'Spotify',
+  [SocialPlatformEnum.DISCORD]: 'Discord',
 }
 
 export const baseFormFields = [
