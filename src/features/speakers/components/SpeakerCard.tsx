@@ -19,7 +19,7 @@ export function SpeakerCard({ speaker }: SpeakerCardProps) {
   const navigate = useNavigate()
   return (
     <Card
-      className="flex flex-col h-full hover:shadow-lg transition-shadow cursor-pointer min-w-[300px]"
+      className="flex flex-col h-full hover:shadow-lg transition-shadow cursor-pointer"
       onClick={() =>
         navigate({
           to: SpeakerRoute.to,

@@ -1,8 +1,8 @@
 import { createServerFn } from '@tanstack/react-start'
 import z from 'zod'
-import { SocialPlatform } from '@prisma/client'
-import { prisma } from '../../../../prisma/client'
 import { mapTopicsToValueLabel } from '../utils'
+import { prisma } from '../../../../prisma/client'
+import { SocialPlatformEnum } from '~/lib/types'
 
 export const createSpeakerSchema = z.object({
   name: z.string().min(1, 'Required'),
@@ -18,7 +18,7 @@ export const createSpeakerSchema = z.object({
   sessionsUrl: z.string(),
   socialLinks: z.array(
     z.object({
-      platform: z.nativeEnum(SocialPlatform),
+      platform: z.nativeEnum(SocialPlatformEnum),
       url: z.string().url('Invalid URL'),
     }),
   ),

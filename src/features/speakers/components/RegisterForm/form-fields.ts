@@ -1,22 +1,19 @@
-import { SocialPlatform as PrismaSocialPlatformEnum } from '@prisma/client'
 import type * as z from 'zod'
 import type { createSpeakerSchema } from '../../api/create-speaker'
+import { SocialPlatformEnum } from '~/lib/types'
 
 export type RegisterFormValues = z.infer<typeof createSpeakerSchema>
 
-export type SocialPlatform =
-  (typeof PrismaSocialPlatformEnum)[keyof typeof PrismaSocialPlatformEnum]
-
-export const SocialPlatformAliases: Record<SocialPlatform, string> = {
-  [PrismaSocialPlatformEnum.LINKEDIN]: 'LinkedIn',
-  [PrismaSocialPlatformEnum.TWITTER]: 'Twitter',
-  [PrismaSocialPlatformEnum.INSTAGRAM]: 'Instagram',
-  [PrismaSocialPlatformEnum.FACEBOOK]: 'Facebook',
-  [PrismaSocialPlatformEnum.YOUTUBE]: 'YouTube',
-  [PrismaSocialPlatformEnum.GITHUB]: 'GitHub',
-  [PrismaSocialPlatformEnum.TIKTOK]: 'TikTok',
-  [PrismaSocialPlatformEnum.SPOTIFY]: 'Spotify',
-  [PrismaSocialPlatformEnum.DISCORD]: 'Discord',
+export const SocialPlatformAliases = {
+  [SocialPlatformEnum.LINKEDIN]: 'LinkedIn',
+  [SocialPlatformEnum.TWITTER]: 'Twitter',
+  [SocialPlatformEnum.INSTAGRAM]: 'Instagram',
+  [SocialPlatformEnum.FACEBOOK]: 'Facebook',
+  [SocialPlatformEnum.YOUTUBE]: 'YouTube',
+  [SocialPlatformEnum.GITHUB]: 'GitHub',
+  [SocialPlatformEnum.TIKTOK]: 'TikTok',
+  [SocialPlatformEnum.SPOTIFY]: 'Spotify',
+  [SocialPlatformEnum.DISCORD]: 'Discord',
 }
 
 export const baseFormFields = [

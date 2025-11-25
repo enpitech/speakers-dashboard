@@ -1,6 +1,6 @@
-import { SocialPlatform } from '@prisma/client'
 import { useFormContext } from './form-context'
 import { SocialPlatformAliases } from './form-fields'
+import { SocialPlatformEnum } from '~/lib/types'
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -24,8 +24,8 @@ export const SocialLinksDropdown = () => {
               </span>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              {Object.values(SocialPlatform)
-                .filter((p) => p !== SocialPlatform.LINKEDIN)
+              {Object.values(SocialPlatformEnum)
+                .filter((p) => p !== SocialPlatformEnum.LINKEDIN)
                 .map((platform) => (
                   <DropdownMenuCheckboxItem
                     key={platform}

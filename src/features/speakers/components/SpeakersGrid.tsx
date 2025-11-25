@@ -24,7 +24,7 @@ export function SpeakersGrid({ speakers, isLoading }: SpeakersGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 animate-in fade-in slide-in-from-top-4 duration-500 auto-rows-fr">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 animate-in fade-in slide-in-from-top-4 duration-500 auto-rows-fr w-full">
       {speakers.map((speaker) => (
         <SpeakerCard key={speaker.id} speaker={speaker} />
       ))}

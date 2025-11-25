@@ -111,7 +111,8 @@ export function Combobox(props: ComboboxProps) {
         {(visibleBadges as string[]).map((badge) => (
           <Badge
             key={badge}
-            className="max-w-[140px] gap-0 "
+            variant="secondary"
+            className="max-w-[140px] gap-0"
             onClick={(e) => {
               e.stopPropagation()
               removeItem(badge)

@@ -1,12 +1,12 @@
 import { useStore } from '@tanstack/react-form'
 import { useRegisterForm } from '../../hooks/useRegisterForm'
+import { useCreateSpeaker } from '../../dal/speakers.resource'
 import { FormProvider } from './form-context'
 import { SelectTopics } from './SelectTopics'
 import { SocialLinkField } from './SocialLinkField'
 import { LinkedinField } from './LinkedinField'
 import { BaseFields } from './BaseFields'
 import { FormField } from './FormField'
-import { useCreateSpeaker } from '~/features/speakers/dal/speakers.resource'
 import {
   Button,
   Card,

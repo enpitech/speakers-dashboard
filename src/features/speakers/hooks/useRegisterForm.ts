@@ -1,8 +1,8 @@
 import { useForm } from '@tanstack/react-form'
-import { SocialPlatform } from '@prisma/client'
 import { createSpeakerSchema } from '../api/create-speaker'
 import type { createSpeakerParams } from '../api/create-speaker'
 import type { RegisterFormValues } from '../components/RegisterForm/form-fields'
+import { SocialPlatformEnum } from '~/lib/types'
 
 const defaultValues: RegisterFormValues = {
   name: '',
@@ -18,7 +18,7 @@ const defaultValues: RegisterFormValues = {
   sessionsUrl: '',
   socialLinks: [
     {
-      platform: SocialPlatform.LINKEDIN,
+      platform: SocialPlatformEnum.LINKEDIN,
       url: '',
     },
   ],
