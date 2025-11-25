@@ -1,11 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Suspense } from 'react'
-import { Spinner } from '~/ui-core/shadcn/Spinner'
+import { Spinner } from '~/ui-core'
 import { DashboardPage } from '~/features/speakers/pages/DashboardPage'
 
 export const Route = createFileRoute('/')({
   component: () => (
-    <Suspense fallback={<Spinner size="lg" />}>
+    <Suspense fallback={<Spinner className="size-48" />}>
       <DashboardPage />
     </Suspense>
   ),

@@ -6,7 +6,7 @@ export { Avatar } from './shadcn/Avatar'
 export { Button } from './shadcn/Button'
 export { SocialIcon } from './shadcn/SocialIcon'
 export { SocialIconsGroup } from './shadcn/SocialIconsGroup'
-export { Spinner } from './shadcn/Spinner'
+export { Spinner } from './shadcn/spinner'
 
 // UI Table components
 export { Row } from './shadcn/table/Row'

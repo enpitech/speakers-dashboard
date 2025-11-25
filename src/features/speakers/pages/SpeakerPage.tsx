@@ -19,7 +19,7 @@ export function SpeakerPage() {
   if (isLoading)
     return (
       <div className="flex h-[50vh] w-full items-center justify-center">
-        <Spinner size="lg" />
+        <Spinner className="size-48" />
       </div>
     )
 

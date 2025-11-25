@@ -15,7 +15,7 @@ export function SearchBar({ search, setSearch, isFetching }: SearchBarProps) {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      {isFetching && <Spinner className="absolute right-2 top-2 " size="sm" />}
+      {isFetching && <Spinner className="absolute right-2 top-2 " />}
     </div>
   )
 }
