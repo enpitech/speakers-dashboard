@@ -49,6 +49,10 @@ To get a local copy up and running, follow these simple steps.
    ```sh
    npx prisma generate
    ```
+5. push the schema
+   ```sh
+   npx prisma db push
+   ```
 6. seed the database
    ```sh
    npm run seed
