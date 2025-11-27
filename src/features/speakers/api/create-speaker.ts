@@ -4,27 +4,26 @@ import { mapTopicsToValueLabel } from '../utils'
 import { prisma } from '../../../../prisma/client'
 import { SocialPlatformEnum } from '~/lib/types'
 
-const createSpeakerParamsSchema = z.object({
-  name: z.string(),
-  email: z.string(),
-  phone: z.string(),
-  avatar: z.string(),
-  location: z.string(),
-  yearsOfExperience: z.number(),
+export const createSpeakerSchema = z.object({
+  name: z.string().min(1, 'Required'),
+  email: z.string().email('Invalid email'),
+  avatar: z.string().url('Invalid URL'),
+  bio: z.string().min(1, 'Required'),
+  phone: z.string().regex(/^\d{10}$/, 'Phone must contain exactly 10 digits'),
+  location: z.string().min(1, 'Required'),
+  topics: z.array(z.string()).min(1, 'At least one topic is required'),
+  languages: z.string().min(1, 'Required'),
+  yearsOfExperience: z.number().min(0),
+  isActive: z.boolean(),
   sessionsUrl: z.string(),
   socialLinks: z.array(
     z.object({
       platform: z.nativeEnum(SocialPlatformEnum),
-      url: z.string(),
+      url: z.string().url('Invalid URL'),
     }),
   ),
-  bio: z.string(),
-  topics: z.array(z.string()),
-  languages: z.string(),
-  isActive: z.boolean().default(false),
 })
-
-export type createSpeakerParams = z.infer<typeof createSpeakerParamsSchema>
+export type createSpeakerParams = z.infer<typeof createSpeakerSchema>
 
 export const createSpeaker = createServerFn({
   method: 'POST',

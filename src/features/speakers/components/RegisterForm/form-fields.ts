@@ -1,25 +1,8 @@
-import * as z from 'zod'
+import type * as z from 'zod'
+import type { createSpeakerSchema } from '../../api/create-speaker'
 import { SocialPlatformEnum } from '~/lib/types'
 
-export const formSchema = z.object({
-  name: z.string().min(1, 'Required'),
-  email: z.string().email('Invalid email'),
-  avatar: z.string().url('Invalid URL'),
-  bio: z.string().min(1, 'Required'),
-  phone: z.string().regex(/^\d{10}$/, 'Phone must contain exactly 10 digits'),
-  location: z.string().min(1, 'Required'),
-  topics: z.array(z.string()).min(1, 'At least one topic is required'),
-  languages: z.string().min(1, 'Required'),
-  yearsOfExperience: z.number().min(0),
-  socialLinks: z.array(
-    z.object({
-      platform: z.nativeEnum(SocialPlatformEnum),
-      url: z.string().url('Invalid URL'),
-    }),
-  ),
-})
-
-export type FormValues = z.infer<typeof formSchema>
+export type RegisterFormValues = z.infer<typeof createSpeakerSchema>
 
 export const SocialPlatformAliases = {
   [SocialPlatformEnum.LINKEDIN]: 'LinkedIn',

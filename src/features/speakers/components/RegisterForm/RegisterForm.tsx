@@ -7,7 +7,6 @@ import { SocialLinkField } from './SocialLinkField'
 import { LinkedinField } from './LinkedinField'
 import { BaseFields } from './BaseFields'
 import { FormField } from './FormField'
-import type { FormValues } from './form-fields'
 import {
   Button,
   Card,
@@ -23,16 +22,16 @@ interface Props {
     title: string,
   ) => Promise<{ topic: { value: string; label: string } }>
   isCreatingTopic: boolean
-  onSuccess: () => void
+  closeModal: () => void
 }
 
 export function RegisterForm({
   topics,
   createTopic,
   isCreatingTopic,
-  onSuccess,
+  closeModal,
 }: Props) {
-  const createSpeaker = useCreateSpeaker({ onSuccess })
+  const createSpeaker = useCreateSpeaker({ onSuccess: closeModal })
   const form = useRegisterForm()
   const socialLinks = useStore(form.store, (state) => state.values.socialLinks)
 
@@ -47,15 +46,7 @@ export function RegisterForm({
                 e.preventDefault()
                 e.stopPropagation()
                 form.handleSubmit({
-                  submit: (value: FormValues) => {
-                    const speakerData = {
-                      ...value,
-                      sessionsUrl: '',
-                      isActive: false,
-                    }
-
-                    createSpeaker.mutateAsync(speakerData)
-                  },
+                  submit: createSpeaker.mutateAsync,
                 })
               }}
             >

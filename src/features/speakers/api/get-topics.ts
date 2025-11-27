@@ -1,5 +1,4 @@
 import { createServerFn } from '@tanstack/react-start'
-import { useQuery } from '@tanstack/react-query'
 import { prisma } from '../../../../prisma/client'
 import { mapTopicsToValueLabel } from '../utils'
 
@@ -17,10 +16,3 @@ export const getTopics = createServerFn({
       throw new Error('Failed to get topics')
     }
   })
-
-export const useTopics = () => {
-  return useQuery({
-    queryKey: ['topics'],
-    queryFn: () => getTopics(),
-  })
-}

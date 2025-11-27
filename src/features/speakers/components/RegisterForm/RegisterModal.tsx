@@ -1,6 +1,9 @@
 import { useState } from 'react'
-import { useTopics } from '../../api/get-topics'
-import { useCreateTopic } from '../../api/create-topic'
+import { RegisterForm } from './RegisterForm'
+import {
+  useCreateTopic,
+  useTopics,
+} from '~/features/speakers/dal/topics.resource'
 import {
   Button,
   Dialog,
@@ -9,16 +12,15 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  RegisterForm,
 } from '~/ui-core/'
 
 export function RegisterModal() {
   const topicsQuery = useTopics()
   const createTopicMutate = useCreateTopic()
-  const [isOpen, setIsOpen] = useState(false)
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false)
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog open={isRegisterModalOpen} onOpenChange={setIsRegisterModalOpen}>
       <DialogTrigger asChild>
         <Button>Register as a lecturer</Button>
       </DialogTrigger>
@@ -33,7 +35,7 @@ export function RegisterModal() {
           topics={topicsQuery.data?.topics}
           createTopic={createTopicMutate.mutateAsync}
           isCreatingTopic={createTopicMutate.isPending}
-          onSuccess={() => setIsOpen(false)}
+          closeModal={() => setIsRegisterModalOpen(false)}
         />
       </DialogContent>
     </Dialog>

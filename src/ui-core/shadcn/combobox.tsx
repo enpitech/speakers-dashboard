@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 import { Check, ChevronsUpDown, X } from 'lucide-react'
 import type { Option } from '~/lib/types'
@@ -21,7 +19,7 @@ import {
 import { useWindowSize } from '~/hooks/useWindowSize'
 
 const MAX_BADGES = 2
-const WINDOW_SMALL_WIDTH_BREAKPOINT = 400
+const WINDOW_SMALL_WIDTH_BREAKPOINT = 640
 
 interface BaseComboboxProps {
   options: Option[]
@@ -44,11 +42,35 @@ interface MultipleComboboxProps extends BaseComboboxProps {
 
 type ComboboxProps = SingleComboboxProps | MultipleComboboxProps
 
+export function ComboboxEmptyState({ loading }: { loading?: boolean }) {
+  return (
+    <CommandEmpty>
+      <div className="flex flex-col items-center justify-center">
+        {loading ? (
+          <>
+            <span className="sr-only">Loading...</span>
+            <Spinner />
+          </>
+        ) : (
+          <>
+            <span>No items found.</span>
+            <span className="text-xs text-muted-foreground">
+              Press Enter to create new.
+            </span>
+          </>
+        )}
+      </div>
+    </CommandEmpty>
+  )
+}
+
 export function Combobox(props: ComboboxProps) {
   const { options, placeholder = 'Select options...', loading, onSave } = props
 
-  const { width } = useWindowSize()
   const [open, setOpen] = React.useState(false)
+  const [searchValue, setSearchValue] = React.useState('')
+
+  const { width } = useWindowSize()
 
   const isMultiple = props.multiple === true
 
@@ -102,8 +124,6 @@ export function Combobox(props: ComboboxProps) {
   }
 
   function renderMultipleSelection() {
-    if (!isMultiple) return null
-
     if (width < WINDOW_SMALL_WIDTH_BREAKPOINT) {
       return `${props.selected.length} Selected`
     }
@@ -120,12 +140,15 @@ export function Combobox(props: ComboboxProps) {
               removeItem(badge)
             }}
           >
-            <span className="truncate ">{badge}</span>
-            <X size={10} className="ml-2 text-white" />
+            <span className="truncate">{badge}</span>
+            <X size={10} className="ml-2" />
           </Badge>
         ))}
-        {width > WINDOW_SMALL_WIDTH_BREAKPOINT && hiddenCount > 0 && (
-          <Badge variant="secondary" className="mr-1 whitespace-nowrap">
+        {hiddenCount > 0 && (
+          <Badge
+            variant="secondary"
+            className="sm:hidden mr-1 whitespace-nowrap"
+          >
             +{hiddenCount} more
           </Badge>
         )}
@@ -157,31 +180,28 @@ export function Combobox(props: ComboboxProps) {
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput
-            className="h-9"
-            placeholder="Search..."
-            onKeyDown={handleKeyDown}
-          />
-          <CommandList>
-            <CommandEmpty>
-              <div className="flex flex-col items-center justify-center">
-                {loading ? (
-                  <>
-                    <span className="sr-only">Loading...</span>
-                    <Spinner size="sm" />
-                  </>
-                ) : (
-                  <>
-                    <span>No items found.</span>
-                    <span className="text-xs text-muted-foreground">
-                      Press Enter to create new.
-                    </span>
-                  </>
-                )}
-              </div>
+          <div className="flex items-center justify-between">
+            <CommandInput
+              value={searchValue}
+              onValueChange={setSearchValue}
+              className="h-9"
+              placeholder="Search..."
+              onKeyDown={handleKeyDown}
+            />
+            <CommandEmpty className="py-0">
+              <Button
+                variant="ghost"
+                disabled={loading}
+                onClick={() => handleCreateIfNeeded(searchValue)}
+              >
+                Save
+              </Button>
             </CommandEmpty>
+          </div>
+          <CommandList>
+            <ComboboxEmptyState loading={loading} />
             <CommandGroup>
-              {loading && <Spinner size="sm" />}
+              {loading && <Spinner />}
               {options.map((option) => (
                 <CommandItem
                   key={option.value}
